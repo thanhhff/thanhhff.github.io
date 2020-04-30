@@ -24,12 +24,13 @@ $(function () {
         name: "Nếu Anh Đi (Cover)",
         url: "Musics/NeuAnhDi.mp3",
         picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
-    }, {
-        artist: "Dig Didzay",
-        name: "Nếu Anh Đi 22 (Cover)",
-        url: "Musics/NeuAnhDi.mp3",
-        picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
     }];
+    // // }, {
+    //     // artist: "Dig Didzay",
+    //     name: "Nếu Anh Đi 22 (Cover)",
+    //     url: "Musics/NeuAnhDi.mp3",
+    //     picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
+    // }];
 
     function shuffle(a) {
         var j, x, i;
