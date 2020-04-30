@@ -239,7 +239,7 @@ $(function () {
 
         selectTrack(0);
 
-        audio.loop = true;
+        audio.loop = false;
 
         playPauseButton.on('click', playPause);
 
