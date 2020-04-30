@@ -20,17 +20,23 @@ $(function () {
     var playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
 
     var songs = [{
-        artist: "Dig Didzay",
-        name: "Nếu Anh Đi (Cover)",
-        url: "Musics/NeuAnhDi.mp3",
+        artist: "野田洋次郎",
+        name: "スパークル",
+        url: "Musics/スパークル.mp3",
+        picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
+    },
+    {
+        artist: "米津玄師",
+        name: "Lemon",
+        url: "Musics/Lemon.mp3",
+        picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
+    },
+    {
+        artist: "石崎ひゅーい",
+        name: "ピノとアメリ",
+        url: "Musics/ピノとアメリ.mp3",
         picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
     }];
-    // // }, {
-    //     // artist: "Dig Didzay",
-    //     name: "Nếu Anh Đi 22 (Cover)",
-    //     url: "Musics/NeuAnhDi.mp3",
-    //     picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
-    // }];
 
     function shuffle(a) {
         var j, x, i;
@@ -178,6 +184,7 @@ $(function () {
     }
 
     function selectTrack(flag) {
+        $('#album-art img').prop('src', bgArtworkUrl);
         if (flag == 0 || flag == 1)
             ++currIndex;
         else
@@ -199,7 +206,6 @@ $(function () {
             currAlbum = songs[currIndex].name;
             currTrackName = songs[currIndex].artist;
             currArtwork = songs[currIndex].picture;
-
             audio.src = songs[currIndex].url;
 
             nTime = 0;
@@ -218,6 +224,7 @@ $(function () {
             albumName.text(currAlbum);
             trackName.text(currTrackName);
             $('#album-art img').prop('src', bgArtworkUrl);
+
         }
         else {
             if (flag == 0 || flag == 1)
@@ -232,7 +239,7 @@ $(function () {
 
         selectTrack(0);
 
-        audio.loop = false;
+        audio.loop = true;
 
         playPauseButton.on('click', playPause);
 
