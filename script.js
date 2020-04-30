@@ -21,19 +21,19 @@ $(function () {
 
     var songs = [{
         artist: "野田洋次郎",
-        name: "スパークル",
+        name: "SPARKLE",
         url: "Musics/スパークル.mp3",
         picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
     },
     {
         artist: "米津玄師",
-        name: "Lemon",
+        name: "LEMON",
         url: "Musics/Lemon.mp3",
         picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
     },
     {
         artist: "石崎ひゅーい",
-        name: "ピノとアメリ",
+        name: "PINO TO AMERI",
         url: "Musics/ピノとアメリ.mp3",
         picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
     }];
