@@ -37,11 +37,17 @@ $(function () {
     //     url: "Musics/ピノとアメリ.mp3",
     //     picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
     // }];
+    // var songs = [{
+    //     artist: "山下歩 & gb",
+    //     name: "愛唄 × See You Again",
+    //     url: "Musics/愛唄 See You Again.mp3"
+    // }
     var songs = [{
-        artist: "山下歩 & gb",
-        name: "愛唄 × See You Again",
-        url: "Musics/愛唄 See You Again.mp3"
-    }]
+        artist: "菅田將暉",
+        name: "虹",
+        url: "Musics/「虹」虹菅田將暉 .mp3"
+    }
+    ]
 
     function shuffle(a) {
         var j, x, i;
