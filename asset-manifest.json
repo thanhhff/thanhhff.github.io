@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.80d697ac.chunk.css",
-    "main.js": "/static/js/main.a6c4a6cb.chunk.js",
-    "main.js.map": "/static/js/main.a6c4a6cb.chunk.js.map",
+    "main.css": "/static/css/main.0465fd16.chunk.css",
+    "main.js": "/static/js/main.dbaa0d0f.chunk.js",
+    "main.js.map": "/static/js/main.dbaa0d0f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.fe325526.js",
     "runtime-main.js.map": "/static/js/runtime-main.fe325526.js.map",
-    "static/js/2.1a40ae72.chunk.js": "/static/js/2.1a40ae72.chunk.js",
-    "static/js/2.1a40ae72.chunk.js.map": "/static/js/2.1a40ae72.chunk.js.map",
+    "static/js/2.abc6c428.chunk.js": "/static/js/2.abc6c428.chunk.js",
+    "static/js/2.abc6c428.chunk.js.map": "/static/js/2.abc6c428.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e0f163f8147d88ff7d55852d934d7421.js": "/precache-manifest.e0f163f8147d88ff7d55852d934d7421.js",
+    "precache-manifest.041b2f6473a8d7de36cef298030564f7.js": "/precache-manifest.041b2f6473a8d7de36cef298030564f7.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.80d697ac.chunk.css.map": "/static/css/main.80d697ac.chunk.css.map",
+    "static/css/main.0465fd16.chunk.css.map": "/static/css/main.0465fd16.chunk.css.map",
     "static/media/index.css": "/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/ThanhNT_V2.jpg": "/static/media/ThanhNT_V2.e9086046.jpg",
     "static/media/UA-Uni.png": "/static/media/UA-Uni.b5d90fb2.png",
@@ -59,13 +59,14 @@
     "static/media/talksCardBack.svg": "/static/media/talksCardBack.0288c5ec.svg",
     "static/media/talksCardBackAlt.svg": "/static/media/talksCardBackAlt.b48e86c9.svg",
     "static/media/ui_ux_design.svg": "/static/media/ui_ux_design.67a6a11c.svg",
+    "static/media/user-experience.png": "/static/media/user-experience.3b99ba29.png",
     "static/media/user-experience.svg": "/static/media/user-experience.4aba2020.svg",
     "static/media/vietai-logo.png": "/static/media/vietai-logo.b72a0335.png"
   },
   "entrypoints": [
     "static/js/runtime-main.fe325526.js",
-    "static/js/2.1a40ae72.chunk.js",
-    "static/css/main.80d697ac.chunk.css",
-    "static/js/main.a6c4a6cb.chunk.js"
+    "static/js/2.abc6c428.chunk.js",
+    "static/css/main.0465fd16.chunk.css",
+    "static/js/main.dbaa0d0f.chunk.js"
   ]
 }
