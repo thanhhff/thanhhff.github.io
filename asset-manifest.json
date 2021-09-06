@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.208dfd11.chunk.css",
-    "main.js": "/static/js/main.ad157b6f.chunk.js",
-    "main.js.map": "/static/js/main.ad157b6f.chunk.js.map",
+    "main.css": "/static/css/main.98a94550.chunk.css",
+    "main.js": "/static/js/main.2b2f3289.chunk.js",
+    "main.js.map": "/static/js/main.2b2f3289.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.63816517.js",
     "runtime-main.js.map": "/static/js/runtime-main.63816517.js.map",
-    "static/js/2.5692de5a.chunk.js": "/static/js/2.5692de5a.chunk.js",
-    "static/js/2.5692de5a.chunk.js.map": "/static/js/2.5692de5a.chunk.js.map",
+    "static/js/2.f43cab27.chunk.js": "/static/js/2.f43cab27.chunk.js",
+    "static/js/2.f43cab27.chunk.js.map": "/static/js/2.f43cab27.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.43515b2fd3fad3b5ea3febc2aaf5dd08.js": "/precache-manifest.43515b2fd3fad3b5ea3febc2aaf5dd08.js",
+    "precache-manifest.274f135c39a002d00e7a5befa71218b5.js": "/precache-manifest.274f135c39a002d00e7a5befa71218b5.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.208dfd11.chunk.css.map": "/static/css/main.208dfd11.chunk.css.map",
+    "static/css/main.98a94550.chunk.css.map": "/static/css/main.98a94550.chunk.css.map",
     "static/media/index.css": "/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/ThanhNT_V2.jpg": "/static/media/ThanhNT_V2.e9086046.jpg",
     "static/media/UA-Uni.png": "/static/media/UA-Uni.b5d90fb2.png",
@@ -52,12 +52,13 @@
     "static/media/ui_ux_design.svg": "/static/media/ui_ux_design.67a6a11c.svg",
     "static/media/user-experience.png": "/static/media/user-experience.3b99ba29.png",
     "static/media/user-experience.svg": "/static/media/user-experience.4aba2020.svg",
-    "static/media/vietai-logo.png": "/static/media/vietai-logo.b72a0335.png"
+    "static/media/vietai-logo.png": "/static/media/vietai-logo.b72a0335.png",
+    "static/media/vinuni.png": "/static/media/vinuni.c7be2372.png"
   },
   "entrypoints": [
     "static/js/runtime-main.63816517.js",
-    "static/js/2.5692de5a.chunk.js",
-    "static/css/main.208dfd11.chunk.css",
-    "static/js/main.ad157b6f.chunk.js"
+    "static/js/2.f43cab27.chunk.js",
+    "static/css/main.98a94550.chunk.css",
+    "static/js/main.2b2f3289.chunk.js"
   ]
 }

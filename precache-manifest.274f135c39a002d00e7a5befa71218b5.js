@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "74071025db3641197ee61c2b37ea2e38",
+    "revision": "9e02eb332928358e26e6844de0726148",
     "url": "/index.html"
   },
   {
-    "revision": "17ed325f66127c49392a",
-    "url": "/static/css/main.208dfd11.chunk.css"
+    "revision": "1a1585835a0f30dfd1b4",
+    "url": "/static/css/main.98a94550.chunk.css"
   },
   {
-    "revision": "ef70962030e7328fffe5",
-    "url": "/static/js/2.5692de5a.chunk.js"
+    "revision": "96e791d7b6f63b4bd12f",
+    "url": "/static/js/2.f43cab27.chunk.js"
   },
   {
-    "revision": "17ed325f66127c49392a",
-    "url": "/static/js/main.ad157b6f.chunk.js"
+    "revision": "1a1585835a0f30dfd1b4",
+    "url": "/static/js/main.2b2f3289.chunk.js"
   },
   {
     "revision": "5a95b1f450b3592c0b32",
@@ -270,5 +270,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b72a0335d9827b4ead707cdf74e9cba9",
     "url": "/static/media/vietai-logo.b72a0335.png"
+  },
+  {
+    "revision": "c7be23726bff896e34102f5bfa86c45b",
+    "url": "/static/media/vinuni.c7be2372.png"
   }
 ]);
