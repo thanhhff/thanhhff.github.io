@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fdc30f6801b2491bacbc498c2c2ac5a3",
+    "revision": "7b88fad4bfbe95d09d7f78768799171f",
     "url": "/index.html"
   },
   {
-    "revision": "fd1b51cb8f112f3dfec4",
-    "url": "/static/css/main.5563341a.chunk.css"
+    "revision": "f5e7023fabfda5eb509c",
+    "url": "/static/css/main.f59e25e1.chunk.css"
   },
   {
     "revision": "a291a3127a367ab4ddc0",
     "url": "/static/js/2.cf462c36.chunk.js"
   },
   {
-    "revision": "fd1b51cb8f112f3dfec4",
-    "url": "/static/js/main.f2237b06.chunk.js"
+    "revision": "f5e7023fabfda5eb509c",
+    "url": "/static/js/main.d4c1678f.chunk.js"
   },
   {
     "revision": "5a95b1f450b3592c0b32",
     "url": "/static/js/runtime-main.63816517.js"
   },
   {
-    "revision": "21f233e19402cc4a66866a7f31191f0d",
-    "url": "/static/media/Agustina.21f233e1.woff"
+    "revision": "03cfd7bcf39ceb6e0a84beda5d7b9a0b",
+    "url": "/static/media/Agustina-Signature.03cfd7bc.otf"
+  },
+  {
+    "revision": "7b9833076716a8d14eec0cf885a3153c",
+    "url": "/static/media/Agustina.7b983307.otf"
   },
   {
     "revision": "4457817ac2b9993c65e81aa05828fe9c",

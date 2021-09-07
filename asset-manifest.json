@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.5563341a.chunk.css",
-    "main.js": "/static/js/main.f2237b06.chunk.js",
-    "main.js.map": "/static/js/main.f2237b06.chunk.js.map",
+    "main.css": "/static/css/main.f59e25e1.chunk.css",
+    "main.js": "/static/js/main.d4c1678f.chunk.js",
+    "main.js.map": "/static/js/main.d4c1678f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.63816517.js",
     "runtime-main.js.map": "/static/js/runtime-main.63816517.js.map",
     "static/js/2.cf462c36.chunk.js": "/static/js/2.cf462c36.chunk.js",
     "static/js/2.cf462c36.chunk.js.map": "/static/js/2.cf462c36.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.022e05dcbcdfa5e7751904f1def7963d.js": "/precache-manifest.022e05dcbcdfa5e7751904f1def7963d.js",
+    "precache-manifest.7714c58dc6f77117b1c5b0c8e176d7c1.js": "/precache-manifest.7714c58dc6f77117b1c5b0c8e176d7c1.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.5563341a.chunk.css.map": "/static/css/main.5563341a.chunk.css.map",
+    "static/css/main.f59e25e1.chunk.css.map": "/static/css/main.f59e25e1.chunk.css.map",
     "static/media/index.css": "/static/media/Montserrat-Regular.ee653992.ttf",
     "static/media/ThanhNT_V2-circle.png": "/static/media/ThanhNT_V2-circle.0f82c637.png",
     "static/media/ThanhNT_V2.jpg": "/static/media/ThanhNT_V2.e9086046.jpg",
@@ -56,7 +56,7 @@
   "entrypoints": [
     "static/js/runtime-main.63816517.js",
     "static/js/2.cf462c36.chunk.js",
-    "static/css/main.5563341a.chunk.css",
-    "static/js/main.f2237b06.chunk.js"
+    "static/css/main.f59e25e1.chunk.css",
+    "static/js/main.d4c1678f.chunk.js"
   ]
 }
