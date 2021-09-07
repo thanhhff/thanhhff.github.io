@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5eaae6e65de6cdf707db591c3ef7df73",
+    "revision": "fdc30f6801b2491bacbc498c2c2ac5a3",
     "url": "/index.html"
   },
   {
-    "revision": "c4ff24188871c1a7e358",
-    "url": "/static/css/main.5dfc1d00.chunk.css"
+    "revision": "fd1b51cb8f112f3dfec4",
+    "url": "/static/css/main.5563341a.chunk.css"
   },
   {
-    "revision": "5689250417c6f7366b43",
-    "url": "/static/js/2.bc2301a8.chunk.js"
+    "revision": "a291a3127a367ab4ddc0",
+    "url": "/static/js/2.cf462c36.chunk.js"
   },
   {
-    "revision": "c4ff24188871c1a7e358",
-    "url": "/static/js/main.53520cda.chunk.js"
+    "revision": "fd1b51cb8f112f3dfec4",
+    "url": "/static/js/main.f2237b06.chunk.js"
   },
   {
     "revision": "5a95b1f450b3592c0b32",
@@ -90,10 +90,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "dfcb7a585547c0b125d208b980d6f57f",
     "url": "/static/media/cloud_infrastructure.dfcb7a58.svg"
-  },
-  {
-    "revision": "b3685be8bafcd5fe4786b39cba69a561",
-    "url": "/static/media/codeInLogo.b3685be8.png"
   },
   {
     "revision": "d6d4086fb1cade58b3f786620e17c3ef",
@@ -202,14 +198,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e64de169a4222787bc49f3706282ef96",
     "url": "/static/media/github_logo.e64de169.png"
-  },
-  {
-    "revision": "0c8a4c114ad00f7854e91550379b9b91",
-    "url": "/static/media/googleAssistant.0c8a4c11.jpg"
-  },
-  {
-    "revision": "c24ba79111a90758a3a472a906ab2901",
-    "url": "/static/media/googleAssistant.c24ba791.svg"
   },
   {
     "revision": "4eb8458fac6d117df2b47cacfea3bb70",
