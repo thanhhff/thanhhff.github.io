@@ -19,35 +19,32 @@ $(function () {
 
     var playPreviousTrackButton = $('#play-previous'), playNextTrackButton = $('#play-next'), currIndex = -1;
 
-    // var songs = [{
-    //     artist: "野田洋次郎",
-    //     name: "SPARKLE",
-    //     url: "Musics/スパークル.mp3",
-    //     picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
-    // },
-    // {
-    //     artist: "米津玄師",
-    //     name: "LEMON",
-    //     url: "Musics/Lemon.mp3",
-    //     picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
-    // },
-    // {
-    //     artist: "石崎ひゅーい",
-    //     name: "PINO TO AMERI",
-    //     url: "Musics/ピノとアメリ.mp3",
-    //     picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
-    // }];
-    // var songs = [{
-    //     artist: "山下歩 & gb",
-    //     name: "愛唄 × See You Again",
-    //     url: "Musics/愛唄 See You Again.mp3"
-    // }
     var songs = [{
         artist: "菅田將暉",
         name: "虹",
         url: "Musics/「虹」虹菅田將暉 .mp3"
-    }
-    ]
+    }, 
+    {
+        artist: "山下歩 & gb",
+        name: "愛唄 × See You Again",
+        url: "Musics/愛唄 See You Again.mp3"
+    },
+    {
+        artist: "米津玄師",
+        name: "レモン",
+        url: "Musics/Lemon.mp3",
+    }, 
+    {
+            artist: "野田洋次郎",
+            name: "スパークル",
+            url: "Musics/スパークル.mp3",
+    },
+    {
+            artist: "石崎ひゅーい",
+            name: "ピノとアメリ",
+            url: "Musics/ピノとアメリ.mp3",
+            picture: "https://raw.githubusercontent.com/himalayasingh/music-player-1/master/img/_1.jpg"
+    }];
 
     function shuffle(a) {
         var j, x, i;
