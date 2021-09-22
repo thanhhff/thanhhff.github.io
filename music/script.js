@@ -34,11 +34,11 @@ $(function () {
         name: "レモン",
         url: "Musics/Lemon.mp3",
     }, 
-    {
-            artist: "野田洋次郎",
-            name: "スパークル",
-            url: "Musics/スパークル.mp3",
-    },
+    // {
+    //         artist: "野田洋次郎",
+    //         name: "スパークル",
+    //         url: "Musics/スパークル.mp3",
+    // },
     {
             artist: "石崎ひゅーい",
             name: "ピノとアメリ",
