@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "12d58459ad9c0ad6021e54956667955d",
+    "revision": "02ed0fa67c8eb5318ed470878c26ba13",
     "url": "/index.html"
   },
   {
-    "revision": "00b38f8036ecf3cb9519",
+    "revision": "c55bc788379521ad7fbf",
     "url": "/static/css/main.9cfdf026.chunk.css"
   },
   {
-    "revision": "ed3e15e30a960267ad3c",
-    "url": "/static/js/2.7c75351d.chunk.js"
+    "revision": "2aec37a669bc7cbfe2ae",
+    "url": "/static/js/2.f0cbe7b4.chunk.js"
   },
   {
-    "revision": "00b38f8036ecf3cb9519",
-    "url": "/static/js/main.8c4fb7ed.chunk.js"
+    "revision": "c55bc788379521ad7fbf",
+    "url": "/static/js/main.90de089f.chunk.js"
   },
   {
     "revision": "5a95b1f450b3592c0b32",
@@ -56,6 +56,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/Montserrat-Regular.ee653992.ttf"
   },
   {
+    "revision": "e7138d9c12946b0fe7db86387c4b96c6",
+    "url": "/static/media/ThanhNT_Circle_202111.e7138d9c.png"
+  },
+  {
     "revision": "0f82c6371e6923effea24f600c07b46d",
     "url": "/static/media/ThanhNT_V2-circle.0f82c637.png"
   },
@@ -70,6 +74,14 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "70925c531cc60e85b5ed23d23f180095",
     "url": "/static/media/VietAI_Logo-RGB.70925c53.svg"
+  },
+  {
+    "revision": "825b44f2a2e1744129a1d47112b1007d",
+    "url": "/static/media/VinBigdata.825b44f2.webp"
+  },
+  {
+    "revision": "b3db4c10a6ef00ceb1c158f2a3688bec",
+    "url": "/static/media/VinBigdata.b3db4c10.png"
   },
   {
     "revision": "3b021f8ffcf9f323ea72abc28382e234",
