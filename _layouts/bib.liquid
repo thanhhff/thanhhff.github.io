@@ -178,9 +178,11 @@
     <div class="periodical">
       {{ periodical | strip }}
     </div>
+    {% comment note of bib %}
     <div class="periodical">
-      {{ entry.note | strip }}
+          {{ entry.note | strip }}
     </div>
+    {% endcomment %}
 
     <!-- Links/Buttons -->
     <div class="links">
