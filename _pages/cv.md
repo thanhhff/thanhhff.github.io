@@ -1,11 +1,14 @@
 ---
-layout: cv
+layout: normal
 permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: example_pdf.pdf # you can also use external links here
-description: This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.
-toc:
-  sidebar: left
 ---
+
+<script>
+  window.open("https://www.linkedin.com/in/thanhhff/", "_blank");
+  window.location.href = "/";
+</script>
+
+<p>If you are not redirected, <a href="https://www.linkedin.com/in/thanhhff/" target="_blank">click here</a>.</p>
