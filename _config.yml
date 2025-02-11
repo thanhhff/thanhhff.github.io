@@ -6,8 +6,8 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Trung Thanh
 middle_name: 
 last_name: Nguyen
-contact_note: >
-description: > # the ">" symbol means to ignore newlines until "footer_text:"
+contact_note: nguyent (at) cs.is.i.nagoya-u.ac.jp
+description: 🔬 PhD Candidate @ Nagoya University | Student Researcher @ RIKEN # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
 keywords: jekyll, jekyll-theme, academic-website, portfolio-website # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
