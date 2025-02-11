@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I graduated with a Master's degree as the Honorary Valedictorian of the [Graduate School of Informatics, Nagoya University](https://www.i.nagoya-u.ac.jp/), Japan.
+I graduated with a Master's degree as the Honorary Valedictorian of the Graduate School of Informatics, Nagoya University, Japan.
