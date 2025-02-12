@@ -7,8 +7,16 @@ nav_order: 5
 ---
 
 <script>
-  window.open("https://www.linkedin.com/in/thanhhff/", "_blank");
-  window.location.href = "/";
+  setTimeout(function() {
+    var newTab = window.open("https://www.linkedin.com/in/thanhhff/", "_blank");
+    if (newTab) {
+      window.location.href = "/";
+    } else {
+      document.getElementById("fallback").style.display = "block";
+    }
+  }, 100);
 </script>
 
-<p>If you are not redirected, <a href="https://www.linkedin.com/in/thanhhff/" target="_blank">click here</a>.</p>
+<p id="fallback" style="display: none;">
+  If you are not redirected, <a href="https://www.linkedin.com/in/thanhhff/" target="_blank">click here</a>.
+</p>
