@@ -24,7 +24,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a PhD candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specializing in Data Science and Artificial Intelligence. My research focuses on computer vision, multimodal recognition, and deep learning, with applications in solving real-world problems.
+I am a PhD candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specializing in the Department of Intelligent Systems. My research focuses on vision-language models, multimodal recognition, and video captioning, with applications in solving real-world problems.
 
 Currently, I am a student researcher at [RIKEN National Science Institute](https://www.riken.jp/), working on the Guardian Robot Project. My research involves open-world action detection and multi-view multi-modal action recognition by analyzing multimodal sensory data. 
 
