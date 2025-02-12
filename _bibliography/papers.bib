@@ -1,5 +1,6 @@
 % International-Journal
 @article{Nguyen2024IEEEAccess,
+  selected={true},
   bibtex_show={true},
   note={International-Journal},
   author = {Nguyen, Trung Thanh and Nguyen, Phi Le and Kawanishi, Yasutomo and Komamizu, Takahiro and Ide, Ichiro},
@@ -11,6 +12,10 @@
   doi={10.1109/ACCESS.2024.3390153},
   award_name={Open Access},
   award={This paper is an open access article. [https://ieeexplore.ieee.org/document/10504270](https://ieeexplore.ieee.org/document/10504270)},
+  preview={2024_IEEEACCESS_GA.jpg},
+  html={https://zero-pima.github.io},
+  code={https://github.com/thanhhff/Zero-PIMA},
+  abstract={Patients’ safety is paramount in the healthcare industry, and reducing medication errors is essential for improvement. A promising solution to this problem involves the development of automated systems capable of assisting patients in verifying their pill intake mistakes. This paper investigates a Pill-Prescription matching task that seeks to associate pills in a multi-pill photo with their corresponding names in the prescription. We specifically aim to overcome the limitations of existing pill detection methods when faced with unseen pills, a situation characteristic of zero-shot learning. We propose a novel method named Zero-PIMA (Zero-shot Pill-Prescription Matching), designed to match pill images with prescription names effectively, even for pills not included in the training dataset. Zero-PIMA is an end-to-end model that includes an object localization module to determine and extract features of pill images and a graph convolutional network to capture the spatial relationship of the pills' text in the prescription. After that, we leverage the contrastive learning paradigm to increase the distance between mismatched pill images and pill name pairs while minimizing the distance between matched pairs. In addition, to deal with the zero-shot pill detection problem, we leverage pills' metadata retrieved from the DrugBank database to fine-tune a pre-trained text encoder, thereby incorporating visual information about pills (e.g., shape, color) into their names, making them more informative and ultimately enhancing the pill image-name matching accuracy. Extensive experiments are conducted on our collected real-world VAIPE-PP dataset of multi-pill photos and prescriptions. Through a series of comprehensive experiments, the proposed method outperforms other methods for both seen and unseen pills in terms of mean average precision. These results indicate that the proposed method could reduce medication errors and improve patients' safety.},
 }
 
 
@@ -57,6 +62,9 @@ abstract = {Multi-label multi-view action recognition aims to recognize multiple
 booktitle = {Proceedings of the 6th ACM International Conference on Multimedia in Asia},
 abbr = {ACM MMAsia},
 arxiv = {2410.03302},
+code = {https://github.com/thanhhff/MultiASL},
+html = {https://thanhhff.github.io/MultiASL/},
+preview = {2024_MMAsia_GA.jpg},
 }
 
 
@@ -98,6 +106,7 @@ arxiv = {2410.03302},
   doi={10.1109/FG59268.2024.10581896},
   arxiv={2404.19542},
   abstract={Open-vocabulary Temporal Action Detection (Open-vocab TAD) is an advanced video analysis approach that expands Closed-vocabulary Temporal Action Detection (Closed-vocab TAD) capabilities. Closed-vocab TAD is typically confined to localizing and classifying actions based on a predefined set of categories. In contrast, Open-vocab TAD goes further and is not limited to these predefined categories. This is particularly useful in real-world scenarios where the variety of actions in videos can be vast and not always predictable. The prevalent methods in Open-vocab TAD typically employ a 2-stage approach, which involves generating action proposals and then identifying those actions. However, errors made during the first stage can adversely affect the subsequent action identification accuracy. Additionally, existing studies face challenges in handling actions of different durations owing to the use of fixed temporal processing methods. Therefore, we propose a 1-stage approach consisting of two primary modules: Multi-scale Video Analysis (MVA) and Video-Text Alignment (VTA). The MVA module captures actions at varying temporal resolutions, overcoming the challenge of detecting actions with diverse durations. The VTA module leverages the synergy between visual and textual modalities to precisely align video segments with corresponding action labels, a critical step for accurate action identification in Open-vocab scenarios. Evaluations on widely recognized datasets THUMOS14 and ActivityNet-1.3, showed that the proposed method achieved superior results compared to the other methods in both Open-vocab and Closed-vocab settings. This serves as a strong demonstration of the effectiveness of the proposed method in the TAD task.},
+  preview = {2024_FG_GA.jpg},
 }
 
 
