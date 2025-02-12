@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-news",
+          title: "news",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/news/";
+          },
         },{id: "nav-cv",
           title: "cv",
           description: "",
@@ -23,7 +30,10 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "news-i-received-acceptance-for-the-mext-scholarship-for-my-phd-at-nagoya-university-japan",
+        },{id: "news-my-new-website-has-been-released-the-news-will-be-updated-from-2024-onward",
+          title: 'My new website has been released. The news will be updated from 2024...',
+          description: "",
+          section: "News",},{id: "news-i-received-acceptance-for-the-mext-scholarship-for-my-phd-at-nagoya-university-japan",
           title: 'I received acceptance for the MEXT Scholarship for my PhD at Nagoya University,...',
           description: "",
           section: "News",},{id: "news-on-a-business-trip-to-nc-state-university-united-states",
