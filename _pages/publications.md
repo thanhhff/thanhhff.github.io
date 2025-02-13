@@ -52,7 +52,7 @@ nav_order: 1
   </div>
 
   <div class="publication-item miscellaneous">
-    <h4>miscellaneous (article, arXiv, etc.)</h4>
+    <h4><br>miscellaneous (article, arXiv, etc.)</h4>
     <div class="publications">
       {% bibliography --query @*[note=Others]* %}
     </div>
