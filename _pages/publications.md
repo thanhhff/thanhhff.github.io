@@ -44,17 +44,17 @@ nav_order: 1
     </div>
   </div>
 
-  <div class="publication-item miscellaneous">
-    <h4>miscellaneous (article, arXiv, etc.)</h4>
-    <div class="publications">
-      {% bibliography --query @*[note=Others]* %}
-    </div>
-  </div>
-
   <div class="publication-item thesis">
     <h4><br>thesis</h4>
     <div class="publications">
       {% bibliography --query @*[note=Thesis]* %}
+    </div>
+  </div>
+
+  <div class="publication-item miscellaneous">
+    <h4>miscellaneous (article, arXiv, etc.)</h4>
+    <div class="publications">
+      {% bibliography --query @*[note=Others]* %}
     </div>
   </div>
 </div>
