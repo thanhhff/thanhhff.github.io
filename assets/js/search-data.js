@@ -69,9 +69,6 @@ ninja.data = [{
           section: "News",},{id: "news-on-a-business-trip-to-riken-grp-until-feb-21-japan",
           title: 'On a business trip to RIKEN GRP until Feb 21, Japan.',
           description: "",
-          section: "News",},{id: "news-i-presented-our-cpdm-paper-at-ieee-cvf-wacv2025-united-states",
-          title: 'I presented our CPDM paper at IEEE/CVF WACV2025, United States.',
-          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
