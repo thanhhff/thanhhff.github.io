@@ -69,6 +69,9 @@ ninja.data = [{
           section: "News",},{id: "news-on-a-business-trip-to-riken-grp-until-feb-21-japan",
           title: 'On a business trip to RIKEN GRP until Feb 21, Japan.',
           description: "",
+          section: "News",},{id: "news-our-grand-challenge-proposal-intentvc-has-been-accepted-at-acm-mm2025",
+          title: 'Our Grand Challenge proposal “IntentVC” has been accepted at ACM MM2025.',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
