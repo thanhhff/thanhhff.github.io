@@ -72,6 +72,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-grand-challenge-proposal-intentvc-has-been-accepted-at-acm-mm2025",
           title: 'Our Grand Challenge proposal “IntentVC” has been accepted at ACM MM2025.',
           description: "",
+          section: "News",},{id: "news-i-presented-our-cpdm-paper-at-ieee-cvf-wacv2025-united-states",
+          title: 'I presented our CPDM paper at IEEE/CVF WACV2025, United States.',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
