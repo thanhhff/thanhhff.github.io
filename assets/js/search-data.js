@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "news-my-new-website-has-been-released-the-news-will-be-updated-from-2024-onward",
+        },{id: "post-presenting-at-wacv-2025-ct-to-pet-translation",
+      
+        title: "Presenting at WACV 2025: CT-to-PET Translation",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/WACV/";
+        
+      },
+    },{id: "news-my-new-website-has-been-released-the-news-will-be-updated-from-2024-onward",
           title: 'My new website has been released. The news will be updated from 2024...',
           description: "",
           section: "News",},{id: "news-i-received-acceptance-for-the-mext-scholarship-for-my-phd-at-nagoya-university-japan",
@@ -72,8 +83,8 @@ ninja.data = [{
           section: "News",},{id: "news-our-grand-challenge-proposal-intentvc-has-been-accepted-at-acm-mm2025",
           title: 'Our Grand Challenge proposal “IntentVC” has been accepted at ACM MM2025.',
           description: "",
-          section: "News",},{id: "news-i-presented-our-cpdm-paper-at-ieee-cvf-wacv2025-united-states",
-          title: 'I presented our CPDM paper at IEEE/CVF WACV2025, United States.',
+          section: "News",},{id: "news-i-presented-our-cpdm-paper-at-ieee-cvf-wacv2025-united-states-read-more",
+          title: 'I presented our CPDM paper at IEEE/CVF WACV2025, United States. 🔗 Read more...',
           description: "",
           section: "News",},{
         id: 'social-github',
