@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our Grand Challenge proposal "IntentVC" has been accepted at [ACM MM2025](https://acmmm2025.org/).
+Our Grand Challenge proposal "[IntentVC](https://sites.google.com/view/intentvc/)" has been accepted at [ACM MM2025](https://acmmm2025.org/).
