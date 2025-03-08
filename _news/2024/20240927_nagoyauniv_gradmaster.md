@@ -28,7 +28,7 @@ related_posts: false
     var openBtn = document.getElementById("openModal");
     var closeBtn = document.getElementById("closeModal");
     var iframe = document.getElementById("youtubeVideo");
-    var videoSrc = "https://www.youtube.com/embed/-CZaQDxkmyA?start=1625&autoplay=1"; // Auto-play enabled
+    var videoSrc = "https://www.youtube.com/embed/-CZaQDxkmyA?start=1632&autoplay=1"; // Auto-play enabled
 
     // Open modal and start video
     openBtn.addEventListener("click", function() {
