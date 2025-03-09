@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
         },{id: "nav-news",
           title: "news",
           description: "",
@@ -37,15 +44,48 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-presenting-at-wacv-2025-ct-to-pet-translation",
+        },{id: "post-presenting-at-ieee-cvf-wacv-2025",
       
-        title: "Presenting at WACV 2025: CT-to-PET Translation",
+        title: "Presenting at IEEE/CVF WACV 2025",
       
       description: "",
       section: "Posts",
       handler: () => {
         
           window.location.href = "/blog/2025/WACV/";
+        
+      },
+    },{id: "post-presenting-at-acm-multimedia-asia-2024",
+      
+        title: "Presenting at ACM Multimedia Asia 2024",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/MMAsia/";
+        
+      },
+    },{id: "post-master-s-graduation-from-nagoya-university",
+      
+        title: "Master’s Graduation from Nagoya University 🎓",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/Meidai/";
+        
+      },
+    },{id: "post-presenting-at-ieee-fg-2024",
+      
+        title: "Presenting at IEEE FG 2024",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/FG/";
         
       },
     },{id: "news-my-new-website-has-been-released-the-news-will-be-updated-from-2024-onward",
@@ -90,8 +130,8 @@ ninja.data = [{
           section: "News",},{id: "news-our-grand-challenge-proposal-intentvc-has-been-accepted-at-acm-mm2025",
           title: 'Our Grand Challenge proposal “IntentVC” has been accepted at ACM MM2025.',
           description: "",
-          section: "News",},{id: "news-i-presented-our-cpdm-paper-at-ieee-cvf-wacv2025-united-states-read-more",
-          title: 'I presented our CPDM paper at IEEE/CVF WACV2025, United States. 🔗 Read more...',
+          section: "News",},{id: "news-i-presented-our-cpdm-paper-at-ieee-cvf-wacv2025-united-states",
+          title: 'I presented our CPDM paper at IEEE/CVF WACV2025, United States.',
           description: "",
           section: "News",},{
         id: 'social-github',
