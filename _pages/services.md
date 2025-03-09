@@ -35,9 +35,9 @@ nav_order: 3
     <td class="year">2024</td>
     <td class="content">
       <ul>
-        <li>Medical Image Computing and Computer Assisted Intervention (MICCAI)</li>
         <li>ACM Multimedia (ACMMM)</li>
         <li>Meeting on Image Recognition and Understanding (MIRU)</li>
+        <li>Medical Image Computing and Computer Assisted Intervention (MICCAI)</li>
       </ul>
     </td>
   </tr>
