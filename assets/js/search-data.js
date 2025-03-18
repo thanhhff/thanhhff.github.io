@@ -140,6 +140,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-presented-our-cpdm-paper-at-ieee-cvf-wacv2025-united-states",
           title: 'I presented our CPDM paper at IEEE/CVF WACV2025, United States.',
           description: "",
+          section: "News",},{id: "news-i-presented-our-paper-on-multi-modal-multi-view-action-recognition-at-shiga-university-japan",
+          title: 'I presented our paper on “Multi-modal Multi-view Action Recognition” at Shiga University, Japan....',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
