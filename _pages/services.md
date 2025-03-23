@@ -29,21 +29,6 @@ nav_order: 3
   }
 </style>
 
-#### reviewer / pc member
-<table class="service-table">
-  <tr>
-    <td class="year">2024</td>
-    <td class="content">
-      <ul>
-        <li>ACM Multimedia (ACMMM)</li>
-        <li>Meeting on Image Recognition and Understanding (MIRU)</li>
-        <li>Medical Image Computing and Computer Assisted Intervention (MICCAI)</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-
 #### committee member / organizer
 <table class="service-table">
   <tr>
@@ -57,3 +42,28 @@ nav_order: 3
     </td>
   </tr>
 </table>
+
+#### reviewer / pc member
+<table class="service-table">
+  <tr>
+    <td class="year">2025</td>
+    <td class="content">
+      <ul>
+        <li>ACM Multimedia (ACMMM)</li>
+        <li>Pattern Recognition (Journal)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td class="year">2024</td>
+    <td class="content">
+      <ul>
+        <li>ACM Multimedia (ACMMM)</li>
+        <li>Meeting on Image Recognition and Understanding (MIRU)</li>
+        <li>Medical Image Computing and Computer Assisted Intervention (MICCAI)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+
