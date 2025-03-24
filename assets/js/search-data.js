@@ -143,6 +143,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-presented-our-paper-on-multi-modal-multi-view-action-recognition-at-shiga-university-japan",
           title: 'I presented our paper on “Multi-modal Multi-view Action Recognition” at Shiga University, Japan....',
           description: "",
+          section: "News",},{id: "news-i-was-invited-to-academia-sinica-taiwan-for-a-summer-school-on-nonstationary-time-series-analysis-for-biomedical-artificial-intelligence",
+          title: 'I was invited to Academia Sinica (Taiwan) for a summer school on nonstationary...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
