@@ -146,8 +146,8 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-invited-to-academia-sinica-taiwan-for-a-summer-school-on-nonstationary-time-series-analysis-for-biomedical-artificial-intelligence",
           title: 'I was invited to Academia Sinica (Taiwan) for a summer school on nonstationary...',
           description: "",
-          section: "News",},{id: "news-i-received-qualified-teaching-assistant-certification-valid-for-1-year-for-higher-education-teaching-from-the-qta-gsi-training-center-tokai-national-higher-education-and-research-system-japan",
-          title: 'I received Qualified Teaching Assistant certification (valid for 1 year) for higher education...',
+          section: "News",},{id: "news-renewed-qualified-teaching-assistant-certification-valid-for-1-year-in-higher-education-teaching-from-the-qta-gsi-training-center-tokai-national-higher-education-and-research-system-japan",
+          title: 'Renewed Qualified Teaching Assistant certification (valid for 1 year) in higher education teaching...',
           description: "",
           section: "News",},{
         id: 'social-github',
