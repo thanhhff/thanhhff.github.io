@@ -107,7 +107,7 @@ ninja.data = [{
           section: "News",},{id: "news-i-received-a-certificate-for-completing-data-at-work-data-science-amp-amp-ai-for-industry-from-nc-state-university-united-states",
           title: 'I received a certificate for completing “Data at Work: Data Science &amp;amp;amp; AI...',
           description: "",
-          section: "News",},{id: "news-i-received-qualified-teaching-assistant-certification-valid-for-1-year-for-higher-education-teaching-from-the-qta-gsi-training-center-tokai-national-higher-education-and-research-system",
+          section: "News",},{id: "news-i-received-qualified-teaching-assistant-certification-valid-for-1-year-for-higher-education-teaching-from-the-qta-gsi-training-center-tokai-national-higher-education-and-research-system-japan",
           title: 'I received Qualified Teaching Assistant certification (valid for 1 year) for higher education...',
           description: "",
           section: "News",},{id: "news-our-zero-pima-paper-was-accepted-in-the-journal-ieee-access",
@@ -145,6 +145,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-i-was-invited-to-academia-sinica-taiwan-for-a-summer-school-on-nonstationary-time-series-analysis-for-biomedical-artificial-intelligence",
           title: 'I was invited to Academia Sinica (Taiwan) for a summer school on nonstationary...',
+          description: "",
+          section: "News",},{id: "news-i-received-qualified-teaching-assistant-certification-valid-for-1-year-for-higher-education-teaching-from-the-qta-gsi-training-center-tokai-national-higher-education-and-research-system-japan",
+          title: 'I received Qualified Teaching Assistant certification (valid for 1 year) for higher education...',
           description: "",
           section: "News",},{
         id: 'social-github',
