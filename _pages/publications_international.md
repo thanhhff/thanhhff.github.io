@@ -33,6 +33,9 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "MultiSensor-Home: A Wide-area Multi-modal Multi-view Dataset for Action Recognition and Transformer-based Sensor Fusion," <i>In Proceedings of the 19th IEEE International Conference on Automatic Face and Gesture Recognition</i></li>
+      </ul>
+      <ul>
         <li>Dac Thai Nguyen, <b>Trung Thanh Nguyen</b>, Huu Tien Nguyen, Thanh Trung Nguyen, Huy Hieu Pham, Thanh Hung Nguyen, Truong Thao Nguyen, and Phi Le Nguyen, "CT to PET translation: A large-scale dataset and domain-knowledge-guided diffusion approach," <i>In Proceedings of the 2025 IEEE/CVF Winter Conference on Applications of Computer Vision</i></li>
       </ul>
     </td>
