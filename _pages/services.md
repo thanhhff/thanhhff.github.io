@@ -37,7 +37,7 @@ nav_order: 3
       <ul>
         <li>Reproducibility Track (ACMMM)</li>
         <li>Intention-Oriented Controllable Video Captioning 
-          (<a href="https://sites.google.com/view/intentvc/" target="_blank">IntentVC</a>, ACMMM)
+          (Grand Challenge @ ACMMM)
         </li>
       </ul>
     </td>
