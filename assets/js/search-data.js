@@ -152,6 +152,9 @@ ninja.data = [{
           section: "News",},{id: "news-renewed-qualified-teaching-assistant-certification-valid-for-1-year-in-higher-education-teaching-from-the-qta-gsi-training-center-tokai-national-higher-education-and-research-system-japan",
           title: 'Renewed Qualified Teaching Assistant certification (valid for 1 year) in higher education teaching...',
           description: "",
+          section: "News",},{id: "news-i-was-selected-to-participate-in-the-doctoral-consortium-at-fg2025-florida-united-states",
+          title: 'I was selected to participate in the Doctoral Consortium at FG2025 @ Florida,...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
