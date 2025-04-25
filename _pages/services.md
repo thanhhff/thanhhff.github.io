@@ -52,8 +52,6 @@ nav_order: 3
       <ul>
         <li>ACM Multimedia (ACMMM)</li>
         <li>Pattern Recognition (Journal)</li>
-        <li>International Conference on Computer Vision (ICCV)</li>
-        <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
       </ul>
     </td>
   </tr>
