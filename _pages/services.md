@@ -52,6 +52,7 @@ nav_order: 3
       <ul>
         <li>ACM Multimedia (ACMMM)</li>
         <li>Pattern Recognition (Journal)</li>
+        <li>ACM International Conference on Multimedia Retrieval (ICMR)</li>
       </ul>
     </td>
   </tr>
