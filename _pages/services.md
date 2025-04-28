@@ -35,9 +35,9 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>Reproducibility Track (ACMMM)</li>
+        <li>Reproducibility Track (ACM MM)</li>
         <li>Intention-Oriented Controllable Video Captioning 
-          (Grand Challenge @ ACMMM)
+          (Grand Challenge @ ACM MM)
         </li>
       </ul>
     </td>
@@ -50,9 +50,9 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>ACM Multimedia (ACMMM)</li>
         <li>Pattern Recognition (Journal)</li>
-        <li>ACM International Conference on Multimedia Retrieval (ICMR)</li>
+        <li>ACM International Conference on Multimedia (ACM MM)</li>
+        <li>ACM International Conference on Multimedia Retrieval (ACM ICMR)</li>
       </ul>
     </td>
   </tr>
@@ -60,7 +60,7 @@ nav_order: 3
     <td class="year">2024</td>
     <td class="content">
       <ul>
-        <li>ACM Multimedia (ACMMM)</li>
+        <li>ACM International Conference on Multimedia (ACM MM)</li>
         <li>Meeting on Image Recognition and Understanding (MIRU)</li>
         <li>Medical Image Computing and Computer Assisted Intervention (MICCAI)</li>
       </ul>
