@@ -155,6 +155,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-selected-to-participate-in-the-doctoral-consortium-at-fg2025-florida-united-states",
           title: 'I was selected to participate in the Doctoral Consortium at FG2025 @ Florida,...',
           description: "",
+          section: "News",},{id: "news-i-received-an-invitation-from-tsinghua-university-for-the-2025-make-it-shenzhen-program",
+          title: 'I received an invitation from Tsinghua University for the 2025 MAKE IT SHENZHEN...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
