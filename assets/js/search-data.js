@@ -161,9 +161,6 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-selected-to-participate-in-the-mediterranean-machine-learning-program-croatia",
           title: 'I was selected to participate in the Mediterranean Machine Learning program, Croatia.',
           description: "",
-          section: "News",},{id: "news-i-received-the-diversity-equity-amp-amp-inclusion-grant-from-the-ieee-biometrics-council",
-          title: 'I received the “Diversity, Equity &amp;amp;amp; Inclusion” Grant from the IEEE Biometrics Council....',
-          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
