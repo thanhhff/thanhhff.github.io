@@ -161,6 +161,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-selected-to-participate-in-the-mediterranean-machine-learning-program-croatia",
           title: 'I was selected to participate in the Mediterranean Machine Learning program, Croatia.',
           description: "",
+          section: "News",},{id: "news-i-received-a-review-recognition-certificate-from-the-pattern-recognition-journal-by-elsevier",
+          title: 'I received a review recognition certificate from the Pattern Recognition journal by Elsevier....',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
