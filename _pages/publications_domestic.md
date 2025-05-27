@@ -24,6 +24,12 @@ nav_order: 3
   <tr>
     <td class="year">2025</td>
     <td class="content">
+    <ul>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "A Benchmark for Multi-modal Multi-view Action Recognition in Home Environments," <i>In Proceedings of the 28th Meeting on Image Recognition and Understanding</i></li>
+      </ul>
+      <ul>
+        <li>Junan Chen, <b>Trung Thanh Nguyen</b>, Takahiro Komamizu, and Ichiro Ide, "Visual Adapter for Extracting Textually-related Features in Video Captioning," <i>In Proceedings of the 28th Meeting on Image Recognition and Understanding</i></li>
+      </ul>
       <ul>
         <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "広域多視点マルチモーダル行動認識のためのセンサ統合手法とMultiSensor-Homeデータセットの提案," <i>In Proceedings of the 2025 Pattern Recognition and Media Understanding</i></li>
       </ul>
@@ -63,7 +69,7 @@ nav_order: 3
     <td class="year">2021</td>
     <td class="content">
       <ul>
-        <li>Minh Khiem Pham, Nang Hung Nguyen, <b>Trung Thanh Nguyen</b>, Van Hieu Dinh, and Dinh Tuan Anh Nguyen, "Mô hình mạng giao thông thông minh ba tầng và giải pháp giảm thiểu độ trễ truyền tin ứng dụng phương pháp học tăng cường," <i>In Proceedings of the 2022 Scientific Research Student Conference, Hanoi University of Science and Technology</i></li>
+        <li>Minh Khiem Pham, Nang Hung Nguyen, <b>Trung Thanh Nguyen</b>, Van Hieu Dinh, and Dinh Tuan Anh Nguyen, "Mô hình mạng giao thông thông minh ba tầng và giải pháp giảm thiểu độ trễ truyền tin ứng dụng phương pháp học tăng cường," <i>In Proceedings of the 2021 Scientific Research Student Conference, Hanoi University of Science and Technology</i></li>
       </ul>
     </td>
   </tr>
