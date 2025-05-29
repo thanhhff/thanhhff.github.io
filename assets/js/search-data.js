@@ -167,6 +167,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-presented-our-multisensor-home-paper-at-ieee-fg2025-united-states",
           title: 'I presented our MultiSensor-Home paper at IEEE FG2025, United States.',
           description: "",
+          section: "News",},{id: "news-our-paper-multisensor-home-won-the-best-student-paper-award-at-ieee-fg2025-united-states",
+          title: 'Our paper “MultiSensor-Home” won the Best Student Paper Award at IEEE FG2025, United...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
