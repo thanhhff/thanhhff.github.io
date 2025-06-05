@@ -20,7 +20,7 @@ nav_order: 3
     <td class="year">2022</td>
     <td class="content">
       <ul>
-        <li><b>Trung Thanh Nguyen</b>, Phi Le Nguyen, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Fuzzy Q-Learning-Based Opportunistic Communication for MEC-Enhanced Vehicular Crowdsensing," <i>IEEE Transactions on Network and Service Management</i></li>
+        <li><b>Trung Thanh Nguyen</b>, Truong Thao Nguyen, Thanh Hung Nguyen, and Phi Le Nguyen, "Fuzzy Q-Learning-Based Opportunistic Communication for MEC-Enhanced Vehicular Crowdsensing," <i>IEEE Transactions on Network and Service Management</i></li>
       </ul>
     </td>
   </tr>
