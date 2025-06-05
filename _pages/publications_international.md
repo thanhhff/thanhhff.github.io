@@ -9,10 +9,18 @@ nav_order: 3
 #### journal
 <table class="service-table">
   <tr>
+    <td class="year">2025</td>
+    <td class="content">
+      <ul>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications</i></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td class="year">2024</td>
     <td class="content">
       <ul>
-        <li><b>Trung Thanh Nguyen</b>, Phi Le Nguyen, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Zero-shot pill-prescription matching with graph convolutional network and contrastive learning," <i>IEEE Access</i></li>
+        <li><b>Trung Thanh Nguyen</b>, Phi Le Nguyen, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Zero-shot Pill-prescription Matching with Graph Convolutional Network and Contrastive Learning," <i>IEEE Access</i></li>
       </ul>
     </td>
   </tr>
