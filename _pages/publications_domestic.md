@@ -25,7 +25,7 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
     <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "A Benchmark for Multi-modal Multi-view Action Recognition in Home Environments," <i>In Proceedings of the 28th Meeting on Image Recognition and Understanding</i></li>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "MultiSensor-Home: Benchmark for Multi-modal Multi-view Action Recognition in Home Environments," <i>In Proceedings of the 28th Meeting on Image Recognition and Understanding</i></li>
       </ul>
       <ul>
         <li>Junan Chen, <b>Trung Thanh Nguyen</b>, Takahiro Komamizu, and Ichiro Ide, "Visual Adapter for Extracting Textually-related Features in Video Captioning," <i>In Proceedings of the 28th Meeting on Image Recognition and Understanding</i></li>
