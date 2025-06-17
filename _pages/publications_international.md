@@ -12,7 +12,7 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications</i></li>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications (IF: 5.2)</i></li>
       </ul>
     </td>
   </tr>
@@ -20,7 +20,7 @@ nav_order: 3
     <td class="year">2024</td>
     <td class="content">
       <ul>
-        <li><b>Trung Thanh Nguyen</b>, Phi Le Nguyen, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Zero-shot Pill-prescription Matching with Graph Convolutional Network and Contrastive Learning," <i>IEEE Access</i></li>
+        <li><b>Trung Thanh Nguyen</b>, Phi Le Nguyen, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Zero-shot Pill-prescription Matching with Graph Convolutional Network and Contrastive Learning," <i>IEEE Access (IF: 3.9)</i></li>
       </ul>
     </td>
   </tr>
@@ -28,7 +28,7 @@ nav_order: 3
     <td class="year">2022</td>
     <td class="content">
       <ul>
-        <li><b>Trung Thanh Nguyen</b>, Truong Thao Nguyen, Thanh Hung Nguyen, and Phi Le Nguyen, "Fuzzy Q-Learning-Based Opportunistic Communication for MEC-Enhanced Vehicular Crowdsensing," <i>IEEE Transactions on Network and Service Management</i></li>
+        <li><b>Trung Thanh Nguyen</b>, Truong Thao Nguyen, Thanh Hung Nguyen, and Phi Le Nguyen, "Fuzzy Q-Learning-Based Opportunistic Communication for MEC-Enhanced Vehicular Crowdsensing," <i>IEEE Transactions on Network and Service Management (IF: 4.7)</i></li>
       </ul>
     </td>
   </tr>
