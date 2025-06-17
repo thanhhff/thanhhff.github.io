@@ -173,6 +173,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-on-mmasl-was-accepted-by-the-acm-tomm-if-5-2-journal",
           title: 'Our paper on MMASL was accepted by the ACM TOMM (IF: 5.2) journal....',
           description: "",
+          section: "News",},{id: "news-on-a-business-trip-to-academia-sinica-until-jul-16-taiwan",
+          title: 'On a business trip to Academia Sinica until Jul 16, Taiwan.',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
