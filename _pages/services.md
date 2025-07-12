@@ -35,7 +35,6 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>Reproducibility Track (ACM MM)</li>
         <li>Intention-Oriented Controllable Video Captioning 
           (Grand Challenge @ ACM MM)
         </li>
