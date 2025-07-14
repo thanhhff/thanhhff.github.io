@@ -176,6 +176,9 @@ ninja.data = [{
           section: "News",},{id: "news-on-a-business-trip-to-academia-sinica-until-jul-17-taiwan",
           title: 'On a business trip to Academia Sinica until Jul 17, Taiwan.',
           description: "",
+          section: "News",},{id: "news-i-received-a-certificate-of-appreciation-from-riken-in-recognition-of-research-contributions",
+          title: 'I received a Certificate of Appreciation from RIKEN in recognition of research contributions....',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
