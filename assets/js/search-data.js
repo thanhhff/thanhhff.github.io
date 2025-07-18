@@ -179,8 +179,8 @@ ninja.data = [{
           section: "News",},{id: "news-i-received-a-certificate-of-achievement-from-academia-sinica-taiwan",
           title: 'I received a Certificate of Achievement from Academia Sinica, Taiwan.',
           description: "",
-          section: "News",},{id: "news-i-received-a-certificate-of-appreciation-from-riken-in-recognition-of-research-contributions",
-          title: 'I received a Certificate of Appreciation from RIKEN in recognition of research contributions....',
+          section: "News",},{id: "news-i-received-a-letter-of-appreciation-from-riken-in-recognition-of-outstanding-research-achievements",
+          title: 'I received a Letter of Appreciation from RIKEN in recognition of outstanding research...',
           description: "",
           section: "News",},{
         id: 'social-github',
