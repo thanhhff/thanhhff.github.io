@@ -1,8 +1,8 @@
 <!-- ---
 layout: post
-date: 2025-08-01 15:59:00+0900
+date: 2025-05-14 17:00:00
 inline: true
 related_posts: false
 ---
 
-We presented 2 papers at [MIRU2025](https://cvim.ipsj.or.jp/MIRU2025/index-en.html), Japan. -->
+I received the "Diversity, Equity & Inclusion" Grant from the [IEEE Biometrics Council](https://ieee-biometrics.org/). -->

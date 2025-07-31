@@ -179,8 +179,11 @@ ninja.data = [{
           section: "News",},{id: "news-i-received-a-certificate-of-achievement-from-academia-sinica-taiwan",
           title: 'I received a Certificate of Achievement from Academia Sinica, Taiwan.',
           description: "",
-          section: "News",},{id: "news-i-received-a-letter-of-appreciation-from-riken-in-recognition-of-excellent-research-achievements",
-          title: 'I received a Letter of Appreciation from RIKEN in recognition of excellent research...',
+          section: "News",},{id: "news-i-received-a-letter-of-appreciation-from-riken-in-recognition-of-outstanding-research-achievements",
+          title: 'I received a Letter of Appreciation from RIKEN in recognition of outstanding research...',
+          description: "",
+          section: "News",},{id: "news-we-presented-2-papers-is3-038-is3-148-at-miru2025-japan",
+          title: 'We presented 2 papers (IS3-038, IS3-148) at MIRU2025, Japan.',
           description: "",
           section: "News",},{
         id: 'social-github',
