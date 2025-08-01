@@ -185,6 +185,9 @@ ninja.data = [{
           section: "News",},{id: "news-we-presented-2-papers-is3-038-is3-148-at-miru2025-japan",
           title: 'We presented 2 papers (IS3-038, IS3-148) at MIRU2025, Japan.',
           description: "",
+          section: "News",},{id: "news-i-was-awarded-a-research-grant-from-nagoya-university-japan",
+          title: 'I was awarded a research grant from Nagoya University, Japan.',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
