@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper on MMASL was accepted by the [ACM TOMM](https://dl.acm.org/journal/tomm) (IF: 5.2) journal.
+Our paper on MMASL was accepted by the [ACM TOMM](https://dl.acm.org/journal/tomm) (IF: 6.0) journal.

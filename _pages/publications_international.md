@@ -12,7 +12,7 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications (IF: 5.2)</i></li>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications (IF: 6.0)</i></li>
       </ul>
     </td>
   </tr>
