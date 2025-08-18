@@ -50,6 +50,7 @@ nav_order: 3
     <td class="content">
       <ul>
         <li>Pattern Recognition (Journal)</li>
+        <li>Biomedical Signal Processing and Control (Journal)</li>
         <li>ACM International Conference on Multimedia (ACM MM)</li>
         <li>ACM International Conference on Multimedia Retrieval (ACM ICMR)</li>
       </ul>
