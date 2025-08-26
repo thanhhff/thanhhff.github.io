@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I was awarded a research grant from Nagoya University, Japan.
+I was awarded a research grant from THERS (National University Corporation), Japan.
