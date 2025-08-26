@@ -185,8 +185,11 @@ ninja.data = [{
           section: "News",},{id: "news-we-presented-2-papers-is3-038-is3-148-at-miru2025-japan",
           title: 'We presented 2 papers (IS3-038, IS3-148) at MIRU2025, Japan.',
           description: "",
-          section: "News",},{id: "news-i-was-awarded-a-research-grant-from-nagoya-university-japan",
-          title: 'I was awarded a research grant from Nagoya University, Japan.',
+          section: "News",},{id: "news-i-was-awarded-a-research-grant-from-thers-national-university-corporation-japan",
+          title: 'I was awarded a research grant from THERS (National University Corporation), Japan.',
+          description: "",
+          section: "News",},{id: "news-i-was-awarded-a-research-grant-from-murata-foundation-est-1970-japan",
+          title: 'I was awarded a research grant from Murata Foundation (est. 1970), Japan.',
           description: "",
           section: "News",},{
         id: 'social-github',
