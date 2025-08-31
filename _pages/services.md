@@ -49,8 +49,9 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>Pattern Recognition (Journal)</li>
-        <li>Biomedical Signal Processing and Control (Journal)</li>
+        <li>Pattern Recognition (Journal, IF: 7.6)</li>
+        <li>Biomedical Signal Processing and Control (Journal, IF: 4.9)</li>
+        <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (Journal, IF: 18.6)</li>
         <li>ACM International Conference on Multimedia (ACM MM)</li>
         <li>ACM International Conference on Multimedia Retrieval (ACM ICMR)</li>
       </ul>
