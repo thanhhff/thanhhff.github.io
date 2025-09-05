@@ -46,6 +46,14 @@ nav_order: 3
 #### reviewer / pc member
 <table class="service-table">
   <tr>
+    <td class="year">2026</td>
+    <td class="content">
+      <ul>
+        <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td class="year">2025</td>
     <td class="content">
       <ul>
