@@ -191,6 +191,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-awarded-a-research-grant-from-murata-foundation-est-1970-japan",
           title: 'I was awarded a research grant from Murata Foundation (est. 1970), Japan.',
           description: "",
+          section: "News",},{id: "news-our-paper-vision-language-foundation-model-for-medical-data-has-been-accepted-to-neurips",
+          title: 'Our paper “Vision-Language Foundation Model for Medical Data” has been accepted to NeurIPS....',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
