@@ -12,6 +12,12 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "A Multi-modal Multi-view Action Recognition Dataset and Transformer-based Sensor Fusion with Action Selection Learning," <i>Under Review</i></li>
+      </ul>
+      <ul>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Hierarchical Global-Local Fusion for One-stage Open-vocabulary Temporal Action Detection," <i>Under Review</i></li>
+      </ul>
+      <ul>
         <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications (IF: 6.0)</i></li>
       </ul>
     </td>
@@ -41,7 +47,13 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>Takahiro Komamizu, A. Kastner Marc, Yasutomo Kawanishi, <b>Trung Thanh Nguyen</b>, and Chen Junan, "IntentVC 2025: The ACM Multimedia Grand Challenge on Intention-Oriented Controllable Video Captioning," <i>In Proceedings of the 33rd ACM International Conference on Multimedia</i></li>
+        <li>Junan Chen, <b>Trung Thanh Nguyen</b>, Takahiro Komamizu, and Ichiro Ide, "Q-Adapter: Visual Query Adapter for Extracting Textually-related Features in Video Captioning," <i>Under Review</i></li>
+      </ul>
+      <ul>
+        <li>Huu Tien Nguyen, Dac Thai Nguyen, Duc Nguyen The Minh, <b>Trung Thanh Nguyen</b>, Thao Nguyen Truong, Hieu Pham, Johan Barthelemy, Tran Minh Quan, Quoc Viet Hung Nguyen, Thanh Tam Nguyen, Mai Hong Son, Chau Quynh Anh, Thanh Trung Nguyen, Phi Le Nguyen, "Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation," <i>Under Review</i></li>
+      </ul>
+      <ul>
+        <li>Takahiro Komamizu, A. Kastner Marc, Yasutomo Kawanishi, <b>Trung Thanh Nguyen</b>, and Junan Chen, "IntentVC 2025: The ACM Multimedia Grand Challenge on Intention-Oriented Controllable Video Captioning," <i>In Proceedings of the 33rd ACM International Conference on Multimedia</i></li>
       </ul>
       <ul>
         <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "MultiSensor-Home: A Wide-area Multi-modal Multi-view Dataset for Action Recognition and Transformer-based Sensor Fusion," <i>In Proceedings of the 19th IEEE International Conference on Automatic Face and Gesture Recognition</i> (<b>Best Student Paper Award</b>)</li>
