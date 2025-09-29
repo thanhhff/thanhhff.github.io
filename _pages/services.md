@@ -58,6 +58,7 @@ nav_order: 3
     <td class="content">
       <ul>
         <li>Pattern Recognition (Journal, IF: 7.6)</li>
+        <li>Information Fusion (Journal, IF: 15.5) </li>
         <li>Biomedical Signal Processing and Control (Journal, IF: 4.9)</li>
         <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (Journal, IF: 18.6)</li>
         <li>ACM International Conference on Multimedia (ACM MM)</li>
