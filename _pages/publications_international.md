@@ -47,10 +47,10 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>Junan Chen, <b>Trung Thanh Nguyen</b>, Takahiro Komamizu, and Ichiro Ide, "Q-Adapter: Visual Query Adapter for Extracting Textually-related Features in Video Captioning," <i>Under Review</i></li>
+        <li>Junan Chen, <b>Trung Thanh Nguyen</b>, Takahiro Komamizu, and Ichiro Ide, "Q-Adapter: Visual Query Adapter for Extracting Textually-related Features in Video Captioning," <i>In Proceedings of the 7th ACM International Conference on Multimedia in Asia</i></li>
       </ul>
       <ul>
-        <li>Huu Tien Nguyen, Dac Thai Nguyen, Duc Nguyen The Minh, <b>Trung Thanh Nguyen</b>, Thao Nguyen Truong, Hieu Pham, Johan Barthelemy, Tran Minh Quan, Quoc Viet Hung Nguyen, Thanh Tam Nguyen, Mai Hong Son, Chau Quynh Anh, Thanh Trung Nguyen, Phi Le Nguyen, "Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation," <i>In Proceedings of the 39th Annual Conference on Neural Information Processing Systems</i></li>
+        <li>Huu Tien Nguyen, Dac Thai Nguyen, Duc Nguyen The Minh, <b>Trung Thanh Nguyen</b>, Thao Nguyen Truong, Hieu Pham, Johan Barthelemy, Tran Minh Quan, Quoc Viet Hung Nguyen, Thanh Tam Nguyen, Mai Hong Son, Chau Quynh Anh, Thanh Trung Nguyen, Phi Le Nguyen, "Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation," <i>In Proceedings of the 39th Conference on Neural Information Processing Systems</i></li>
       </ul>
       <ul>
         <li>Takahiro Komamizu, A. Kastner Marc, Yasutomo Kawanishi, <b>Trung Thanh Nguyen</b>, and Junan Chen, "IntentVC 2025: The ACM Multimedia Grand Challenge on Intention-Oriented Controllable Video Captioning," <i>In Proceedings of the 33rd ACM International Conference on Multimedia</i></li>
