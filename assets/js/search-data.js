@@ -194,6 +194,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-q-adapter-visual-query-adapter-for-extracting-textually-related-features-in-video-captioning-has-been-accepted-to-acm-mmasia-malaysia",
           title: 'Our paper “Q-Adapter: Visual Query Adapter for Extracting Textually-related Features in Video Captioning”...',
           description: "",
+          section: "News",},{id: "news-i-was-selected-to-present-my-phd-research-at-the-doctoral-symposium-of-acm-mmasia-malaysia",
+          title: 'I was selected to present my PhD research at the Doctoral Symposium of...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
