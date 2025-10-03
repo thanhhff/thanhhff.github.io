@@ -47,13 +47,16 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
+        <li><b>Trung Thanh Nguyen</b>, "MultiSensor-Home: Benchmark for Multi-modal Multi-view Action Recognition in Home Environments," <i>In Proceedings of the 7th ACM International Conference on Multimedia in Asia (Doctoral Symposium)</i></li>
+      </ul>
+      <ul>
         <li>Junan Chen, <b>Trung Thanh Nguyen</b>, Takahiro Komamizu, and Ichiro Ide, "Q-Adapter: Visual Query Adapter for Extracting Textually-related Features in Video Captioning," <i>In Proceedings of the 7th ACM International Conference on Multimedia in Asia</i></li>
       </ul>
       <ul>
         <li>Huu Tien Nguyen, Dac Thai Nguyen, Duc Nguyen The Minh, <b>Trung Thanh Nguyen</b>, Thao Nguyen Truong, Hieu Pham, Johan Barthelemy, Tran Minh Quan, Quoc Viet Hung Nguyen, Thanh Tam Nguyen, Mai Hong Son, Chau Quynh Anh, Thanh Trung Nguyen, Phi Le Nguyen, "Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation," <i>In Proceedings of the 39th Conference on Neural Information Processing Systems</i></li>
       </ul>
       <ul>
-        <li>Takahiro Komamizu, A. Kastner Marc, Yasutomo Kawanishi, <b>Trung Thanh Nguyen</b>, and Junan Chen, "IntentVC 2025: The ACM Multimedia Grand Challenge on Intention-Oriented Controllable Video Captioning," <i>In Proceedings of the 33rd ACM International Conference on Multimedia</i></li>
+        <li>Takahiro Komamizu, A. Kastner Marc, Yasutomo Kawanishi, <b>Trung Thanh Nguyen</b>, and Junan Chen, "IntentVC 2025: The ACM Multimedia Grand Challenge on Intention-Oriented Controllable Video Captioning," <i>In Proceedings of the 33rd ACM International Conference on Multimedia (Grand Challenge)</i></li>
       </ul>
       <ul>
         <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "MultiSensor-Home: A Wide-area Multi-modal Multi-view Dataset for Action Recognition and Transformer-based Sensor Fusion," <i>In Proceedings of the 19th IEEE International Conference on Automatic Face and Gesture Recognition</i> (<b>Best Student Paper Award</b>)</li>
