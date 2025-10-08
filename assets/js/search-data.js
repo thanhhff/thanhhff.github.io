@@ -197,6 +197,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-selected-to-present-my-phd-research-at-the-doctoral-symposium-of-acm-mmasia-malaysia",
           title: 'I was selected to present my PhD research at the Doctoral Symposium of...',
           description: "",
+          section: "News",},{id: "news-i-was-selected-as-a-rising-star-for-the-freiburg-rising-stars-academy-universität-freiburg-germany",
+          title: 'I was selected as a Rising Star for the Freiburg Rising Stars Academy,...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
