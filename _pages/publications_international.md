@@ -11,12 +11,12 @@ nav_order: 3
   <tr>
     <td class="year">2025</td>
     <td class="content">
-      <ul>
+      <!-- <ul>
         <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "A Multi-modal Multi-view Action Recognition Dataset and Transformer-based Sensor Fusion with Action Selection Learning," <i>Under Review</i></li>
       </ul>
       <ul>
         <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Hierarchical Global-Local Fusion for One-stage Open-vocabulary Temporal Action Detection," <i>Under Review</i></li>
-      </ul>
+      </ul> -->
       <ul>
         <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications (IF: 6.0)</i></li>
       </ul>
