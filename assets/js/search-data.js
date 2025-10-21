@@ -200,6 +200,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-selected-as-a-rising-star-for-the-freiburg-rising-stars-academy-universität-freiburg-germany",
           title: 'I was selected as a Rising Star for the Freiburg Rising Stars Academy,...',
           description: "",
+          section: "News",},{id: "news-our-paper-hierarchical-global-local-fusion-for-one-stage-open-vocabulary-temporal-action-detection-has-been-accepted-to-acm-tomm-if-6-0-journal",
+          title: 'Our paper “Hierarchical Global-Local Fusion for One-stage Open-vocabulary Temporal Action Detection” has been...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
