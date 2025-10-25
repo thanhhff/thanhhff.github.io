@@ -29,21 +29,31 @@ nav_order: 3
   }
 </style>
 
-#### committee member / organizer
+#### organizing committee
 <table class="service-table">
   <tr>
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>Intention-Oriented Controllable Video Captioning 
-          (Grand Challenge @ ACM MM)
-        </li>
+        <li>IntentVC Challenge: Intention-Oriented Controllable Video Captioning (Grand Challenge @ ACM MM)</li>
       </ul>
     </td>
   </tr>
 </table>
 
-#### reviewer / pc member
+#### program committee
+<table class="service-table">
+  <tr>
+    <td class="year">2025</td>
+    <td class="content">
+      <ul>
+        <li>International Workshop on Intelligent Cross-Data Analysis and Retrieval (Workshop @ ACM ICMR)</li>
+      </ul>
+    </td>
+  </tr>
+</table>
+
+#### reviewer
 <table class="service-table">
   <tr>
     <td class="year">2026</td>
@@ -51,7 +61,7 @@ nav_order: 3
       <ul>
         <li>International Conference on Multimedia Modeling (MMM)</li>
         <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-        <!-- <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li> -->
+        <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
       </ul>
     </td>
   </tr>
@@ -64,8 +74,8 @@ nav_order: 3
         <li>ACM Computing Surveys (Journal, IF: 28.0)</li>
         <li>Biomedical Signal Processing and Control (Journal, IF: 4.9)</li>
         <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (Journal, IF: 18.6)</li>
-        <li>ACM International Conference on Multimedia (ACM MM)</li>
-        <li>ACM International Conference on Multimedia Retrieval (ACM ICMR)</li>
+        <!-- <li>ACM International Conference on Multimedia (ACM MM)</li>
+        <li>ACM International Conference on Multimedia Retrieval (ACM ICMR)</li> -->
       </ul>
     </td>
   </tr>
@@ -74,8 +84,8 @@ nav_order: 3
     <td class="content">
       <ul>
         <li>ACM International Conference on Multimedia (ACM MM)</li>
-        <li>Meeting on Image Recognition and Understanding (MIRU)</li>
         <li>Medical Image Computing and Computer Assisted Intervention (MICCAI)</li>
+        <li>Meeting on Image Recognition and Understanding (MIRU, Japanese Domestic)</li>
       </ul>
     </td>
   </tr>
