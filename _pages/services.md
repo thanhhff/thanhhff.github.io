@@ -51,7 +51,7 @@ nav_order: 3
       <ul>
         <li>International Conference on Multimedia Modeling (MMM)</li>
         <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-        <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
+        <!-- <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li> -->
       </ul>
     </td>
   </tr>
