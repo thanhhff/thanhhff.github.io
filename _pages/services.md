@@ -61,7 +61,7 @@ nav_order: 3
       <ul>
         <li>International Conference on Multimedia Modeling (MMM)</li>
         <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-        <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
+        <!-- <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li> -->
       </ul>
     </td>
   </tr>
@@ -74,8 +74,6 @@ nav_order: 3
         <li>ACM Computing Surveys (Journal, IF: 28.0)</li>
         <li>Biomedical Signal Processing and Control (Journal, IF: 4.9)</li>
         <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (Journal, IF: 18.6)</li>
-        <!-- <li>ACM International Conference on Multimedia (ACM MM)</li>
-        <li>ACM International Conference on Multimedia Retrieval (ACM ICMR)</li> -->
       </ul>
     </td>
   </tr>
