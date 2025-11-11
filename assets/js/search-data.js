@@ -203,6 +203,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-hierarchical-global-local-fusion-for-one-stage-open-vocabulary-temporal-action-detection-has-been-accepted-to-acm-tomm-if-6-0-journal",
           title: 'Our paper “Hierarchical Global-Local Fusion for One-stage Open-vocabulary Temporal Action Detection” has been...',
           description: "",
+          section: "News",},{id: "news-2-papers-view-aware-cross-modal-distillation-for-multi-view-action-recognition-and-padm-a-physics-aware-diffusion-model-for-attenuation-correction-have-been-accepted-to-ieee-cvf-wacv2026-united-states",
+          title: '2 papers — “View-aware Cross-modal Distillation for Multi-view Action Recognition” and “PADM: A...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
