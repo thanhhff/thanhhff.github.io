@@ -35,6 +35,7 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
+        <li>ACM Multimedia Asia 2025 (Poster Session Chair @ ACM MMAsia)</li>
         <li>IntentVC Challenge: Intention-Oriented Controllable Video Captioning (Grand Challenge @ ACM MM)</li>
       </ul>
     </td>
@@ -47,7 +48,7 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>International Workshop on Intelligent Cross-Data Analysis and Retrieval (Workshop @ ACM ICMR)</li>
+        <li>ACM International Workshop on Intelligent Cross-Data Analysis and Retrieval (Workshop @ ACM ICMR)</li>
       </ul>
     </td>
   </tr>
