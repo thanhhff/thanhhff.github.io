@@ -206,6 +206,9 @@ ninja.data = [{
           section: "News",},{id: "news-2-papers-view-aware-cross-modal-distillation-for-multi-view-action-recognition-and-padm-a-physics-aware-diffusion-model-for-attenuation-correction-have-been-accepted-to-ieee-cvf-wacv2026-united-states",
           title: '2 papers — “View-aware Cross-modal Distillation for Multi-view Action Recognition” and “PADM: A...',
           description: "",
+          section: "News",},{id: "news-i-have-successfully-completed-my-phd-pre-defense-onward-to-the-final-defense",
+          title: 'I have successfully completed my PhD pre-defense. Onward to the final defense!',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
