@@ -209,6 +209,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-successfully-completed-my-phd-pre-defense-onward-to-the-final-defense",
           title: 'I have successfully completed my PhD pre-defense. Onward to the final defense!',
           description: "",
+          section: "News",},{id: "news-our-paper-q-adapter-won-the-best-oral-award-at-acm-mmasia-malaysia",
+          title: 'Our paper “Q-Adapter” won the Best Oral Award at ACM MMAsia, Malaysia.',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
