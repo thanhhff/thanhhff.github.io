@@ -5,5 +5,5 @@ inline: true
 related_posts: false
 ---
 
-Our paper "Q-Adapter" won the Best Oral Award at [ACM MMAsia](https://mmasia2025.org/), Malaysia.
+Our paper "Q-Adapter" won the **Best Oral Award** at [ACM MMAsia](https://mmasia2025.org/), Malaysia.
 
