@@ -212,6 +212,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-q-adapter-won-the-best-oral-award-at-acm-mmasia-malaysia",
           title: 'Our paper “Q-Adapter” won the Best Oral Award at ACM MMAsia, Malaysia.',
           description: "",
+          section: "News",},{id: "news-i-was-invited-by-riken-r-css-to-attend-the-sca-hpc-asia-2026-and-the-acm-asia-school-on-hpc-amp-amp-ai-japan",
+          title: 'I was invited by RIKEN R-CSS to attend the SCA/HPC Asia 2026 and...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
