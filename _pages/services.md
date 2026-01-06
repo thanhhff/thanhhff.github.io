@@ -62,6 +62,7 @@ nav_order: 3
       <ul>
         <li>Neurocomputing (Journal, IF: 6.5)</li>
         <li>ACM Computing Surveys (Journal, IF: 28.0)</li>
+        <li>IEEE Transactions on Multimedia (Journal, IF: 9.7)</li>
         <li>International Conference on Multimedia Modeling (MMM)</li>
         <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
         <!-- <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li> -->
