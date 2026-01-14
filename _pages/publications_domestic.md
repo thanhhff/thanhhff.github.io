@@ -22,6 +22,14 @@ nav_order: 3
 #### conference
 <table class="service-table">
   <tr>
+    <td class="year">2026</td>
+    <td class="content">
+    <ul>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "視野が部分的に重複する多視点行動認識における視点整合性学習法," <i>In Proceedings of the 2026 Pattern Recognition and Media Understanding</i></li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td class="year">2025</td>
     <td class="content">
     <ul>

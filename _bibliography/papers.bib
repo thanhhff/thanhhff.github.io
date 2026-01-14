@@ -1,24 +1,5 @@
 % International-Journal
 
-@article{nguyen2025_HOTAD,
-  note={International-Journal},
-  selected={true},
-  bibtex_show={true},
-  title={Hierarchical Local-Global Fusion for One-stage Open-vocabulary Temporal Action Detection},
-  author={Nguyen, Trung Thanh and Kawanishi, Yasutomo and Komamizu, Takahiro and Ide, Ichiro},
-  journal={ACM Transactions on Multimedia Computing, Communications, and Applications},
-  year={2025},
-  publisher={ACM},
-  abbr = {ACM TOMM},
-  award_name={Open Access},
-  award={This paper is an open access article.},
-  preview = {2024_FG_GA.jpg},
-  code={https://github.com/thanhhff/HOTAD},
-  doi={10.1145/3773986},
-  abstract={Open-vocabulary Temporal Action Detection (Open-vocab TAD) extends the detection scope of Closed-vocabulary Temporal Action Detection (Closed-vocab TAD) to unseen action classes specified by vocabularies not included in the training data, within untrimmed video. Typical Open-vocab TAD methods adopt a two-stage approach that first proposes candidate action intervals and then identifies those actions. However, errors in the first stage can affect the subsequent stage and the final detection results. Moreover, conventional methods for temporal context analyses tend to focus solely on either global or local context. Focusing solely on the global context can lead to lack of momentary detail, making it difficult to distinguish one action from another. Conversely, focusing only on the local context makes it challenging to determine the start and end timings of action intervals. To address these challenges, we introduce a one-stage approach named Hierarchical Open-vocab TAD (HOTAD), consisting of two branches: Temporal Context Analysis (TCA) and Video-Text Alignment (VTA). The former utilizes Hierarchical Encoder (HE) to fuse global and local temporal features, enabling a comprehensive capture of temporal actions, while the latter branch exploits the synergy between visual and textual modalities for precisely detecting unseen actions in the Open-vocab setting. Experiments and in-depth analysis using the widely recognized datasets THUMOS14 and ActivityNet-1.3 are performed to show the effectiveness of the proposed method. The results highlight remarkable accuracy in detecting a wide range of unseen actions. Furthermore, the proposed method significantly reduces wrong labels and localizes action instances with high precision, showcasing its robustness in complex and dynamic video settings.},
-  html = {https://grp.riken.jp/en/news/20251112/},
-}
-
 
 @article{Nguyen2025ACMTOMM,
   selected={true},
@@ -32,13 +13,31 @@
   publisher = {ACM},
   award_name= {Open Access},
   award= {This paper is an open access article.},
-  year = {2025},
+  year = {2026},
   preview={2025_MMASL_GA.jpg},
   code = {https://github.com/thanhhff/MMASL},
   html = {https://grp.riken.jp/en/news/20250627a/},
   abstract={Multi-view action recognition is a critical task in computer vision, with broad applications in surveillance, robotics, and video-content analysis. Traditional single-view action recognition approaches suffer from a limited field of view and occlusion, leading to incomplete understanding of actions and a higher likelihood of misclassification. Moreover, most existing methods rely on constrained environments with strong label annotations, where the onset and offset times of each action are meticulously labeled at the frame-level. However, annotating strong labels for multi-view video sequences in real-world scenarios is time consuming and labor intensive. In many cases, only a weak video-level (sequence-level) label is available, where only the action class label for the entire video sequence is provided. This limits the performance of accurate action recognition. To overcome this limitation, we propose Multi-modal Multi-view Action Selection Learning (MMASL), which integrates audio and video data to perform frame-level action recognition in large-area environments using sequence-level weak labels. The key components of MMASL include modality-specific Shared Audio Encoder and Shared Video Encoder, and an Action Selection Learning (ASL) mechanism. The encoder processes input data from multiple views by extracting and unifying features from audio and video modalities. Meanwhile, ASL dynamically selects relevant frames across views and filters out irrelevant information while focusing on critical action segments to enhance action recognition accuracy. By incorporating audio data with video data, MMASL improves recognition accuracy for visually ambiguous actions that are distinguishable through sound. Experiments in a real-world office environment using the MM-Office dataset demonstrate that MMASL outperforms state-of-the-art methods, achieving up to 8.81% improvement in mAP_C (Class-wise mean Average Precision) and 8.43% in mAP_S (Sample-wise mean Average Precision), highlighting the significance of multi-modal multi-view action recognition with ASL in real-world scenarios.}
 }
 
+@article{nguyen2025_HOTAD,
+  note={International-Journal},
+  selected={true},
+  bibtex_show={true},
+  title={Hierarchical Local-Global Fusion for One-stage Open-vocabulary Temporal Action Detection},
+  author={Nguyen, Trung Thanh and Kawanishi, Yasutomo and Komamizu, Takahiro and Ide, Ichiro},
+  journal={ACM Transactions on Multimedia Computing, Communications, and Applications},
+  year={2026},
+  publisher={ACM},
+  abbr = {ACM TOMM},
+  award_name={Open Access},
+  award={This paper is an open access article.},
+  preview = {2024_FG_GA.jpg},
+  code={https://github.com/thanhhff/HOTAD},
+  doi={10.1145/3773986},
+  abstract={Open-vocabulary Temporal Action Detection (Open-vocab TAD) extends the detection scope of Closed-vocabulary Temporal Action Detection (Closed-vocab TAD) to unseen action classes specified by vocabularies not included in the training data, within untrimmed video. Typical Open-vocab TAD methods adopt a two-stage approach that first proposes candidate action intervals and then identifies those actions. However, errors in the first stage can affect the subsequent stage and the final detection results. Moreover, conventional methods for temporal context analyses tend to focus solely on either global or local context. Focusing solely on the global context can lead to lack of momentary detail, making it difficult to distinguish one action from another. Conversely, focusing only on the local context makes it challenging to determine the start and end timings of action intervals. To address these challenges, we introduce a one-stage approach named Hierarchical Open-vocab TAD (HOTAD), consisting of two branches: Temporal Context Analysis (TCA) and Video-Text Alignment (VTA). The former utilizes Hierarchical Encoder (HE) to fuse global and local temporal features, enabling a comprehensive capture of temporal actions, while the latter branch exploits the synergy between visual and textual modalities for precisely detecting unseen actions in the Open-vocab setting. Experiments and in-depth analysis using the widely recognized datasets THUMOS14 and ActivityNet-1.3 are performed to show the effectiveness of the proposed method. The results highlight remarkable accuracy in detecting a wide range of unseen actions. Furthermore, the proposed method significantly reduces wrong labels and localizes action instances with high precision, showcasing its robustness in complex and dynamic video settings.},
+  html = {https://grp.riken.jp/en/news/20251112/},
+}
 
 @article{Nguyen2024IEEEAccess,
   selected={true},
@@ -339,6 +338,16 @@ preview = {2024_MMAsia_GA.jpg},
 }
  
 % Domesitc-Conference # Note that, please also update the file in _pages
+@inproceedings{Nguyen2026PRMU,
+  bibtex_show={true},
+  note={Domestic-Conference},
+  author = {Nguyen, Trung Thanh and Kawanishi, Yasutomo and Komamizu, Takahiro and Ide, Ichiro},
+  title = {視野が部分的に重複する多視点行動認識における視点整合性学習法},
+  booktitle = {Proceedings of the 2026 Pattern Recognition and Media Understanding},
+  abbr = {PRMU - Japan},
+  year = {2026},
+}
+
 @inproceedings{Nguyen2025MIRU,
   bibtex_show={true},
   note={Domestic-Conference},
@@ -413,7 +422,7 @@ preview = {2024_MMAsia_GA.jpg},
   note={Domestic-Conference},
   author = {Nguyen, Trung Thanh and Kawanishi, Yasutomo and John, Vijay and Komamizu, Takahiro and Ide, Ichiro},
   title = {広域多視点マルチモーダル行動認識のためのセンサ統合手法とMultiSensor-Homeデータセットの提案},
-  booktitle = {Proceedings of the 2025 Pattern Recognition and Media Understanding },
+  booktitle = {Proceedings of the 2025 Pattern Recognition and Media Understanding},
   abbr = {PRMU - Japan},
   year = {2025},
   html={https://ken.ieice.org/ken/paper/20250318Lcia/},
