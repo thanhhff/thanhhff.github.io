@@ -19,9 +19,9 @@ announcements:
   limit: 10 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: false
+  enabled: true
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 5 # leave blank to include all the blog posts
 ---
 
 I am a PhD candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specializing in the Department of Intelligent Systems. My research focuses on vision-language models, multimodal recognition, and video captioning, with applications in solving real-world problems.
