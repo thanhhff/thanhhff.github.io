@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/news/";
           },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
+          },
         },{id: "dropdown-international",
               title: "international",
               description: "",
@@ -51,9 +58,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-presenting-at-ieee-cvf-wacv-2025",
+        },{id: "post-presenting-at-ieee-cvf-wacv-2025-united-states",
       
-        title: "Presenting at IEEE/CVF WACV 2025",
+        title: "Presenting at IEEE/CVF WACV 2025, United States 🇺🇸",
       
       description: "",
       section: "Posts",
@@ -62,9 +69,9 @@ ninja.data = [{
           window.location.href = "/blog/2025/WACV/";
         
       },
-    },{id: "post-presenting-at-acm-multimedia-asia-2024",
+    },{id: "post-presenting-at-acm-multimedia-asia-2024-new-zealand",
       
-        title: "Presenting at ACM Multimedia Asia 2024",
+        title: "Presenting at ACM Multimedia Asia 2024, New Zealand 🇳🇿",
       
       description: "",
       section: "Posts",
@@ -84,9 +91,9 @@ ninja.data = [{
           window.location.href = "/blog/2024/Meidai/";
         
       },
-    },{id: "post-presenting-at-ieee-fg-2024",
+    },{id: "post-presenting-at-ieee-fg-2024-turkey",
       
-        title: "Presenting at IEEE FG 2024",
+        title: "Presenting at IEEE FG 2024, Turkey 🇹🇷",
       
       description: "",
       section: "Posts",

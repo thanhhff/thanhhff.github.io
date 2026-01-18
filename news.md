@@ -1,8 +1,9 @@
 <!-- ---
 layout: post
-date: 2025-05-14 17:00:00
+date: 2026-01-23 15:59:00+0900
 inline: true
 related_posts: false
 ---
 
-I received the "Diversity, Equity & Inclusion" Grant from the [IEEE Biometrics Council](https://ieee-biometrics.org/). -->
+My interview in a special feature "The Reality of the Doctoral Program" (in Japanese) by Nagoya University is now published on [Tamatebako (玉手箱)](https://tamatebako.i.nagoya-u.ac.jp/).
+ -->
