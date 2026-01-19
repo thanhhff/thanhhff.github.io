@@ -58,9 +58,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-presenting-at-ieee-cvf-wacv-2025-united-states",
+        },{id: "post-presenting-at-ieee-cvf-wacv-2025",
       
-        title: "Presenting at IEEE/CVF WACV 2025, United States 🇺🇸",
+        title: "Presenting at IEEE/CVF WACV 2025 🇺🇸",
       
       description: "",
       section: "Posts",
@@ -69,9 +69,9 @@ ninja.data = [{
           window.location.href = "/blog/2025/WACV/";
         
       },
-    },{id: "post-presenting-at-acm-multimedia-asia-2024-new-zealand",
+    },{id: "post-presenting-at-acm-multimedia-asia-2024",
       
-        title: "Presenting at ACM Multimedia Asia 2024, New Zealand 🇳🇿",
+        title: "Presenting at ACM Multimedia Asia 2024 🇳🇿",
       
       description: "",
       section: "Posts",
@@ -91,15 +91,26 @@ ninja.data = [{
           window.location.href = "/blog/2024/Meidai/";
         
       },
-    },{id: "post-presenting-at-ieee-fg-2024-turkey",
+    },{id: "post-presenting-at-ieee-fg-2024",
       
-        title: "Presenting at IEEE FG 2024, Turkey 🇹🇷",
+        title: "Presenting at IEEE FG 2024 🇹🇷",
       
       description: "",
       section: "Posts",
       handler: () => {
         
           window.location.href = "/blog/2024/FG/";
+        
+      },
+    },{id: "post-data-science-training-at-north-carolina-state-university",
+      
+        title: "Data Science Training at North Carolina State University 🇺🇸",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2024/NCState/";
         
       },
     },{id: "news-my-new-website-has-been-released-the-news-will-be-updated-from-2024-onward",
