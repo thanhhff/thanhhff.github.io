@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 🔬 PhD Candidate @ Nagoya University | Student Researcher @ RIKEN 
+subtitle: 🔬 PhD Candidate @ Nagoya University | Student Researcher @ RIKEN 🇯🇵 | ⭐️ Rising Star @ Universität Freiburg 🇩🇪
 
 profile:
   align: right
