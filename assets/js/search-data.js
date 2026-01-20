@@ -233,6 +233,12 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-invited-by-riken-r-css-to-attend-the-sca-hpc-asia-2026-and-the-acm-asia-school-on-hpc-amp-amp-ai-japan",
           title: 'I was invited by RIKEN R-CSS to attend the SCA/HPC Asia 2026 and...',
           description: "",
+          section: "News",},{id: "news-my-interview-in-a-special-feature-the-reality-of-the-doctoral-program-in-japanese-by-nagoya-university-is-now-published-on-tamatebako-玉手箱",
+          title: 'My interview in a special feature “The Reality of the Doctoral Program” (in...',
+          description: "",
+          section: "News",},{id: "news-i-am-actively-seeking-postdoctoral-researcher-or-assistant-professor-positions-please-email-me-if-you-think-i-would-be-a-good-fit",
+          title: 'I am actively seeking Postdoctoral Researcher or Assistant Professor positions. Please email me...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
