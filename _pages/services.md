@@ -45,10 +45,18 @@ nav_order: 3
 #### program committee
 <table class="service-table">
   <tr>
+    <td class="year">2026</td>
+    <td class="content">
+      <ul>
+        <li>International Workshop on Embedded and Mobile Deep Learning (Workshop @ ACM MobiSys)</li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>ACM International Workshop on Intelligent Cross-Data Analysis and Retrieval (Workshop @ ACM ICMR)</li>
+        <li>International Workshop on Intelligent Cross-Data Analysis and Retrieval (Workshop @ ACM ICMR)</li>
       </ul>
     </td>
   </tr>
@@ -67,7 +75,7 @@ nav_order: 3
         <li>European Conference on Computer Vision (ECCV)</li>
         <li>International Conference on Multimedia Modeling (MMM)</li>
         <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-        <!-- <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li> -->
+        <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
       </ul>
     </td>
   </tr>
