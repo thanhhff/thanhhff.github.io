@@ -60,7 +60,7 @@ ninja.data = [{
           },
         },{id: "post-attending-acm-asian-school-on-hpc-and-ai-2026",
       
-        title: "Attending ACM Asian School on HPC and AI 2026 🇯🇵",
+        title: "🇯🇵 Attending ACM Asian School on HPC and AI 2026",
       
       description: "",
       section: "Posts",
@@ -71,7 +71,7 @@ ninja.data = [{
       },
     },{id: "post-attending-sca-hpcasia-2026",
       
-        title: "Attending SCA/HPCAsia 2026 🇯🇵",
+        title: "🇯🇵 Attending SCA/HPCAsia 2026",
       
       description: "",
       section: "Posts",
@@ -82,7 +82,7 @@ ninja.data = [{
       },
     },{id: "post-best-oral-award-at-acm-multimedia-asia-2025",
       
-        title: "Best Oral Award at ACM Multimedia Asia 2025 🇲🇾",
+        title: "🇲🇾 Best Oral Award at ACM Multimedia Asia 2025",
       
       description: "",
       section: "Posts",
@@ -93,7 +93,7 @@ ninja.data = [{
       },
     },{id: "post-international-summer-school-2025-at-academia-sinica",
       
-        title: "International Summer School 2025 at Academia Sinica 🇹🇼",
+        title: "🇹🇼 International Summer School 2025 at Academia Sinica",
       
       description: "",
       section: "Posts",
@@ -104,7 +104,7 @@ ninja.data = [{
       },
     },{id: "post-best-student-paper-award-at-ieee-fg-2025",
       
-        title: "Best Student Paper Award at IEEE FG 2025 🇺🇸",
+        title: "🇺🇸 Best Student Paper Award at IEEE FG 2025",
       
       description: "",
       section: "Posts",
@@ -115,7 +115,7 @@ ninja.data = [{
       },
     },{id: "post-presenting-at-ieee-cvf-wacv-2025",
       
-        title: "Presenting at IEEE/CVF WACV 2025 🇺🇸",
+        title: "🇺🇸 Presenting at IEEE/CVF WACV 2025",
       
       description: "",
       section: "Posts",
@@ -126,7 +126,7 @@ ninja.data = [{
       },
     },{id: "post-presenting-at-acm-multimedia-asia-2024",
       
-        title: "Presenting at ACM Multimedia Asia 2024 🇳🇿",
+        title: "🇳🇿 Presenting at ACM Multimedia Asia 2024",
       
       description: "",
       section: "Posts",
@@ -137,7 +137,7 @@ ninja.data = [{
       },
     },{id: "post-master-s-graduation-from-nagoya-university",
       
-        title: "Master’s Graduation from Nagoya University 🎓",
+        title: "🎓 Master’s Graduation from Nagoya University",
       
       description: "",
       section: "Posts",
@@ -148,7 +148,7 @@ ninja.data = [{
       },
     },{id: "post-presenting-at-ieee-fg-2024",
       
-        title: "Presenting at IEEE FG 2024 🇹🇷",
+        title: "🇹🇷 Presenting at IEEE FG 2024",
       
       description: "",
       section: "Posts",
@@ -159,7 +159,7 @@ ninja.data = [{
       },
     },{id: "post-data-science-training-at-north-carolina-state-university",
       
-        title: "Data Science Training at North Carolina State University 🇺🇸",
+        title: "🇺🇸 Data Science Training at North Carolina State University",
       
       description: "",
       section: "Posts",
