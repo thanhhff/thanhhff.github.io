@@ -69,6 +69,28 @@ ninja.data = [{
           window.location.href = "/blog/2026/ACM/";
         
       },
+    },{id: "post-attending-sca-hpcasia-2026",
+      
+        title: "Attending SCA/HPCAsia 2026 🇯🇵",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/SCA/";
+        
+      },
+    },{id: "post-best-oral-award-at-acm-multimedia-asia-2025",
+      
+        title: "Best Oral Award at ACM Multimedia Asia 2025 🇲🇾",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/MMAsia/";
+        
+      },
     },{id: "post-presenting-at-ieee-cvf-wacv-2025",
       
         title: "Presenting at IEEE/CVF WACV 2025 🇺🇸",
