@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "International Summer School 2025 at Academia Sinica 🇹🇼"
+title: "🇹🇼 International Summer School 2025 at Academia Sinica"
 date: 2025-07-16
 tags: [school, taiwan]
 categories: school
