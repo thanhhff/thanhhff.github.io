@@ -102,6 +102,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/AcademiaSinica/";
         
       },
+    },{id: "post-best-student-paper-award-at-ieee-fg-2025",
+      
+        title: "Best Student Paper Award at IEEE FG 2025 🇺🇸",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/FG/";
+        
+      },
     },{id: "post-presenting-at-ieee-cvf-wacv-2025",
       
         title: "Presenting at IEEE/CVF WACV 2025 🇺🇸",
