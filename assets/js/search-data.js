@@ -91,6 +91,17 @@ ninja.data = [{
           window.location.href = "/blog/2025/MMAsia/";
         
       },
+    },{id: "post-international-summer-school-2025-at-academia-sinica",
+      
+        title: "International Summer School 2025 at Academia Sinica 🇹🇼",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/AcademiaSinica/";
+        
+      },
     },{id: "post-presenting-at-ieee-cvf-wacv-2025",
       
         title: "Presenting at IEEE/CVF WACV 2025 🇺🇸",
