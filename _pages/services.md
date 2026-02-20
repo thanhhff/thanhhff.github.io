@@ -83,11 +83,21 @@ nav_order: 3
     <td class="year">2025</td>
     <td class="content">
       <ul>
-        <li>Pattern Recognition (Journal, IF: 7.6)</li>
+        <li>Pattern Recognition (Journal, IF: 7.6) 
+          <a href="{{ site.baseurl }}/assets/pdf/reviewer/2025_PR.pdf"
+            target="_blank" rel="noopener">
+            Certificate
+          </a>
+        </li>
         <li>Information Sciences (Journal, IF: 6.8)</li>
         <li>ACM Computing Surveys (Journal, IF: 28.0)</li>
         <li>Biomedical Signal Processing and Control (Journal, IF: 4.9)</li>
-        <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (Journal, IF: 18.6)</li>
+        <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (Journal, IF: 18.6)
+          <a href="{{ site.baseurl }}/assets/pdf/reviewer/2025_TPAMI.pdf"
+            target="_blank" rel="noopener">
+            Certificate
+          </a>
+        </li>
       </ul>
     </td>
   </tr>
