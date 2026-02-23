@@ -69,6 +69,7 @@ nav_order: 3
     <td class="content">
       <ul>
         <li>Neurocomputing (Journal, IF: 6.5)</li>
+        <li>Pattern Recognition (Journal, IF: 7.6)</li>
         <li>ACM Computing Surveys (Journal, IF: 28.0)</li>
         <li>IEEE Transactions on Multimedia (Journal, IF: 9.7)</li>
         <li>IEEE Transactions on Circuits and Systems for Video Technology (Journal, IF: 11.1)</li>
