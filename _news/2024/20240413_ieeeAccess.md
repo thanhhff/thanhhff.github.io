@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our Zero-PIMA paper was accepted in the journal [IEEE Access](https://ieeeaccess.ieee.org/).
+Our paper Zero-PIMA was accepted in the [IEEE Access](https://ieeeaccess.ieee.org/) journal.
