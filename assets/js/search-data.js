@@ -276,6 +276,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-have-received-a-certificate-of-completion-from-the-acm-asian-school-on-hpc-and-ai-japan",
           title: 'I have received a Certificate of Completion from the ACM Asian School on...',
           description: "",
+          section: "News",},{id: "news-my-interview-in-a-special-feature-the-reality-of-the-doctoral-program-in-japanese-by-nagoya-university-is-now-published-on-tamatebako-玉手箱",
+          title: 'My interview in a special feature “The Reality of the Doctoral Program” (in...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
