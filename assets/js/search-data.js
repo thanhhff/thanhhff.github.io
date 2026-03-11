@@ -58,7 +58,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-attending-acm-asian-school-on-hpc-and-ai-2026",
+        },{id: "post-presenting-at-ieee-cvf-wacv-2026",
+      
+        title: "🇺🇸 Presenting at IEEE/CVF WACV 2026",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/WACV/";
+        
+      },
+    },{id: "post-attending-acm-asian-school-on-hpc-and-ai-2026",
       
         title: "🇯🇵 Attending ACM Asian School on HPC and AI 2026",
       
