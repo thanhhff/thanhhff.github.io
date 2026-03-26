@@ -75,6 +75,7 @@ nav_order: 3
         <li>IEEE Transactions on Circuits and Systems for Video Technology (Journal, IF: 11.1)</li>
         <li>European Conference on Computer Vision (ECCV)</li>
         <li>International Conference on Multimedia Modeling (MMM)</li>
+        <li>Conference on Neural Information Processing Systems (NeurIPS)</li>
         <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
         <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
       </ul>
