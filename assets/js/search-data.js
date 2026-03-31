@@ -302,7 +302,7 @@ ninja.data = [{
           title: 'My interview in a special feature “The Reality of the Doctoral Program” (in...',
           description: "",
           section: "News",},{id: "news-universität-freiburg-international-researchers-are-networking-at-the-freiburg-rising-stars-academy",
-          title: 'Universität Freiburg: “International researchers are networking at the Freiburg Rising Stars Academy”',
+          title: '🇩🇪 Universität Freiburg: “International researchers are networking at the Freiburg Rising Stars Academy”...',
           description: "",
           section: "News",},{
         id: 'social-github',
