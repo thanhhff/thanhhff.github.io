@@ -24,9 +24,11 @@ latest_posts:
   limit: 5 # leave blank to include all the blog posts
 ---
 
-I am a PhD candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specializing in the Department of Intelligent Systems. My research focuses on vision-language models, multimodal recognition, and video captioning, with applications in solving real-world problems.
+I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specializing in the Department of Intelligent Systems. My research focuses on vision-language models, multimodal recognition, and video captioning, with applications in solving real-world problems.
 
-Currently, I am a student researcher at [RIKEN National Science Institute](https://www.riken.jp/), working on the Guardian Robot Project. My research involves open-world action detection and multi-view multi-modal action recognition by analyzing multimodal sensory data. 
+Currently, I am a Student Researcher at [RIKEN National Science Institute](https://www.riken.jp/), working on the Guardian Robot Project. My research involves open-world action detection and multi-view multi-modal action recognition by analyzing multimodal sensory data. 
+
+I am also a Visiting Researcher at the [University of Freiburg](https://uni-freiburg.de/) within the Excellence Cluster Future Forests, where I am developing a 3D AI point cloud tree segmentation model for the [3dtrees.earth](https://3dtrees.earth) project.
 
 Additionally, I am in charge at the [Center for Artificial Intelligence, Mathematical and Data Science](https://www.mds.nagoya-u.ac.jp/), collaborating with Japanese corporations to develop practical AI solutions.
 
