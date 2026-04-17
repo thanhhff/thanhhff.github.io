@@ -304,6 +304,9 @@ ninja.data = [{
           section: "News",},{id: "news-universität-freiburg-international-researchers-are-networking-at-the-freiburg-rising-stars-academy",
           title: '🇩🇪 Universität Freiburg: “International researchers are networking at the Freiburg Rising Stars Academy”...',
           description: "",
+          section: "News",},{id: "news-i-was-selected-to-present-my-phd-research-at-the-doctoral-consortium-of-ieee-fg2026-kyoto",
+          title: 'I was selected to present my PhD research at the Doctoral Consortium of...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
