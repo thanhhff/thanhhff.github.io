@@ -76,7 +76,7 @@ nav_order: 3
         <li>International Conference on Multimedia Modeling (MMM)</li>
         <li>Conference on Neural Information Processing Systems (NeurIPS)</li>
         <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-        <li>IEEE/CVF CVPR @ CV4Animals: Computer Vision for Animal Behavior Tracking and Modeling </li>
+        <li>IEEE/CVF CVPR @ CV4Animals: Computer Vision for Animal Behavior Tracking and Modeling</li>
         <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
       </ul>
     </td>
