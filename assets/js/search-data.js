@@ -307,6 +307,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-selected-to-present-my-phd-research-at-the-doctoral-consortium-of-ieee-fg2026-kyoto",
           title: 'I was selected to present my PhD research at the Doctoral Consortium of...',
           description: "",
+          section: "News",},{id: "news-our-paper-on-the-multisensor-home-dataset-was-accepted-in-pattern-recognition-if-7-6",
+          title: 'Our paper on the MultiSensor-Home dataset was accepted in Pattern Recognition (IF: 7.6)....',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
