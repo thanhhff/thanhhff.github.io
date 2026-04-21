@@ -11,9 +11,9 @@ nav_order: 3
   <tr>
     <td class="year">2026</td>
     <td class="content">
-      <!-- <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "A Multi-modal Multi-view Action Recognition Dataset and Transformer-based Sensor Fusion with Action Selection Learning," <i>Under Review</i></li>
-      </ul> -->
+      <ul>
+        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "MultiSensor-Home: Multi-modal multi-view dataset and benchmarks for action recognition in home environments," <i>Pattern Recognition (IF: 7.6)</i></li>
+      </ul>
       <ul>
         <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications (IF: 6.0)</i></li>
       </ul>
