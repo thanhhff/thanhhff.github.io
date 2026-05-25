@@ -42,26 +42,6 @@ nav_order: 3
   </tr>
 </table>
 
-#### program committee
-<table class="service-table">
-  <tr>
-    <td class="year">2026</td>
-    <td class="content">
-      <ul>
-        <li>International Workshop on Embedded and Mobile Deep Learning (Workshop @ ACM MobiSys)</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2025</td>
-    <td class="content">
-      <ul>
-        <li>International Workshop on Intelligent Cross-Data Analysis and Retrieval (Workshop @ ACM ICMR)</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
 #### reviewer
 <table class="service-table">
   <tr>
@@ -78,6 +58,7 @@ nav_order: 3
         <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
         <li>IEEE/CVF CVPR @ CV4Animals: Computer Vision for Animal Behavior Tracking and Modeling</li>
         <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
+        <li>ACM MobiSys @ International Workshop on Embedded and Mobile Deep Learning</li>
       </ul>
     </td>
   </tr>
@@ -109,6 +90,7 @@ nav_order: 3
       <ul>
         <li>ACM International Conference on Multimedia (ACM MM)</li>
         <li>Medical Image Computing and Computer Assisted Intervention (MICCAI)</li>
+        <li>ACM ICMR @ International Workshop on Intelligent Cross-Data Analysis and Retrieval</li>
         <li>Meeting on Image Recognition and Understanding (MIRU, Japanese Domestic)</li>
       </ul>
     </td>
