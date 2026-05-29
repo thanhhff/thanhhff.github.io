@@ -37,13 +37,6 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "";
               },
-            },{id: "dropdown-all",
-              title: "all",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
             },{id: "nav-services",
           title: "services",
           description: "",
@@ -309,6 +302,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-our-paper-on-the-multisensor-home-dataset-was-accepted-in-pattern-recognition-if-7-6",
           title: 'Our paper on the MultiSensor-Home dataset was accepted in Pattern Recognition (IF: 7.6)....',
+          description: "",
+          section: "News",},{id: "news-our-paper-prims-physics-guided-representation-for-fluid-identification-in-multimodal-sensing-has-been-accepted-to-ecml-pkdd-2026-naples",
+          title: 'Our paper, “PRIMS: Physics-guided Representation for Fluid Identification in Multimodal Sensing,” has been...',
           description: "",
           section: "News",},{
         id: 'social-github',
