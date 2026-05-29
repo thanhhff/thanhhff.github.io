@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-attending-the-freiburg-rising-stars-conference",
+        },{id: "post-presenting-at-ieee-fg-2026",
+      
+        title: "🇯🇵 Presenting at IEEE FG 2026",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/FG/";
+        
+      },
+    },{id: "post-attending-the-freiburg-rising-stars-conference",
       
         title: "🇩🇪 Attending the Freiburg Rising Stars Conference",
       
