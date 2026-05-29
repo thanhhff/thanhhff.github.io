@@ -184,33 +184,3 @@ I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specia
     }
   }
 </style>
-
-<script>
-  (function () {
-    var BREAKPOINT = 576;
-    var MOBILE_SRC = '{{ "/assets/img/mobile-avatar.png" | relative_url }}';
-    var desktopSrc = null;
-    var desktopSrcset = null;
-
-    function applyMobileAvatar() {
-      var img = document.querySelector('.profile img');
-      if (!img) return;
-      var picture = img.closest('picture');
-      var source = picture ? picture.querySelector('source') : null;
-      if (!desktopSrc) {
-        desktopSrc = img.getAttribute('src');
-        if (source) desktopSrcset = source.getAttribute('srcset');
-      }
-      if (window.innerWidth <= BREAKPOINT) {
-        if (source) source.setAttribute('srcset', '');
-        img.setAttribute('src', MOBILE_SRC);
-      } else {
-        if (source && desktopSrcset) source.setAttribute('srcset', desktopSrcset);
-        img.setAttribute('src', desktopSrc);
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', applyMobileAvatar);
-    window.addEventListener('resize', applyMobileAvatar);
-  })();
-</script>
