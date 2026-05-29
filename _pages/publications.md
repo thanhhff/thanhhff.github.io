@@ -2,131 +2,334 @@
 layout: page
 permalink: /publications/
 title: publications
-description: publications by categories in reversed chronological order.
-nav: false
+nav: true
 nav_order: 2
 ---
 
-<!-- Bibsearch Feature -->
-{% include bib_search.liquid %}
+{% capture intl_j %}{% bibliography_count --query @*[note=International-Journal] %}{% endcapture %}
+{% capture intl_c %}{% bibliography_count --query @*[note=International-Conference] %}{% endcapture %}
+{% assign intl_total = intl_j | plus: intl_c %}
+{% capture dom_j %}{% bibliography_count --query @*[note=Domestic-Journal] %}{% endcapture %}
+{% capture dom_c %}{% bibliography_count --query @*[note=Domestic-Conference] %}{% endcapture %}
+{% assign dom_total = dom_j | plus: dom_c %}
 
-<!-- Filter Buttons -->
-<h4><br>type</h4>
-<div id="filter-buttons">
-  <button class="filter-btn active" data-type="all">any</button>
-  <button class="filter-btn" data-type="journal">journal</button>
-  <button class="filter-btn" data-type="international-conference">international conference</button>
-  <button class="filter-btn" data-type="domestic-conference">domestic journal/conference</button>
-  <button class="filter-btn" data-type="thesis">thesis</button>
-  <button class="filter-btn" data-type="miscellaneous">miscellaneous</button>
+<div class="pub-tabs">
+  <a href="#international" class="pub-tab" data-tab="international">International <span class="pub-tab-count">{{ intl_total }} papers</span></a>
+  <a href="#domestic" class="pub-tab" data-tab="domestic">Domestic <span class="pub-tab-count">{{ dom_total }} papers</span></a>
 </div>
 
-<!-- Publication Sections -->
-<div id="publications-list">
-  <div class="publication-item journal">
-    <h4><br>journal</h4>
-    <div class="publications">
-      {% bibliography --query @*[note=International-Journal]* %}
-    </div>
-  </div>
+<!-- International Panel -->
+<div id="tab-international" class="pub-panel pub-page">
 
-  <div class="publication-item international-conference">
-    <h4><br>international conference</h4>
-    <div class="publications">
-      {% bibliography --query @*[note=International-Conference]* %}
-    </div>
-  </div>
-
-  <div class="publication-item domestic-conference">
-    <h4><br>domestic journal/conference</h4>
-    <div class="publications">
-      {% bibliography --query @*[note=Domestic-Journal] or @*[note=Domestic-Conference] %}
-    </div>
-  </div>
-
-  <div class="publication-item thesis">
-    <h4><br>thesis</h4>
-    <div class="publications">
-      {% bibliography --query @*[note=Thesis]* %}
-    </div>
-  </div>
-
-  <div class="publication-item miscellaneous">
-    <h4><br>miscellaneous (article, arXiv, etc.)</h4>
-    <div class="publications">
-      {% bibliography --query @*[note=Others]* %}
-    </div>
+<div class="pub-year-block">
+  <div class="pub-year">2026</div>
+  <div class="pub-entries">
+    <div class="pub-section">Journal</div>
+    {% bibliography --template bib_international --query @*[pub_group=ij2026] %}
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2026] %}
   </div>
 </div>
 
-<!-- JavaScript for Filtering -->
+<div class="pub-year-block">
+  <div class="pub-year">2025</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2025] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2024</div>
+  <div class="pub-entries">
+    <div class="pub-section">Journal</div>
+    {% bibliography --template bib_international --query @*[pub_group=ij2024] %}
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2024] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2022</div>
+  <div class="pub-entries">
+    <div class="pub-section">Journal</div>
+    {% bibliography --template bib_international --query @*[pub_group=ij2022] %}
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2022] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2021</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2021] %}
+  </div>
+</div>
+
+</div>
+
+<!-- Domestic Panel -->
+<div id="tab-domestic" class="pub-panel pub-page" style="display:none">
+
+<div class="pub-year-block">
+  <div class="pub-year">2026</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2026] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2025</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2025] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2024</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2024] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2023</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2023] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2022</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2022] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2021</div>
+  <div class="pub-entries">
+    <div class="pub-section">Journal</div>
+    {% bibliography --template bib_international --query @*[pub_group=dj2021] %}
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2021] %}
+  </div>
+</div>
+
+</div>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const buttons = document.querySelectorAll(".filter-btn");
-    const publications = document.querySelectorAll(".publication-item");
+  (function () {
+    var tabs = document.querySelectorAll('.pub-tab');
+    var panels = document.querySelectorAll('.pub-panel');
 
-    buttons.forEach(button => {
-      button.addEventListener("click", function () {
-        buttons.forEach(btn => btn.classList.remove("active"));
-        this.classList.add("active");
+    function activate(name) {
+      tabs.forEach(function (t) {
+        t.classList.toggle('active', t.dataset.tab === name);
+      });
+      panels.forEach(function (p) {
+        p.style.display = p.id === 'tab-' + name ? '' : 'none';
+      });
+    }
 
-        const filterType = this.getAttribute("data-type");
-
-        publications.forEach(pub => {
-          if (filterType === "all") {
-            pub.style.display = "block";
-          } else {
-            pub.style.display = pub.classList.contains(filterType) ? "block" : "none";
-          }
-        });
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function (e) {
+        e.preventDefault();
+        var name = t.dataset.tab;
+        history.replaceState(null, '', '#' + name);
+        activate(name);
       });
     });
-  });
+
+    var hash = location.hash.replace('#', '');
+    activate(hash === 'domestic' ? 'domestic' : 'international');
+  })();
 </script>
 
-<!-- Responsive CSS -->
 <style>
-  /* Filter Buttons Layout */
-  #filter-buttons {
+  .pub-page {
+    margin-top: 1rem;
+  }
+
+  .pub-year-block {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    overflow-x: auto;  /* Allow scrolling on small screens */
-    padding-bottom: 10px;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--global-divider-color, #e8e8e8);
+  }
+  .pub-year-block:first-of-type {
+    border-top: none;
   }
 
-  .filter-btn {
-    background-color: #ddd;
-    border: none;
-    padding: 8px 13px;
-    cursor: pointer;
-    border-radius: 5px;
-    white-space: nowrap;  /* Prevent text wrapping */
-    transition: background 0.3s;
+  .pub-year {
+    flex: 0 0 70px;
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--global-theme-color, #b509ac);
+    line-height: 1.1;
+    position: sticky;
+    top: 5rem;
   }
 
-  .filter-btn.active {
-    background-color: #0076df;
-    color: white;
+  .pub-entries {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
-  /* Publication Items */
-  .publication-item {
-    margin-top: 20px;
+  .pub-section {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light, #828282);
+    margin: 0.4rem 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px dashed var(--global-divider-color, #e8e8e8);
+  }
+  .pub-section:first-child {
+    margin-top: 0;
   }
 
-  /* Responsive Design */
+  .pub-entries h2.bibliography {
+    display: none;
+  }
+
+  ol.bibliography {
+    margin: 0 0 1.1rem;
+    padding-left: 1.25rem;
+  }
+  ol.bibliography:last-child {
+    margin-bottom: 0;
+  }
+  ol.bibliography li {
+    margin-bottom: 0.7rem;
+    line-height: 1.55;
+    text-align: justify;
+  }
+  ol.bibliography li::marker {
+    color: var(--global-text-color-light, #999);
+    font-size: 0.85em;
+  }
+
+  .pub-page b {
+    font-weight: 400;
+    color: #000;
+    background: color-mix(in srgb, #4ade80 25%, transparent);
+    border: 1px solid color-mix(in srgb, #4ade80 50%, transparent);
+    border-radius: 6px;
+    padding: 0.05rem 0.25rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
+  .venue {
+    font-style: italic;
+    color: var(--global-text-color, #333);
+  }
+
+  .doi-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+    text-decoration: none;
+  }
+  .doi-badge:hover {
+    background: rgba(124, 58, 237, 0.18);
+    text-decoration: none;
+  }
+
+  .if-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--global-theme-color, #b509ac);
+    background: color-mix(in srgb, var(--global-theme-color, #b509ac) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color, #b509ac) 30%, transparent);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
+  .award-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #b26a00;
+    background: rgba(255, 193, 7, 0.15);
+    border-radius: 6px;
+    padding: 0.05rem 0.45rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
   @media (max-width: 600px) {
-    #filter-buttons {
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+    .pub-year-block {
+      flex-direction: column;
+      gap: 0.4rem;
     }
-    .filter-btn {
-      flex: 1;
-      text-align: center;
+    .pub-year {
+      flex-basis: auto;
+      text-align: left;
+      position: static;
     }
+    ol.bibliography li {
+      text-align: left;
+    }
+  }
+
+  .pub-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--global-divider-color, #e8e8e8);
+  }
+  .pub-tab {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--global-text-color-light, #828282);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.18s, border-color 0.18s;
+  }
+  .pub-tab:hover {
+    color: var(--global-theme-color, #b509ac);
+    text-decoration: none;
+  }
+  .pub-tab.active {
+    color: var(--global-theme-color, #b509ac);
+    border-bottom-color: var(--global-theme-color, #b509ac);
+  }
+  .pub-tab-count {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: color-mix(in srgb, var(--global-theme-color, #b509ac) 12%, transparent);
+    color: var(--global-theme-color, #b509ac);
+    border-radius: 20px;
+    padding: 0.05rem 0.45rem;
+    margin-left: 0.25rem;
+    vertical-align: middle;
   }
 </style>

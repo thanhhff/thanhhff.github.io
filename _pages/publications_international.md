@@ -2,8 +2,7 @@
 layout: page
 title: publications
 permalink: /publications-international/
-nav: true
-nav_order: 2
+nav: false
 ---
 
 {% capture intl_j %}{% bibliography_count --query @*[note=International-Journal] %}{% endcapture %}
