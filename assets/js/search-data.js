@@ -23,21 +23,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/blog/";
           },
-        },{id: "dropdown-international",
-              title: "international",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
-            },{id: "dropdown-domestic",
-              title: "domestic",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "";
-              },
-            },{id: "nav-services",
+        },{id: "nav-publications",
+          title: "publications",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications-international/";
+          },
+        },{id: "nav-services",
           title: "services",
           description: "",
           section: "Navigation",
