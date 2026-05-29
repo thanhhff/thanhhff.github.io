@@ -162,7 +162,55 @@ I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specia
   /* ── Responsive ── */
   @media (max-width: 576px) {
     .about-position-card { padding: 0.55rem 0.7rem; }
-    .about-edu-year { flex: 0 0 44px; font-size: 0.72rem; }
-    .about-contact-link { font-size: 0.78rem; }
+    .about-edu-year { flex: 0 0 44px; }
+
+    /* Mobile avatar: centered circle */
+    .profile,
+    .profile.float-right,
+    .profile.float-left {
+      float: none !important;
+      display: flex;
+      justify-content: center;
+      margin: 0 0 1.25rem 0 !important;
+    }
+    .profile figure {
+      width: 80%;
+    }
+    .profile img {
+      width: 100% !important;
+      aspect-ratio: 1;
+      border-radius: 50% !important;
+      object-fit: cover;
+    }
   }
 </style>
+
+<script>
+  (function () {
+    var BREAKPOINT = 576;
+    var MOBILE_SRC = '{{ "/assets/img/mobile-avatar.png" | relative_url }}';
+    var desktopSrc = null;
+    var desktopSrcset = null;
+
+    function applyMobileAvatar() {
+      var img = document.querySelector('.profile img');
+      if (!img) return;
+      var picture = img.closest('picture');
+      var source = picture ? picture.querySelector('source') : null;
+      if (!desktopSrc) {
+        desktopSrc = img.getAttribute('src');
+        if (source) desktopSrcset = source.getAttribute('srcset');
+      }
+      if (window.innerWidth <= BREAKPOINT) {
+        if (source) source.setAttribute('srcset', '');
+        img.setAttribute('src', MOBILE_SRC);
+      } else {
+        if (source && desktopSrcset) source.setAttribute('srcset', desktopSrcset);
+        img.setAttribute('src', desktopSrc);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', applyMobileAvatar);
+    window.addEventListener('resize', applyMobileAvatar);
+  })();
+</script>
