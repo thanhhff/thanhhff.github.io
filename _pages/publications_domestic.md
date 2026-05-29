@@ -1,10 +1,21 @@
 ---
 layout: page
-title: domestic
+title: publications
 permalink: /publications-domestic/
 nav: false
-nav_order: 3
 ---
+
+{% capture intl_j %}{% bibliography_count --query @*[note=International-Journal] %}{% endcapture %}
+{% capture intl_c %}{% bibliography_count --query @*[note=International-Conference] %}{% endcapture %}
+{% assign intl_total = intl_j | plus: intl_c %}
+{% capture dom_j %}{% bibliography_count --query @*[note=Domestic-Journal] %}{% endcapture %}
+{% capture dom_c %}{% bibliography_count --query @*[note=Domestic-Conference] %}{% endcapture %}
+{% assign dom_total = dom_j | plus: dom_c %}
+
+<div class="pub-tabs">
+  <a href="{{ '/publications-international/' | relative_url }}" class="pub-tab">International <span class="pub-tab-count">{{ intl_total }} papers</span></a>
+  <a href="{{ '/publications-domestic/' | relative_url }}" class="pub-tab active">Domestic <span class="pub-tab-count">{{ dom_total }} papers</span></a>
+</div>
 
 <div class="pub-page">
 
@@ -204,5 +215,42 @@ nav_order: 3
     ol.bibliography li {
       text-align: left;
     }
+  }
+
+  /* ── Tab switcher ── */
+  .pub-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--global-divider-color, #e8e8e8);
+  }
+  .pub-tab {
+    padding: 0.45rem 1.1rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--global-text-color-light, #828282);
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.18s, border-color 0.18s;
+  }
+  .pub-tab:hover {
+    color: var(--global-theme-color, #b509ac);
+    text-decoration: none;
+  }
+  .pub-tab.active {
+    color: var(--global-theme-color, #b509ac);
+    border-bottom-color: var(--global-theme-color, #b509ac);
+  }
+  .pub-tab-count {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: color-mix(in srgb, var(--global-theme-color, #b509ac) 12%, transparent);
+    color: var(--global-theme-color, #b509ac);
+    border-radius: 20px;
+    padding: 0.05rem 0.45rem;
+    margin-left: 0.25rem;
+    vertical-align: middle;
   }
 </style>

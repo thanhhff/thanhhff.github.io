@@ -6,95 +6,159 @@ nav: true
 nav_order: 3
 ---
 
+<div class="pub-page">
+
+<div class="pub-year-block">
+  <div class="pub-year">2026</div>
+  <div class="pub-entries">
+    <div class="pub-section">Reviewer</div>
+    <ul class="srv-list">
+      <li>Neurocomputing <span class="srv-note">Journal, IF: 6.5</span></li>
+      <li>Pattern Recognition <span class="srv-note">Journal, IF: 7.6</span></li>
+      <li>ACM Computing Surveys <span class="srv-note">Journal, IF: 28.0</span></li>
+      <li>IEEE Transactions on Multimedia <span class="srv-note">Journal, IF: 9.7</span></li>
+      <li>IEEE Transactions on Circuits and Systems for Video Technology <span class="srv-note">Journal, IF: 11.1</span></li>
+      <li>International Conference on Multimedia Modeling <span class="srv-note">MMM</span></li>
+      <li>Conference on Neural Information Processing Systems <span class="srv-note">NeurIPS</span></li>
+      <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition <span class="srv-note">CVPR</span></li>
+      <li>IEEE/CVF CVPR @ CV4Animals: Computer Vision for Animal Behavior Tracking and Modeling</li>
+      <li>IEEE International Conference on Automatic Face and Gesture Recognition <span class="srv-note">FG</span></li>
+      <li>ACM MobiSys @ International Workshop on Embedded and Mobile Deep Learning</li>
+    </ul>
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2025</div>
+  <div class="pub-entries">
+    <div class="pub-section">Organizing Committee</div>
+    <ul class="srv-list">
+      <li>ACM Multimedia Asia 2025 <span class="srv-note">Poster Session Chair @ ACM MMAsia</span></li>
+      <li>IntentVC Challenge: Intention-Oriented Controllable Video Captioning <span class="srv-note">Grand Challenge @ ACM MM</span></li>
+    </ul>
+    <div class="pub-section">Reviewer</div>
+    <ul class="srv-list">
+      <li>Pattern Recognition <span class="srv-note">Journal, IF: 7.6</span> <a href="{{ site.baseurl }}/assets/pdf/reviewer/2025_PR.pdf" target="_blank" rel="noopener" class="srv-cert">Certificate</a></li>
+      <li>Information Sciences <span class="srv-note">Journal, IF: 6.8</span></li>
+      <li>ACM Computing Surveys <span class="srv-note">Journal, IF: 28.0</span></li>
+      <li>Biomedical Signal Processing and Control <span class="srv-note">Journal, IF: 4.9</span></li>
+      <li>IEEE Transactions on Pattern Analysis and Machine Intelligence <span class="srv-note">Journal, IF: 18.6</span> <a href="{{ site.baseurl }}/assets/pdf/reviewer/2025_TPAMI.pdf" target="_blank" rel="noopener" class="srv-cert">Certificate</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2024</div>
+  <div class="pub-entries">
+    <div class="pub-section">Reviewer</div>
+    <ul class="srv-list">
+      <li>ACM International Conference on Multimedia <span class="srv-note">ACM MM</span></li>
+      <li>Medical Image Computing and Computer Assisted Intervention <span class="srv-note">MICCAI</span></li>
+      <li>ACM ICMR @ International Workshop on Intelligent Cross-Data Analysis and Retrieval</li>
+      <li>Meeting on Image Recognition and Understanding <span class="srv-note">MIRU, Japanese Domestic</span></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
 <style>
-  .service-table {
-    width: 100%;
-    max-width: 100%;
+  .pub-page {
+    margin-top: 1rem;
   }
 
-  .service-table td {
-    vertical-align: top;
-    padding: 5px 20px;
+  .pub-year-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--global-divider-color, #e8e8e8);
+  }
+  .pub-year-block:first-of-type {
+    border-top: none;
   }
 
-  .year {
-    font-weight: bold;
+  .pub-year {
+    flex: 0 0 70px;
     text-align: right;
-    width: 80px;
-    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--global-theme-color, #b509ac);
+    line-height: 1.1;
+    position: sticky;
+    top: 5rem;
   }
 
-  .content {
+  .pub-entries {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .pub-section {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light, #828282);
+    margin: 0.4rem 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px dashed var(--global-divider-color, #e8e8e8);
+  }
+  .pub-section:first-child {
+    margin-top: 0;
+  }
+
+  .srv-list {
+    margin: 0 0 1.1rem;
+    padding-left: 1.25rem;
+  }
+  .srv-list:last-child {
+    margin-bottom: 0;
+  }
+  .srv-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.55;
     text-align: left;
   }
+  .srv-list li::marker {
+    color: var(--global-text-color-light, #999);
+    font-size: 0.85em;
+  }
+
+  .srv-note {
+    font-size: 0.78rem;
+    color: var(--global-text-color-light, #828282);
+    font-style: italic;
+  }
+
+  .srv-cert {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+    text-decoration: none;
+  }
+  .srv-cert:hover {
+    background: rgba(124, 58, 237, 0.18);
+    text-decoration: none;
+  }
+
+  @media (max-width: 600px) {
+    .pub-year-block {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .pub-year {
+      flex-basis: auto;
+      text-align: left;
+      position: static;
+    }
+  }
 </style>
-
-#### organizing committee
-<table class="service-table">
-  <tr>
-    <td class="year">2025</td>
-    <td class="content">
-      <ul>
-        <li>ACM Multimedia Asia 2025 (Poster Session Chair @ ACM MMAsia)</li>
-        <li>IntentVC Challenge: Intention-Oriented Controllable Video Captioning (Grand Challenge @ ACM MM)</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-#### reviewer
-<table class="service-table">
-  <tr>
-    <td class="year">2026</td>
-    <td class="content">
-      <ul>
-        <li>Neurocomputing (Journal, IF: 6.5)</li>
-        <li>Pattern Recognition (Journal, IF: 7.6)</li>
-        <li>ACM Computing Surveys (Journal, IF: 28.0)</li>
-        <li>IEEE Transactions on Multimedia (Journal, IF: 9.7)</li>
-        <li>IEEE Transactions on Circuits and Systems for Video Technology (Journal, IF: 11.1)</li>
-        <li>International Conference on Multimedia Modeling (MMM)</li>
-        <li>Conference on Neural Information Processing Systems (NeurIPS)</li>
-        <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)</li>
-        <li>IEEE/CVF CVPR @ CV4Animals: Computer Vision for Animal Behavior Tracking and Modeling</li>
-        <li>IEEE International Conference on Automatic Face and Gesture Recognition (FG)</li>
-        <li>ACM MobiSys @ International Workshop on Embedded and Mobile Deep Learning</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2025</td>
-    <td class="content">
-      <ul>
-        <li>Pattern Recognition (Journal, IF: 7.6) 
-          <a href="{{ site.baseurl }}/assets/pdf/reviewer/2025_PR.pdf"
-            target="_blank" rel="noopener">
-            Certificate
-          </a>
-        </li>
-        <li>Information Sciences (Journal, IF: 6.8)</li>
-        <li>ACM Computing Surveys (Journal, IF: 28.0)</li>
-        <li>Biomedical Signal Processing and Control (Journal, IF: 4.9)</li>
-        <li>IEEE Transactions on Pattern Analysis and Machine Intelligence (Journal, IF: 18.6)
-          <a href="{{ site.baseurl }}/assets/pdf/reviewer/2025_TPAMI.pdf"
-            target="_blank" rel="noopener">
-            Certificate
-          </a>
-        </li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2024</td>
-    <td class="content">
-      <ul>
-        <li>ACM International Conference on Multimedia (ACM MM)</li>
-        <li>Medical Image Computing and Computer Assisted Intervention (MICCAI)</li>
-        <li>ACM ICMR @ International Workshop on Intelligent Cross-Data Analysis and Retrieval</li>
-        <li>Meeting on Image Recognition and Understanding (MIRU, Japanese Domestic)</li>
-      </ul>
-    </td>
-  </tr>
-</table>
-
-
