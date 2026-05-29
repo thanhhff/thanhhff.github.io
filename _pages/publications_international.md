@@ -6,147 +6,199 @@ nav: false
 nav_order: 3
 ---
 
-#### journal
-<table class="service-table">
-  <tr>
-    <td class="year">2026</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "MultiSensor-Home: Multi-modal multi-view dataset and benchmarks for action recognition in home environments," <i>Pattern Recognition (IF: 7.6)</i></li>
-      </ul>
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Weakly Labeled Multi-modal Multi-view Action Recognition," <i>ACM Transactions on Multimedia Computing, Communications, and Applications (IF: 6.0)</i></li>
-      </ul>
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Hierarchical Global-Local Fusion for One-stage Open-vocabulary Temporal Action Detection," <i>ACM Transactions on Multimedia Computing, Communications, and Applications (IF: 6.0)</i></li>
-      </ul> 
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2024</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Phi Le Nguyen, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Zero-shot Pill-prescription Matching with Graph Convolutional Network and Contrastive Learning," <i>IEEE Access (IF: 3.9)</i></li>
-      </ul>
-    </td>
-  </tr>
-    <tr>
-    <td class="year">2022</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Thao Nguyen Truong, Thanh Hung Nguyen, and Phi Le Nguyen, "Fuzzy Q-Learning-Based Opportunistic Communication for MEC-Enhanced Vehicular Crowdsensing," <i>IEEE Transactions on Network and Service Management (IF: 4.7)</i></li>
-      </ul>
-    </td>
-  </tr>
-</table>
+<div class="pub-page">
 
+<div class="pub-year-block">
+  <div class="pub-year">2026</div>
+  <div class="pub-entries">
+    <div class="pub-section">Journal</div>
+    {% bibliography --template bib_international --query @*[pub_group=ij2026] %}
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2026] %}
+  </div>
+</div>
 
-#### conference
-<table class="service-table">
-    <tr>
-    <td class="year">2026</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "View-aware Cross-modal Distillation for Multi-view Action Recognition," <i>In Proceedings of the 2026 IEEE/CVF Winter Conference on Applications of Computer Vision</i></li>
-      </ul>
-      <ul>
-        <li>Trung Kien Pham, Hoang Minh Vu, Anh Duc Chu, Dac Thai Nguyen, <b>Trung Thanh Nguyen</b>, Thao Nguyen Truong, Mai Hong Son, Thanh Trung Nguyen, and Phi Le Nguyen, "PADM: A Physics-aware Diffusion Model for Attenuation Correction," <i>In Proceedings of the 2026 IEEE/CVF Winter Conference on Applications of Computer Vision</i></li>
-      </ul>
-    </td>
-  </tr>
-  
-  <tr>
-    <td class="year">2025</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, "MultiSensor-Home: Benchmark for Multi-modal Multi-view Action Recognition in Home Environments," <i>In Proceedings of the 7th ACM International Conference on Multimedia in Asia (Doctoral Symposium)</i></li>
-      </ul>
-      <ul>
-        <li>Junan Chen, <b>Trung Thanh Nguyen</b>, Takahiro Komamizu, and Ichiro Ide, "Q-Adapter: Visual Query Adapter for Extracting Textually-related Features in Video Captioning," <i>In Proceedings of the 7th ACM International Conference on Multimedia in Asia</i></li>
-      </ul>
-      <ul>
-        <li>Huu Tien Nguyen, Dac Thai Nguyen, Duc Nguyen The Minh, <b>Trung Thanh Nguyen<sup> (Corresponding Author)</sup></b>, Thao Nguyen Truong, Hieu Pham, Johan Barthelemy, Tran Minh Quan, Quoc Viet Hung Nguyen, Thanh Tam Nguyen, Mai Hong Son, Chau Quynh Anh, Thanh Trung Nguyen, Phi Le Nguyen, "Toward a Vision-Language Foundation Model for Medical Data: Multimodal Dataset and Benchmarks for Vietnamese PET/CT Report Generation," <i>In Proceedings of the 39th Conference on Neural Information Processing Systems</i></li>
-      </ul>
-      <ul>
-        <li>Takahiro Komamizu, A. Kastner Marc, Yasutomo Kawanishi, <b>Trung Thanh Nguyen</b>, and Junan Chen, "IntentVC 2025: The ACM Multimedia Grand Challenge on Intention-Oriented Controllable Video Captioning," <i>In Proceedings of the 33rd ACM International Conference on Multimedia (Grand Challenge)</i></li>
-      </ul>
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "MultiSensor-Home: A Wide-area Multi-modal Multi-view Dataset for Action Recognition and Transformer-based Sensor Fusion," <i>In Proceedings of the 19th IEEE International Conference on Automatic Face and Gesture Recognition</i> (<b>Best Student Paper Award</b>)</li>
-      </ul>
-      <ul>
-        <li>Dac Thai Nguyen, <b>Trung Thanh Nguyen</b>, Huu Tien Nguyen, Thanh Trung Nguyen, Huy Hieu Pham, Thanh Hung Nguyen, Thao Nguyen Truong, and Phi Le Nguyen, "CT to PET translation: A large-scale dataset and domain-knowledge-guided diffusion approach," <i>In Proceedings of the 2025 IEEE/CVF Winter Conference on Applications of Computer Vision</i></li>
-      </ul>
-    </td>
-  </tr>
+<div class="pub-year-block">
+  <div class="pub-year">2025</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2025] %}
+  </div>
+</div>
 
-  <tr>
-    <td class="year">2024</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "Action Selection Learning for Multi-label Multi-view Action Recognition," <i>In Proceedings of the 6th ACM International Conference on Multimedia in Asia</i></li>
-      </ul>
-      <ul>
-        <li>Manh Duong Nguyen, <b>Trung Thanh Nguyen</b>, Huy Hieu Pham, Trong Nghia Hoang, Phi Le Nguyen, and Thanh Trung Huynh, "FedMAC: Tackling Partial-Modality Missing in Federated Learning with Cross-Modal Aggregation and Contrastive Regularization," <i>In Proceedings of the 22nd IEEE International Symposium on Network Computing and Applications</i></li>
-      </ul>
-      <ul>
-        <li>Minh Hieu Nguyen, Huu Tien Nguyen, <b>Trung Thanh Nguyen</b>, Manh Duong Nguyen, Trong Nghia Hoang, Thao Nguyen Truong, and Phi Le Nguyen, "FedCert: Federated Accuracy Certification," <i>In Proceedings of the 22nd IEEE International Symposium on Network Computing and Applications</i></li>
-      </ul>
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "One-Stage Open-Vocabulary Temporal Action Detection Leveraging Temporal Multi-Scale and Action Label Features," <i>In Proceedings of the 18th IEEE International Conference on Automatic Face and Gesture Recognition</i></li>
-      </ul>
-    </td>
-  </tr>
+<div class="pub-year-block">
+  <div class="pub-year">2024</div>
+  <div class="pub-entries">
+    <div class="pub-section">Journal</div>
+    {% bibliography --template bib_international --query @*[pub_group=ij2024] %}
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2024] %}
+  </div>
+</div>
 
-  <tr>
-    <td class="year">2022</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Hoang Dang Nguyen, Thanh Hung Nguyen, Huy Hieu Pham, Ichiro Ide, and Phi Le Nguyen, "A Novel Approach for Pill-Prescription Matching with GNN Assistance and Contrastive Learning," <i>In Proceedings of the 2022 Pacific Rim International Conference on Artificial Intelligence</i></li>
-      </ul>
-      <ul>
-        <li>Nang Hung Nguyen, Phi Le Nguyen, Thuy Dung Nguyen, <b>Trung Thanh Nguyen</b>, Duc Long Nguyen, Thanh Hung Nguyen, Huy Hieu Pham, and Thao Nguyen Truong, "FedDRL: Deep Reinforcement Learning-based Adaptive Aggregation for Non-IID Data in Federated Learning," <i>In Proceedings of the 51st International Conference on Parallel Processing</i></li>
-      </ul>
-      <ul>
-        <li>Hieu Dinh, Nang Hung Nguyen, <b>Trung Thanh Nguyen</b>, Thanh Hung Nguyen, Thao Nguyen Truong, and Phi Le Nguyen, "Deep Reinforcement Learning-based Offloading for Latency Minimization in 3-tier V2X Networks," <i>In Proceedings of the 2022 IEEE Wireless Communications and Networking Conference</i></li>
-      </ul>
-    </td>
-  </tr>
+<div class="pub-year-block">
+  <div class="pub-year">2022</div>
+  <div class="pub-entries">
+    <div class="pub-section">Journal</div>
+    {% bibliography --template bib_international --query @*[pub_group=ij2022] %}
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2022] %}
+  </div>
+</div>
 
-  <tr>
-    <td class="year">2021</td>
-    <td class="content">
-      <ul>
-        <li>Dinh Tan Nguyen, Cao Truong Tran, <b>Trung Thanh Nguyen</b>, Cao Bao Hoang, Van Phu Luu, Ba Ngoc Nguyen, and Pou Ian Cheong, "Data Augmentation for Small Face Datasets and Face Verification by Generative Adversarial Networks Inversion," <i>In Proceedings of the 13th International Conference on Knowledge and Systems Engineering</i></li>
-      </ul>
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Thao Nguyen Truong, Tuan Anh Nguyen Dinh, Thanh Hung Nguyen, and Phi Le Nguyen, "Q-learning-based Opportunistic Communication for Real-time Mobile Air Quality Monitoring Systems," <i>In Proceedings of the 2021 IEEE International Performance, Computing, and Communications Conference</i></li>
-      </ul>
-    </td>
-  </tr>
+<div class="pub-year-block">
+  <div class="pub-year">2021</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=ic2021] %}
+  </div>
+</div>
 
-</table>
-
-
+</div>
 
 <style>
-  .service-table {
-    width: 100%;
-    max-width: 100%;
+  .pub-page {
+    margin-top: 1rem;
   }
 
-  .service-table td {
-    vertical-align: top;
-    padding: 5px 20px;
+  .pub-year-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--global-divider-color, #e8e8e8);
+  }
+  .pub-year-block:first-of-type {
+    border-top: none;
   }
 
-  .year {
-    font-weight: bold;
+  .pub-year {
+    flex: 0 0 70px;
     text-align: right;
-    width: 80px;
-    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--global-theme-color, #b509ac);
+    line-height: 1.1;
+    position: sticky;
+    top: 5rem;
   }
 
-  .content {
+  .pub-entries {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .pub-section {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light, #828282);
+    margin: 0.4rem 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px dashed var(--global-divider-color, #e8e8e8);
+  }
+  .pub-section:first-child {
+    margin-top: 0;
+  }
+
+  /* Hide year labels injected by jekyll-scholar's global group_by: year */
+  .pub-entries h2.bibliography {
+    display: none;
+  }
+
+  ol.bibliography {
+    margin: 0 0 1.1rem;
+    padding-left: 1.25rem;
+  }
+  ol.bibliography:last-child {
+    margin-bottom: 0;
+  }
+  ol.bibliography li {
+    margin-bottom: 0.7rem;
+    line-height: 1.55;
     text-align: justify;
+  }
+  ol.bibliography li::marker {
+    color: var(--global-text-color-light, #999);
+    font-size: 0.85em;
+  }
+
+  .pub-page b {
+    font-weight: 400;
+    color: #000;
+    background: color-mix(in srgb, #4ade80 25%, transparent);
+    border: 1px solid color-mix(in srgb, #4ade80 50%, transparent);
+    border-radius: 6px;
+    padding: 0.05rem 0.25rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
+  .venue {
+    font-style: italic;
+    color: var(--global-text-color, #333);
+  }
+
+  .doi-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+    text-decoration: none;
+  }
+  .doi-badge:hover {
+    background: rgba(124, 58, 237, 0.18);
+    text-decoration: none;
+  }
+
+  .if-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--global-theme-color, #b509ac);
+    background: color-mix(in srgb, var(--global-theme-color, #b509ac) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color, #b509ac) 30%, transparent);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
+  .award-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #b26a00;
+    background: rgba(255, 193, 7, 0.15);
+    border-radius: 6px;
+    padding: 0.05rem 0.45rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
+  @media (max-width: 600px) {
+    .pub-year-block {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .pub-year {
+      flex-basis: auto;
+      text-align: left;
+      position: static;
+    }
+    ol.bibliography li {
+      text-align: left;
+    }
   }
 </style>

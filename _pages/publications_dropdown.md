@@ -9,6 +9,6 @@ children:
     permalink: /publications-international/
   - title: domestic
     permalink: /publications-domestic/
-  - title: all
-    permalink: /publications/
+  # - title: all
+  #   permalink: /publications/
 ---

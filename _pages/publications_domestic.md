@@ -6,104 +6,203 @@ nav: false
 nav_order: 3
 ---
 
-#### journal
-<table class="service-table">
-  <tr>
-    <td class="year">2021</td>
-    <td class="content">
-      <ul>
-        <li>Nang Hung Nguyen, <b>Trung Thanh Nguyen</b>, Minh Khiem Pham, Van Hieu Dinh, Tuan Anh Nguyen Dinh, Thanh Hung Nguyen, and Phi Le Nguyen, "Mô hình mạng giao thông thông minh ba tầng và giải pháp giảm thiểu độ trễ truyền tin ứng dụng phương pháp học tăng cường," <i>Journal of Science and Technology on Information and Communications</i></li>
-      </ul>
-    </td>
-  </tr>
-</table>
+<div class="pub-page">
 
+<div class="pub-year-block">
+  <div class="pub-year">2026</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2026] %}
+  </div>
+</div>
 
-#### conference
-<table class="service-table">
-  <tr>
-    <td class="year">2026</td>
-    <td class="content">
-    <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "視野が部分的に重複する多視点行動認識における視点整合性学習法," <i>In Proceedings of the 2026 Pattern Recognition and Media Understanding</i></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2025</td>
-    <td class="content">
-    <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "MultiSensor-Home: Benchmark for Multi-modal Multi-view Action Recognition in Home Environments," <i>In Proceedings of the 28th Meeting on Image Recognition and Understanding</i></li>
-      </ul>
-      <ul>
-        <li>Junan Chen, <b>Trung Thanh Nguyen</b>, Takahiro Komamizu, and Ichiro Ide, "Visual Adapter for Extracting Textually-related Features in Video Captioning," <i>In Proceedings of the 28th Meeting on Image Recognition and Understanding</i></li>
-      </ul>
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Vijay John, Takahiro Komamizu, and Ichiro Ide, "広域多視点マルチモーダル行動認識のためのセンサ統合手法とMultiSensor-Homeデータセットの提案," <i>In Proceedings of the 2025 Pattern Recognition and Media Understanding</i></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2024</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "大域・局所特徴統合埋め込みに基づくオープン語彙時系列行動検出," <i>In Proceedings of the 2024 Pattern Recognition and Media Understanding</i></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2023</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Phi Le Nguyen, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "医療分野におけるゼロショット錠剤‐処方箋対応付け," <i>In Proceedings of the 2023 Tokai-Kansai Database Workshop</i></li>
-      </ul>
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "時間マルチスケール特徴と行動ラベル特徴によるオープンボキャブラリ行動区間認識," <i>In Proceedings of the 26th Meeting on Image Recognition and Understanding</i></li>
-      </ul>
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Phi Le Nguyen, Yasutomo Kawanishi, Takahiro Komamizu, and Ichiro Ide, "PiDP: 処方箋に対するGCNの対照学習に基づく錠剤検出," <i>In Proceedings of the 2023 IEICE General Conference</i></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2022</td>
-    <td class="content">
-      <ul>
-        <li><b>Trung Thanh Nguyen</b>, Nang Hung Nguyen, Manh Cuong Dao, Nam Duong Tran, and Trong Bang Nguyen, "Tối ưu truyền tin trong mạng điện toán biên di động bằng tuận toán Fuzzy Q-learning," <i>In Proceedings of the 2022 Scientific Research Student Conference, Hanoi University of Science and Technology</i></li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td class="year">2021</td>
-    <td class="content">
-      <ul>
-        <li>Minh Khiem Pham, Nang Hung Nguyen, <b>Trung Thanh Nguyen</b>, Van Hieu Dinh, and Dinh Tuan Anh Nguyen, "Mô hình mạng giao thông thông minh ba tầng và giải pháp giảm thiểu độ trễ truyền tin ứng dụng phương pháp học tăng cường," <i>In Proceedings of the 2021 Scientific Research Student Conference, Hanoi University of Science and Technology</i></li>
-      </ul>
-    </td>
-  </tr>
-</table>
+<div class="pub-year-block">
+  <div class="pub-year">2025</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2025] %}
+  </div>
+</div>
 
+<div class="pub-year-block">
+  <div class="pub-year">2024</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2024] %}
+  </div>
+</div>
 
+<div class="pub-year-block">
+  <div class="pub-year">2023</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2023] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2022</div>
+  <div class="pub-entries">
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2022] %}
+  </div>
+</div>
+
+<div class="pub-year-block">
+  <div class="pub-year">2021</div>
+  <div class="pub-entries">
+    <div class="pub-section">Journal</div>
+    {% bibliography --template bib_international --query @*[pub_group=dj2021] %}
+    <div class="pub-section">Conference</div>
+    {% bibliography --template bib_international --query @*[pub_group=dc2021] %}
+  </div>
+</div>
+
+</div>
 
 <style>
-  .service-table {
-    width: 100%;
-    max-width: 100%;
+  .pub-page {
+    margin-top: 1rem;
   }
 
-  .service-table td {
-    vertical-align: top;
-    padding: 5px 20px;
+  .pub-year-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--global-divider-color, #e8e8e8);
+  }
+  .pub-year-block:first-of-type {
+    border-top: none;
   }
 
-  .year {
-    font-weight: bold;
+  .pub-year {
+    flex: 0 0 70px;
     text-align: right;
-    width: 80px;
-    white-space: nowrap;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--global-theme-color, #b509ac);
+    line-height: 1.1;
+    position: sticky;
+    top: 5rem;
   }
 
-  .content {
+  .pub-entries {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .pub-section {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light, #828282);
+    margin: 0.4rem 0 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px dashed var(--global-divider-color, #e8e8e8);
+  }
+  .pub-section:first-child {
+    margin-top: 0;
+  }
+
+  /* Hide year labels injected by jekyll-scholar's global group_by: year */
+  .pub-entries h2.bibliography {
+    display: none;
+  }
+
+  ol.bibliography {
+    margin: 0 0 1.1rem;
+    padding-left: 1.25rem;
+  }
+  ol.bibliography:last-child {
+    margin-bottom: 0;
+  }
+  ol.bibliography li {
+    margin-bottom: 0.7rem;
+    line-height: 1.55;
     text-align: justify;
+  }
+  ol.bibliography li::marker {
+    color: var(--global-text-color-light, #999);
+    font-size: 0.85em;
+  }
+
+  .pub-page b {
+    font-weight: 400;
+    color: #000;
+    background: color-mix(in srgb, #4ade80 25%, transparent);
+    border: 1px solid color-mix(in srgb, #4ade80 50%, transparent);
+    border-radius: 6px;
+    padding: 0.05rem 0.25rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
+  .venue {
+    font-style: italic;
+    color: var(--global-text-color, #333);
+  }
+
+  .doi-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #7c3aed;
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+    text-decoration: none;
+  }
+  .doi-badge:hover {
+    background: rgba(124, 58, 237, 0.18);
+    text-decoration: none;
+  }
+
+  .if-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--global-theme-color, #b509ac);
+    background: color-mix(in srgb, var(--global-theme-color, #b509ac) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--global-theme-color, #b509ac) 30%, transparent);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
+  .award-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #b26a00;
+    background: rgba(255, 193, 7, 0.15);
+    border-radius: 6px;
+    padding: 0.05rem 0.45rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+  }
+
+  @media (max-width: 600px) {
+    .pub-year-block {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .pub-year {
+      flex-basis: auto;
+      text-align: left;
+      position: static;
+    }
+    ol.bibliography li {
+      text-align: left;
+    }
   }
 </style>
