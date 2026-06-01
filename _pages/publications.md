@@ -250,8 +250,36 @@ nav_order: 2
     vertical-align: 1px;
     text-decoration: none;
   }
+  .doi-badge .ai {
+    font-size: 0.9em;
+    vertical-align: -0.05em;
+  }
   .doi-badge:hover {
     background: rgba(124, 58, 237, 0.18);
+    text-decoration: none;
+  }
+
+  .arxiv-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #b91c1c;
+    background: rgba(185, 28, 28, 0.08);
+    border: 1px solid rgba(185, 28, 28, 0.25);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+    text-decoration: none;
+  }
+  .arxiv-badge .ai {
+    font-size: 0.9em;
+    vertical-align: -0.05em;
+  }
+  .arxiv-badge:hover {
+    background: rgba(185, 28, 28, 0.18);
     text-decoration: none;
   }
 
