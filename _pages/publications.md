@@ -6,11 +6,11 @@ nav: true
 nav_order: 2
 ---
 
-{% capture intl_j %}{% bibliography_count --query @*[note=International-Journal] %}{% endcapture %}
-{% capture intl_c %}{% bibliography_count --query @*[note=International-Conference] %}{% endcapture %}
+{% capture intl_j %}{% bibliography_count --file journals.bib --query @*[note=International-Journal] %}{% endcapture %}
+{% capture intl_c %}{% bibliography_count --file conferences.bib --query @*[note=International-Conference] %}{% endcapture %}
 {% assign intl_total = intl_j | plus: intl_c %}
-{% capture dom_j %}{% bibliography_count --query @*[note=Domestic-Journal] %}{% endcapture %}
-{% capture dom_c %}{% bibliography_count --query @*[note=Domestic-Conference] %}{% endcapture %}
+{% capture dom_j %}{% bibliography_count --file journals.bib --query @*[note=Domestic-Journal] %}{% endcapture %}
+{% capture dom_c %}{% bibliography_count --file domestic.bib --query @*[note=Domestic-Conference] %}{% endcapture %}
 {% assign dom_total = dom_j | plus: dom_c %}
 
 <div class="pub-tabs">
@@ -25,9 +25,9 @@ nav_order: 2
   <div class="pub-year">2026</div>
   <div class="pub-entries">
     <div class="pub-section">Journal</div>
-    {% bibliography --template bib_international --query @*[pub_group=ij2026] %}
+    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=ij2026] %}
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=ic2026] %}
+    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2026] %}
   </div>
 </div>
 
@@ -35,7 +35,7 @@ nav_order: 2
   <div class="pub-year">2025</div>
   <div class="pub-entries">
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=ic2025] %}
+    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2025] %}
   </div>
 </div>
 
@@ -43,9 +43,9 @@ nav_order: 2
   <div class="pub-year">2024</div>
   <div class="pub-entries">
     <div class="pub-section">Journal</div>
-    {% bibliography --template bib_international --query @*[pub_group=ij2024] %}
+    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=ij2024] %}
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=ic2024] %}
+    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2024] %}
   </div>
 </div>
 
@@ -53,9 +53,9 @@ nav_order: 2
   <div class="pub-year">2022</div>
   <div class="pub-entries">
     <div class="pub-section">Journal</div>
-    {% bibliography --template bib_international --query @*[pub_group=ij2022] %}
+    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=ij2022] %}
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=ic2022] %}
+    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2022] %}
   </div>
 </div>
 
@@ -63,7 +63,7 @@ nav_order: 2
   <div class="pub-year">2021</div>
   <div class="pub-entries">
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=ic2021] %}
+    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2021] %}
   </div>
 </div>
 
@@ -76,7 +76,7 @@ nav_order: 2
   <div class="pub-year">2026</div>
   <div class="pub-entries">
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=dc2026] %}
+    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2026] %}
   </div>
 </div>
 
@@ -84,7 +84,7 @@ nav_order: 2
   <div class="pub-year">2025</div>
   <div class="pub-entries">
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=dc2025] %}
+    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2025] %}
   </div>
 </div>
 
@@ -92,7 +92,7 @@ nav_order: 2
   <div class="pub-year">2024</div>
   <div class="pub-entries">
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=dc2024] %}
+    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2024] %}
   </div>
 </div>
 
@@ -100,7 +100,7 @@ nav_order: 2
   <div class="pub-year">2023</div>
   <div class="pub-entries">
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=dc2023] %}
+    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2023] %}
   </div>
 </div>
 
@@ -108,7 +108,7 @@ nav_order: 2
   <div class="pub-year">2022</div>
   <div class="pub-entries">
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=dc2022] %}
+    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2022] %}
   </div>
 </div>
 
@@ -116,9 +116,9 @@ nav_order: 2
   <div class="pub-year">2021</div>
   <div class="pub-entries">
     <div class="pub-section">Journal</div>
-    {% bibliography --template bib_international --query @*[pub_group=dj2021] %}
+    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=dj2021] %}
     <div class="pub-section">Conference</div>
-    {% bibliography --template bib_international --query @*[pub_group=dc2021] %}
+    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2021] %}
   </div>
 </div>
 
@@ -256,6 +256,26 @@ nav_order: 2
   }
   .doi-badge:hover {
     background: rgba(124, 58, 237, 0.18);
+    text-decoration: none;
+  }
+
+  .pdf-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #c0392b;
+    background: rgba(192, 57, 43, 0.08);
+    border: 1px solid rgba(192, 57, 43, 0.25);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+    text-decoration: none;
+  }
+  .pdf-badge:hover {
+    background: rgba(192, 57, 43, 0.18);
     text-decoration: none;
   }
 
