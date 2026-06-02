@@ -10,28 +10,28 @@ ninja.data = [{
       window.location.href = "/";
     },
   },{id: "nav-news",
-          title: "news",
+          title: "News",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/news/";
           },
         },{id: "nav-blog",
-          title: "blog",
+          title: "Blog",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
           },
         },{id: "nav-publications",
-          title: "publications",
+          title: "Publications",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-services",
-          title: "services",
+          title: "Services",
           description: "",
           section: "Navigation",
           handler: () => {
@@ -43,6 +43,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
+          },
+        },{id: "nav-",
+          title: "✈",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/flights/";
           },
         },{id: "post-presenting-at-ieee-fg-2026",
       
