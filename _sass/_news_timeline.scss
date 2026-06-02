@@ -14,8 +14,9 @@
   &::after {
     content: '';
     flex: 1;
-    height: 1.5px;
-    background: var(--global-divider-color);
+    height: 2px;
+    background: var(--global-theme-color);
+    opacity: 0.3;
   }
 }
 
