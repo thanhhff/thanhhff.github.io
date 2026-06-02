@@ -283,13 +283,28 @@ layout: default
       .post article h2 a:hover {
         color: var(--global-theme-color, #b509ac) !important;
       }
+      .ab-see-more {
+        margin-left: auto;
+        font-size: 1rem;
+        color: var(--global-text-color-light) !important;
+        text-decoration: none;
+        opacity: .6;
+        transition: opacity .18s, color .18s;
+        line-height: 1;
+      }
+      .ab-see-more:hover {
+        opacity: 1;
+        color: var(--global-theme-color, #b509ac) !important;
+        text-decoration: none !important;
+      }
 
     </style>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
+        <a href="{{ '/news/' | relative_url }}" class="ab-see-more">↗</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -297,7 +312,8 @@ layout: default
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
+        <a href="{{ '/blog/' | relative_url }}" class="ab-see-more">↗</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
@@ -305,7 +321,8 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
+        <a href="{{ '/publications/' | relative_url }}" class="ab-see-more">↗</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}

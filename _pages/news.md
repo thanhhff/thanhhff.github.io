@@ -12,6 +12,7 @@ nav_order: 1
 {% assign prev_year = "" %}
 {% assign prev_month = "" %}
 {% assign in_group = false %}
+{% assign first_month_done = false %}
 {% for item in news_items %}
   {% assign yr = item.date | date: "%Y" %}
   {% assign mo = item.date | date: "%Y-%m" %}
@@ -24,14 +25,14 @@ nav_order: 1
     {% assign in_group = true %}
   {% endif %}
   {% if mo != prev_month %}
-    <div class="nt-month-sep">{{ item.date | date: "%B" }}</div>
+    <div class="nt-month-sep">
+      <div class="nt-dot"></div>
+      {{ item.date | date: "%B" }}
+      {% if first_month_done == false %}<span class="nt-new-badge">✦ New</span>{% assign first_month_done = true %}{% endif %}
+    </div>
     {% assign prev_month = mo %}
   {% endif %}
   <div class="nt-item">
-    <div class="nt-left">
-      <span class="nt-day">{{ item.date | date: "%-d" }}</span>
-    </div>
-    <div class="nt-dot-col"><div class="nt-dot"></div></div>
     <div class="nt-body">
       {% if item.inline %}
         {{ item.content | emojify }}
@@ -49,7 +50,7 @@ nav_order: 1
 
 /* ── Year separator ── */
 .nt-year-sep {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: .08em;
   color: var(--global-theme-color);
@@ -65,49 +66,18 @@ nav_order: 1
   background: color-mix(in srgb, var(--global-theme-color) 22%, transparent);
 }
 
-/* ── Month separator ── */
+/* ── Month separator with dot ── */
 .nt-month-sep {
-  font-size: .75rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .80rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--global-text-color-light);
-  padding: .5rem 0 .4rem calc(2rem + .75rem + 20px + .75rem);
+  padding: .6rem 0 .4rem 1.2rem;
   margin-bottom: .1rem;
-}
-
-/* ── Year group ── */
-.nt-items { position: relative; }
-
-/* ── Item row ── */
-.nt-item {
-  display: grid;
-  grid-template-columns: 2rem 20px 1fr;
-  column-gap: .75rem;
-  align-items: start;
-  margin-bottom: .65rem;
-  position: relative;
-}
-
-/* Date column */
-.nt-left {
-  text-align: right;
-  padding-top: .28rem;
-  user-select: none;
-}
-.nt-day {
-  display: block;
-  font-size: 1rem;
-  font-weight: 800;
-  color: var(--global-text-color);
-  line-height: 1;
-}
-
-/* Dot — sits on top of the spine line */
-.nt-dot-col {
-  display: flex;
-  justify-content: center;
-  padding-top: .38rem;
   position: relative;
   z-index: 1;
 }
@@ -115,8 +85,31 @@ nav_order: 1
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  flex-shrink: 0;
   background: var(--global-theme-color);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--global-theme-color) 18%, transparent);
+}
+
+/* ── Year group — continuous spine line ── */
+.nt-items {
+  position: relative;
+}
+.nt-items::before {
+  content: '';
+  position: absolute;
+  left: calc(1.2rem + 4px);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--global-divider-color);
+  z-index: 0;
+}
+
+/* ── Item row ── */
+.nt-item {
+  padding-left: calc(1.2rem + 10px + .6rem);
+  margin-bottom: .65rem;
+  position: relative;
 }
 
 /* Content card */
@@ -124,7 +117,7 @@ nav_order: 1
   background: var(--global-card-bg-color);
   border: 1px solid var(--global-divider-color);
   border-radius: 10px;
-  padding: .65rem .95rem;
+  padding: .4rem .7rem;
   font-size: 1rem;
   line-height: 1.65;
 }
@@ -137,24 +130,17 @@ nav_order: 1
 }
 .nt-link:hover { text-decoration: underline; }
 
-/* ── "New" badge on the latest item ── */
-.nt-items:first-of-type .nt-item:first-of-type .nt-body::before {
-  content: '✦ new';
-  display: inline-block;
-  font-size: .6rem;
+/* ── "New" badge on the latest month ── */
+.nt-new-badge {
+  font-size: .62rem;
   font-weight: 800;
   letter-spacing: .1em;
   text-transform: uppercase;
   color: #fff;
-  background: var(--global-theme-color);
+  background: #e53935;
   border-radius: 20px;
-  padding: .1rem .5rem;
-  margin-bottom: .45rem;
+  padding: .15rem .55rem;
+  margin-left: .25rem;
   vertical-align: middle;
-  animation: nt-pulse 2s ease-in-out infinite;
-}
-@keyframes nt-pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: .55; }
 }
 </style>

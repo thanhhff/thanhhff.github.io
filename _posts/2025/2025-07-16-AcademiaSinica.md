@@ -4,7 +4,7 @@ title: "🇹🇼 International Summer School 2025 at Academia Sinica"
 date: 2025-07-16
 tags: [school, taiwan]
 categories: school
-image: assets/img/blog/2025/07_AcademiaSinica/3.jpeg
+image: assets/img/blog/2025/07_AcademiaSinica/3.jpg
 ---
 <style>
   figure img {
@@ -27,7 +27,7 @@ It was an intensive and intellectually rewarding three-week experience that comb
 At the end of the program, I received a **Certificate of Achievement** from Academia Sinica, recognizing the successful completion of the course. This certification represents not only participation, but also deep engagement with advanced topics in mathematical modeling and biomedical AI.
 
 <div style="text-align:center;">
-  {% include figure.liquid loading="eager" path="assets/img/blog/2025/07_AcademiaSinica/1.PNG" width="85%" %}
+  {% include figure.liquid loading="eager" path="assets/img/blog/2025/07_AcademiaSinica/1.jpg" width="85%" %}
 </div>
 
 
@@ -38,7 +38,7 @@ At the end of the program, I received a **Certificate of Achievement** from Acad
 Outside the classroom, Taipei offered a vibrant cultural experience. From exploring historic streets to enjoying local cuisine, the city provided a perfect backdrop for reflection and inspiration.
 
 <div style="text-align:center;">
-  {% include figure.liquid loading="eager" path="assets/img/blog/2025/07_AcademiaSinica/3.jpeg" width="80%" %}
+  {% include figure.liquid loading="eager" path="assets/img/blog/2025/07_AcademiaSinica/3.jpg" width="80%" %}
 </div>
 
 Moments like these remind me that academic journeys are not only about research progress, but also about cultural exchange and personal growth.

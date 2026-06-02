@@ -173,7 +173,8 @@ nav_order: 2
     flex: 0 0 70px;
     text-align: right;
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: .08em;
     color: var(--global-theme-color, #b509ac);
     line-height: 1.1;
     position: sticky;
@@ -186,7 +187,7 @@ nav_order: 2
   }
 
   .pub-section {
-    font-size: 0.72rem;
+    font-size: 0.80rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -354,7 +355,7 @@ nav_order: 2
   }
   .pub-tab {
     padding: 0.45rem 1.1rem;
-    font-size: 0.88rem;
+    font-size: 1.0rem;
     font-weight: 600;
     color: var(--global-text-color-light, #828282);
     text-decoration: none;

@@ -90,7 +90,8 @@ nav_order: 3
     flex: 0 0 70px;
     text-align: right;
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: .08em;
     color: var(--global-theme-color, #b509ac);
     line-height: 1.1;
     position: sticky;
@@ -103,7 +104,7 @@ nav_order: 3
   }
 
   .pub-section {
-    font-size: 0.72rem;
+    font-size: 0.80rem;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
