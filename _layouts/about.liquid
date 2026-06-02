@@ -177,10 +177,10 @@ layout: default
       document.getElementById('ab-lv-num').textContent=active.number;
       document.getElementById('ab-lv-link').href='https://www.google.com/search?q='+encodeURIComponent(ac+num+' flight status '+active.date);
       document.getElementById('ab-dep-time').textContent=active.fromTime;
-      document.getElementById('ab-dep-tz').textContent=' '+active.fromTz;
+      document.getElementById('ab-dep-tz').textContent=active.fromTz;
       document.getElementById('ab-dep-code').textContent=active.fromCode;
       document.getElementById('ab-arr-time').textContent=active.toTime;
-      document.getElementById('ab-arr-tz').textContent=' '+active.toTz;
+      document.getElementById('ab-arr-tz').textContent=active.toTz;
       document.getElementById('ab-arr-code').textContent=active.toCode;
       document.getElementById('ab-dur').textContent=active.duration;
       document.getElementById('ab-terminal').textContent=active.aircraft;
@@ -297,7 +297,7 @@ layout: default
       .live-stop { flex:0 0 120px; white-space:nowrap; }
       .live-stop--right { text-align:right; }
       .live-time { font-size:1.45rem; font-weight:400; color:var(--global-text-color); line-height:1; letter-spacing:-.01em; white-space:nowrap; }
-      .live-tz { font-size:.65rem; color:var(--global-text-color-light); }
+      .live-tz { font-size:.75rem; color:var(--global-text-color-light); display:block; margin-top:.2rem; }
       .live-code { font-size:1rem; font-weight:700; color:var(--global-text-color); margin-top:.22rem; }
       .live-track { flex:1; text-align:center; min-width:0; }
       .live-dur { font-size:.88rem; font-weight:500; color:var(--global-text-color-light); margin-bottom:.4rem; }
@@ -307,7 +307,7 @@ layout: default
       @keyframes fly-bob { from{transform:translateY(-80%);} to{transform:translateY(-40%);} }
       .map-plane { font-size:1.3rem; line-height:1; color:#000; filter:drop-shadow(0 1px 4px rgba(26,115,232,.6)); animation:fly-bob .9s ease-in-out infinite alternate; }
       html[data-theme=dark] .map-plane { color:#1a73e8; }
-      .live-terminal { font-size:.73rem; color:var(--global-text-color-light); margin-top:.3rem; }
+      .live-terminal { font-size:.80rem; color:var(--global-text-color-light); margin-top:.3rem; }
     </style>
 
     <style>

@@ -27,7 +27,7 @@ nav_order: 5
 
 
 <!-- ── Map ── -->
-<div id="fl-map" style="width:100%;height:400px;border-radius:14px;overflow:hidden;border:1px solid var(--global-divider-color);background:var(--global-card-bg-color);margin-bottom:.7rem;display:flex;align-items:center;justify-content:center;color:var(--global-text-color-light);font-size:.85rem;letter-spacing:.05em;">Loading map…</div>
+<div id="fl-map" style="display:flex;align-items:center;justify-content:center;color:var(--global-text-color-light);font-size:.85rem;letter-spacing:.05em;">Loading map…</div>
 <div class="fl-legend">
   {% for leg in fd.legend %}
   <span class="fl-leg" style="--c:{{ leg.color }}">● {{ leg.label }}</span>
@@ -71,7 +71,7 @@ nav_order: 5
     <!-- Row 2: route -->
     <div class="gf-route">
       <div class="gf-stop">
-        <div class="gf-time">{{ fl.from_time }}<span class="gf-tz"> {{ fl.from_tz }}</span></div>
+        <div class="gf-time">{{ fl.from_time }}<span class="gf-tz">{{ fl.from_tz }}</span></div>
         <div class="gf-code">{{ fl.from_code }}</div>
         <div class="gf-city">{{ fl.from_city }}</div>
       </div>
@@ -89,7 +89,7 @@ nav_order: 5
       </div>
 
       <div class="gf-stop gf-stop--right">
-        <div class="gf-time">{{ fl.to_time }}<span class="gf-tz"> {{ fl.to_tz }}</span></div>
+        <div class="gf-time">{{ fl.to_time }}<span class="gf-tz">{{ fl.to_tz }}</span></div>
         <div class="gf-code">{{ fl.to_code }}</div>
         <div class="gf-city">{{ fl.to_city }}</div>
       </div>
@@ -224,7 +224,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
 
   function buildMap() {
   var map = L.map('fl-map', {
-    zoomControl: false, scrollWheelZoom: false, attributionControl: false, dragging: false
+    zoomControl: true, scrollWheelZoom: false, attributionControl: false, dragging: true
   });
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -283,17 +283,16 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   ].forEach(function(r) {
     var pts = fixAntimeridian(gc(AP[r.from].ll, AP[r.to].ll));
     allPts = allPts.concat(pts);
-    animLines.push(L.polyline(pts, { color: r.color, weight: 5, opacity: 0.9 }).addTo(map));
+    animLines.push(L.polyline(pts, { color: r.color, weight: 5, opacity: 0.9, noClip: true }).addTo(map));
   });
 
   var routeAPs = new Set([{% for r in fd.map_routes %}'{{ r.from }}','{{ r.to }}',{% endfor %}]);
 
   Object.keys(AP).forEach(function(k) {
     if (!routeAPs.has(k)) return;
-    var a = AP[k];
-    L.circleMarker(a.ll, {
+    L.circleMarker(AP[k].ll, {
       radius: 7, fillColor: '#1a73e8', color: '#fff', weight: 2, fillOpacity: 1
-    }).addTo(map).bindTooltip(a.label, { className:'fl-tip', direction:'top', offset:[0,-10] });
+    }).addTo(map).bindTooltip(AP[k].label, { className:'fl-tip', direction:'top', offset:[0,-10] });
   });
 
   var boundsPts = Array.from(routeAPs).filter(function(k){ return AP[k]; }).map(function(k){ return AP[k].ll; });
@@ -304,7 +303,20 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   }
   {% endfor %}
 
-  map.fitBounds(boundsPts, { padding: [40, 40] });
+  map.fitBounds(boundsPts, { padding: [35, 35] });
+
+  /* Re-check size once CSS has fully settled, then re-fit */
+  setTimeout(function(){
+    map.invalidateSize();
+    map.fitBounds(boundsPts, { padding: [35, 35] });
+  }, 200);
+
+  /* Keep responsive on window resize / orientation change */
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(function(){ map.invalidateSize(); map.fitBounds(boundsPts, { padding: [35, 35] }); }).observe(mapEl);
+  } else {
+    window.addEventListener('resize', function(){ map.invalidateSize(); map.fitBounds(boundsPts, { padding: [35, 35] }); });
+  }
 
   /* Animate route lines drawing after map settles */
   setTimeout(function() {
@@ -337,9 +349,9 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
 
   /* Map */
   #fl-map {
-    width:100%; height:340px;
+    width:100%; height:380px;
     border-radius:14px; overflow:hidden;
-    border:1px solid #2a2a3a; background:#1a1a2e;
+    border:1px solid var(--global-divider-color); background:var(--global-card-bg-color);
     margin-bottom:.7rem;
   }
 
@@ -431,7 +443,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
     color:var(--global-text-color); line-height:1; letter-spacing:-.01em;
     white-space: nowrap;
   }
-  .gf-tz { font-size:.65rem; color:var(--global-text-color-light); font-weight:400; }
+  .gf-tz { font-size:.75rem; color:var(--global-text-color-light); font-weight:400; display:block; margin-top:.2rem; }
   .gf-code {
     font-size:1rem; font-weight:700; color:var(--global-text-color); margin-top:.25rem;
   }
@@ -447,7 +459,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   }
   .gf-bar { flex:1; height:1.5px; background:var(--global-divider-color); }
   .gf-plane { font-size:.95rem; color:var(--global-text-color-light); padding:0 .2rem; }
-  .gf-terminal { font-size:.73rem; color:var(--global-text-color-light); }
+  .gf-terminal { font-size:.80rem; color:var(--global-text-color-light); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
   @media (max-width:480px) {
     #fl-map { height:210px; }
