@@ -174,7 +174,7 @@ def main():
                 "to_time":   fmt_time(arr_dt) if arr_dt else "—",
                 "to_tz":     fmt_tz(to_tz),
                 "duration":  duration,
-                "terminal":  normalize_terminal(row.get("Dep Terminal", "")),
+                "aircraft":  row.get("Aircraft Type Name", "").strip() or "—",
                 # internal — stripped before YAML output
                 "_dep_utc":  dep_utc,
                 "_arr_utc":  arr_utc or dep_utc,
