@@ -54,7 +54,7 @@ layout: default
             <span id="ab-lv-airline" class="live-airline"></span>
             <span id="ab-lv-num" class="live-num"></span>
           </div>
-          <a id="ab-lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">FlightAware ↗</a>
+          <a id="ab-lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">Google Flights ↗</a>
         </div>
         <div class="live-route">
           <div class="live-stop">
@@ -144,7 +144,7 @@ layout: default
       document.getElementById('ab-lv-logo').src='https://www.gstatic.com/flights/airline_logos/70px/'+ac+'.png';
       document.getElementById('ab-lv-airline').textContent=active.airline;
       document.getElementById('ab-lv-num').textContent=active.number;
-      document.getElementById('ab-lv-link').href='https://www.flightaware.com/live/flight/'+icao+num;
+      document.getElementById('ab-lv-link').href='https://www.google.com/travel/flights?q='+ac+num;
       document.getElementById('ab-dep-time').textContent=active.fromTime;
       document.getElementById('ab-dep-tz').textContent=' '+active.fromTz;
       document.getElementById('ab-dep-code').textContent=active.fromCode;
@@ -297,6 +297,7 @@ layout: default
         color: var(--global-theme-color, #b509ac) !important;
         text-decoration: none !important;
       }
+
 
     </style>
 

@@ -5,11 +5,41 @@ airline_icao:
   JL: "JAL"   # Japan Airlines
 
 airports:
-  NGO: { lat: 34.86, lng: 136.81, city: "Nagoya",    country: "Japan",   tz: 9 }
-  PVG: { lat: 31.14, lng: 121.81, city: "Shanghai",  country: "China",   tz: 8 }
-  FRA: { lat: 50.04, lng: 8.56,   city: "Frankfurt", country: "Germany", tz_winter: 1, tz_summer: 2 }
-  HAN: { lat: 21.22, lng: 105.81, city: "Hanoi",     country: "Vietnam", tz: 7 }
-  NGS: { lat: 32.92, lng: 129.91, city: "Nagasaki",  country: "Japan",   tz: 9 }
+  # Japan
+  NGO: { lat: 34.86,  lng: 136.81,  city: "Nagoya",          country: "Japan",         tz: 9 }
+  NGS: { lat: 32.92,  lng: 129.91,  city: "Nagasaki",         country: "Japan",         tz: 9 }
+  NRT: { lat: 35.76,  lng: 140.39,  city: "Tokyo",            country: "Japan",         tz: 9 }
+  HND: { lat: 35.55,  lng: 139.78,  city: "Tokyo",            country: "Japan",         tz: 9 }
+  KIX: { lat: 34.43,  lng: 135.24,  city: "Osaka",            country: "Japan",         tz: 9 }
+  CTS: { lat: 42.77,  lng: 141.69,  city: "Sapporo",          country: "Japan",         tz: 9 }
+  OKA: { lat: 26.20,  lng: 127.65,  city: "Okinawa",          country: "Japan",         tz: 9 }
+  UKB: { lat: 34.63,  lng: 135.22,  city: "Kobe",             country: "Japan",         tz: 9 }
+  # China
+  PVG: { lat: 31.14,  lng: 121.81,  city: "Shanghai",         country: "China",         tz: 8 }
+  CAN: { lat: 23.39,  lng: 113.30,  city: "Guangzhou",        country: "China",         tz: 8 }
+  SZX: { lat: 22.64,  lng: 113.81,  city: "Shenzhen",         country: "China",         tz: 8 }
+  # Vietnam
+  HAN: { lat: 21.22,  lng: 105.81,  city: "Hanoi",            country: "Vietnam",       tz: 7 }
+  SGN: { lat: 10.82,  lng: 106.65,  city: "Ho Chi Minh City", country: "Vietnam",       tz: 7 }
+  # Europe
+  FRA: { lat: 50.04,  lng: 8.56,    city: "Frankfurt",        country: "Germany",       tz_winter: 1, tz_summer: 2 }
+  IST: { lat: 41.27,  lng: 28.74,   city: "Istanbul",         country: "Turkey",        tz: 3 }
+  # Southeast Asia
+  KUL: { lat: 2.74,   lng: 101.71,  city: "Kuala Lumpur",     country: "Malaysia",      tz: 8 }
+  SIN: { lat: 1.36,   lng: 103.99,  city: "Singapore",        country: "Singapore",     tz: 8 }
+  # East Asia
+  TPE: { lat: 25.08,  lng: 121.23,  city: "Taipei",           country: "Taiwan",        tz: 8 }
+  # Oceania
+  AKL: { lat: -37.01, lng: 174.79,  city: "Auckland",         country: "New Zealand",   tz: 13 }
+  # United States
+  RDU: { lat: 35.88,  lng: -78.79,  city: "Raleigh",          country: "United States", tz_winter: -5, tz_summer: -4 }
+  BOS: { lat: 42.37,  lng: -71.00,  city: "Boston",           country: "United States", tz_winter: -5, tz_summer: -4 }
+  IAD: { lat: 38.94,  lng: -77.46,  city: "Washington D.C.",  country: "United States", tz_winter: -5, tz_summer: -4 }
+  ORD: { lat: 41.98,  lng: -87.91,  city: "Chicago",          country: "United States", tz_winter: -6, tz_summer: -5 }
+  LAX: { lat: 33.94,  lng: -118.41, city: "Los Angeles",      country: "United States", tz_winter: -8, tz_summer: -7 }
+  DEN: { lat: 39.86,  lng: -104.67, city: "Denver",           country: "United States", tz_winter: -7, tz_summer: -6 }
+  TPA: { lat: 27.98,  lng: -82.54,  city: "Tampa",            country: "United States", tz_winter: -5, tz_summer: -4 }
+  TUS: { lat: 32.12,  lng: -110.94, city: "Tucson",           country: "United States", tz: -7 }
 
 map_routes:
   - from: NGO
@@ -34,6 +64,1076 @@ legend:
     color: "#43a047"
 
 trips:
+- name: Hanoi → Nagoya
+  icon: 🇯🇵
+  dates: Jan 7–8, 2024
+  flights:
+  - number: MU5076
+    airline: China Eastern
+    date: Jan 8, 2024
+    from_code: HAN
+    from_city: Hanoi
+    from_time: 2:25 AM
+    from_tz: GMT+7
+    to_code: PVG
+    to_city: Shanghai
+    to_time: 6:25 AM
+    to_tz: GMT+8
+    duration: 3h 00m
+    terminal: T2
+  - number: MU529
+    airline: China Eastern
+    date: Jan 8, 2024
+    from_code: PVG
+    from_city: Shanghai
+    from_time: 9:30 AM
+    from_tz: GMT+8
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 12:35 PM
+    to_tz: GMT+9
+    duration: 2h 05m
+    terminal: T1
+- name: Nagoya → Hanoi
+  icon: 🇻🇳
+  dates: Feb 3, 2024
+  flights:
+  - number: MU720
+    airline: China Eastern
+    date: Feb 3, 2024
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 5:00 PM
+    from_tz: GMT+9
+    to_code: PVG
+    to_city: Shanghai
+    to_time: 6:55 PM
+    to_tz: GMT+8
+    duration: 2h 55m
+    terminal: T1
+  - number: MU5075
+    airline: China Eastern
+    date: Feb 3, 2024
+    from_code: PVG
+    from_city: Shanghai
+    from_time: 10:35 PM
+    from_tz: GMT+8
+    to_code: HAN
+    to_city: Hanoi
+    to_time: 1:25 AM
+    to_tz: GMT+7
+    duration: 3h 50m
+    terminal: T1
+- name: Hanoi → Nagoya
+  icon: 🇯🇵
+  dates: Feb 27–28, 2024
+  flights:
+  - number: MU5076
+    airline: China Eastern
+    date: Feb 28, 2024
+    from_code: HAN
+    from_city: Hanoi
+    from_time: 2:25 AM
+    from_tz: GMT+7
+    to_code: PVG
+    to_city: Shanghai
+    to_time: 6:25 AM
+    to_tz: GMT+8
+    duration: 3h 00m
+    terminal: T2
+  - number: MU8637
+    airline: China Eastern
+    date: Feb 28, 2024
+    from_code: PVG
+    from_city: Shanghai
+    from_time: 11:25 AM
+    from_tz: GMT+8
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 3:00 PM
+    to_tz: GMT+9
+    duration: 2h 35m
+    terminal: T1
+- name: Nagoya → Raleigh
+  icon: 🇺🇸
+  dates: Mar 2–3, 2024
+  flights:
+  - number: NH86
+    airline: ANA
+    date: Mar 3, 2024
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 7:20 AM
+    from_tz: GMT+9
+    to_code: HND
+    to_city: Tokyo
+    to_time: 8:25 AM
+    to_tz: GMT+9
+    duration: 1h 05m
+    terminal: T1
+  - number: NH102
+    airline: ANA
+    date: Mar 3, 2024
+    from_code: HND
+    from_city: Tokyo
+    from_time: 10:50 AM
+    from_tz: GMT+9
+    to_code: IAD
+    to_city: Washington D.C.
+    to_time: 9:20 AM
+    to_tz: GMT-5
+    duration: 12h 30m
+    terminal: T3
+  - number: UA1347
+    airline: United Airlines
+    date: Mar 3, 2024
+    from_code: IAD
+    from_city: Washington D.C.
+    from_time: 12:40 PM
+    from_tz: GMT-5
+    to_code: RDU
+    to_city: Raleigh
+    to_time: 1:53 PM
+    to_tz: GMT-5
+    duration: 1h 13m
+    terminal: Main
+- name: Raleigh → Nagoya
+  icon: 🇯🇵
+  dates: Mar 9–10, 2024
+  flights:
+  - number: NH7567
+    airline: ANA
+    date: Mar 9, 2024
+    from_code: RDU
+    from_city: Raleigh
+    from_time: 6:38 AM
+    from_tz: GMT-5
+    to_code: ORD
+    to_city: Chicago
+    to_time: 8:03 AM
+    to_tz: GMT-6
+    duration: 2h 25m
+    terminal: T2
+  - number: NH11
+    airline: ANA
+    date: Mar 9, 2024
+    from_code: ORD
+    from_city: Chicago
+    from_time: 10:30 AM
+    from_tz: GMT-6
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 3:00 PM
+    to_tz: GMT+9
+    duration: 13h 30m
+    terminal: T1
+  - number: NH493
+    airline: ANA
+    date: Mar 10, 2024
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 4:55 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 6:10 PM
+    to_tz: GMT+9
+    duration: 1h 15m
+    terminal: T1S
+- name: Nagoya → Sapporo
+  icon: 🇯🇵
+  dates: Mar 18, 2024
+  flights:
+  - number: SK765
+    airline: SKY
+    date: Mar 18, 2024
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 1:15 PM
+    from_tz: GMT+9
+    to_code: CTS
+    to_city: Sapporo
+    to_time: 3:00 PM
+    to_tz: GMT+9
+    duration: 1h 45m
+    terminal: T1
+- name: Sapporo → Nagoya
+  icon: 🇯🇵
+  dates: Mar 22, 2024
+  flights:
+  - number: AP464
+    airline: Peach Aviation
+    date: Mar 22, 2024
+    from_code: CTS
+    from_city: Sapporo
+    from_time: 7:10 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 9:10 PM
+    to_tz: GMT+9
+    duration: 2h 00m
+    terminal: D
+- name: Tokyo → Istanbul
+  icon: ✈
+  dates: May 25, 2024
+  flights:
+  - number: TH199
+    airline: THY
+    date: May 25, 2024
+    from_code: HND
+    from_city: Tokyo
+    from_time: 9:55 PM
+    from_tz: GMT+9
+    to_code: IST
+    to_city: Istanbul
+    to_time: 5:10 AM
+    to_tz: GMT+3
+    duration: 13h 15m
+    terminal: T3
+- name: Istanbul → Tokyo
+  icon: 🇯🇵
+  dates: Jun 1, 2024
+  flights:
+  - number: TH50
+    airline: THY
+    date: Jun 1, 2024
+    from_code: IST
+    from_city: Istanbul
+    from_time: 3:50 PM
+    from_tz: GMT+3
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 8:55 AM
+    to_tz: GMT+9
+    duration: 11h 05m
+    terminal: —
+- name: Nagoya → Hanoi
+  icon: 🇻🇳
+  dates: Jun 5, 2024
+  flights:
+  - number: VJ921
+    airline: VietJet Air
+    date: Jun 5, 2024
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 9:25 AM
+    from_tz: GMT+9
+    to_code: HAN
+    to_city: Hanoi
+    to_time: 12:50 PM
+    to_tz: GMT+7
+    duration: 5h 25m
+    terminal: T1
+- name: Hanoi → Osaka
+  icon: 🇯🇵
+  dates: Jun 26, 2024
+  flights:
+  - number: VJ938
+    airline: VietJet Air
+    date: Jun 27, 2024
+    from_code: HAN
+    from_city: Hanoi
+    from_time: 1:20 AM
+    from_tz: GMT+7
+    to_code: KIX
+    to_city: Osaka
+    to_time: 7:50 AM
+    to_tz: GMT+9
+    duration: 4h 30m
+    terminal: T2
+- name: Nagoya → Hanoi
+  icon: 🇻🇳
+  dates: Oct 1–3, 2024
+  flights:
+  - number: MU292
+    airline: China Eastern
+    date: Oct 2, 2024
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 8:55 AM
+    from_tz: GMT+9
+    to_code: PVG
+    to_city: Shanghai
+    to_time: 10:40 AM
+    to_tz: GMT+8
+    duration: 2h 45m
+    terminal: T1
+  - number: MU5075
+    airline: China Eastern
+    date: Oct 3, 2024
+    from_code: PVG
+    from_city: Shanghai
+    from_time: 10:40 PM
+    from_tz: GMT+8
+    to_code: HAN
+    to_city: Hanoi
+    to_time: 1:20 AM
+    to_tz: GMT+7
+    duration: 3h 40m
+    terminal: T1
+- name: Hanoi → Hanoi
+  icon: 🇻🇳
+  dates: Oct 19–20, 2024
+  flights:
+  - number: MU5076
+    airline: China Eastern
+    date: Oct 20, 2024
+    from_code: HAN
+    from_city: Hanoi
+    from_time: 2:20 AM
+    from_tz: GMT+7
+    to_code: PVG
+    to_city: Shanghai
+    to_time: 6:35 AM
+    to_tz: GMT+8
+    duration: 3h 15m
+    terminal: T2
+  - number: MU8971
+    airline: China Eastern
+    date: Oct 20, 2024
+    from_code: PVG
+    from_city: Shanghai
+    from_time: 3:50 PM
+    from_tz: GMT+8
+    to_code: HAN
+    to_city: Hanoi
+    to_time: 6:25 PM
+    to_tz: GMT+7
+    duration: 3h 35m
+    terminal: T2
+- name: Nagoya → Auckland
+  icon: 🇳🇿
+  dates: Dec 1, 2024
+  flights:
+  - number: NH494
+    airline: ANA
+    date: Dec 1, 2024
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 2:10 PM
+    from_tz: GMT+9
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 3:25 PM
+    to_tz: GMT+9
+    duration: 1h 15m
+    terminal: T1
+  - number: AN90
+    airline: ANZ
+    date: Dec 1, 2024
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 6:45 PM
+    from_tz: GMT+9
+    to_code: AKL
+    to_city: Auckland
+    to_time: 9:20 AM
+    to_tz: GMT+13
+    duration: 10h 35m
+    terminal: T1S
+- name: Auckland → Tokyo
+  icon: 🇯🇵
+  dates: Dec 6, 2024
+  flights:
+  - number: AN99
+    airline: ANZ
+    date: Dec 7, 2024
+    from_code: AKL
+    from_city: Auckland
+    from_time: 10:05 AM
+    from_tz: GMT+13
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 5:00 PM
+    to_tz: GMT+9
+    duration: 10h 55m
+    terminal: I
+- name: Nagoya → Hanoi
+  icon: 🇻🇳
+  dates: Dec 23, 2024
+  flights:
+  - number: CS6056
+    airline: CSN
+    date: Dec 23, 2024
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 3:00 PM
+    from_tz: GMT+9
+    to_code: CAN
+    to_city: Guangzhou
+    to_time: 7:05 PM
+    to_tz: GMT+8
+    duration: 5h 05m
+    terminal: T1
+  - number: CS371
+    airline: CSN
+    date: Dec 23, 2024
+    from_code: CAN
+    from_city: Guangzhou
+    from_time: 10:10 PM
+    from_tz: GMT+8
+    to_code: HAN
+    to_city: Hanoi
+    to_time: 11:15 PM
+    to_tz: GMT+7
+    duration: 2h 05m
+    terminal: T2
+- name: Hanoi → Nagoya
+  icon: 🇯🇵
+  dates: Jan 13–14, 2025
+  flights:
+  - number: CS372
+    airline: CSN
+    date: Jan 13, 2025
+    from_code: HAN
+    from_city: Hanoi
+    from_time: 8:15 AM
+    from_tz: GMT+7
+    to_code: CAN
+    to_city: Guangzhou
+    to_time: 10:55 AM
+    to_tz: GMT+8
+    duration: 1h 40m
+    terminal: T2
+  - number: CS6055
+    airline: CSN
+    date: Jan 14, 2025
+    from_code: CAN
+    from_city: Guangzhou
+    from_time: 9:05 AM
+    from_tz: GMT+8
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 1:45 PM
+    to_tz: GMT+9
+    duration: 3h 40m
+    terminal: T2
+- name: Nagoya → Tucson
+  icon: 🇺🇸
+  dates: Feb 27, 2025
+  flights:
+  - number: NH494
+    airline: ANA
+    date: Feb 27, 2025
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 2:10 PM
+    from_tz: GMT+9
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 3:25 PM
+    to_tz: GMT+9
+    duration: 1h 15m
+    terminal: T1
+  - number: UA142
+    airline: United Airlines
+    date: Feb 27, 2025
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 5:30 PM
+    from_tz: GMT+9
+    to_code: DEN
+    to_city: Denver
+    to_time: 12:10 PM
+    to_tz: GMT-7
+    duration: 10h 40m
+    terminal: T1
+  - number: UA5954
+    airline: United Airlines
+    date: Feb 27, 2025
+    from_code: DEN
+    from_city: Denver
+    from_time: 4:25 PM
+    from_tz: GMT-7
+    to_code: TUS
+    to_city: Tucson
+    to_time: 6:44 PM
+    to_tz: GMT-7
+    duration: 2h 19m
+    terminal: Main
+- name: Tucson → Nagoya
+  icon: 🇯🇵
+  dates: Mar 5–6, 2025
+  flights:
+  - number: UA5657
+    airline: United Airlines
+    date: Mar 5, 2025
+    from_code: TUS
+    from_city: Tucson
+    from_time: 8:00 AM
+    from_tz: GMT-7
+    to_code: DEN
+    to_city: Denver
+    to_time: 10:07 AM
+    to_tz: GMT-7
+    duration: 2h 07m
+    terminal: Main
+  - number: UA143
+    airline: United Airlines
+    date: Mar 5, 2025
+    from_code: DEN
+    from_city: Denver
+    from_time: 11:30 AM
+    from_tz: GMT-7
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 3:45 PM
+    to_tz: GMT+9
+    duration: 12h 15m
+    terminal: Main
+  - number: NH493
+    airline: ANA
+    date: Mar 6, 2025
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 5:25 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 6:40 PM
+    to_tz: GMT+9
+    duration: 1h 15m
+    terminal: T1
+- name: Nagoya → Okinawa
+  icon: 🇯🇵
+  dates: Mar 13, 2025
+  flights:
+  - number: SN121
+    airline: SNJ
+    date: Mar 13, 2025
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 12:00 PM
+    from_tz: GMT+9
+    to_code: OKA
+    to_city: Okinawa
+    to_time: 2:35 PM
+    to_tz: GMT+9
+    duration: 2h 35m
+    terminal: T1
+- name: Okinawa → Kobe
+  icon: 🇯🇵
+  dates: Mar 17, 2025
+  flights:
+  - number: SK596
+    airline: SKY
+    date: Mar 17, 2025
+    from_code: OKA
+    from_city: Okinawa
+    from_time: 4:40 PM
+    from_tz: GMT+9
+    to_code: UKB
+    to_city: Kobe
+    to_time: 6:30 PM
+    to_tz: GMT+9
+    duration: 1h 50m
+    terminal: D
+- name: Nagoya → Hanoi
+  icon: 🇻🇳
+  dates: Apr 25, 2025
+  flights:
+  - number: CS754
+    airline: CSZ
+    date: Apr 25, 2025
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 3:00 PM
+    from_tz: GMT+9
+    to_code: SZX
+    to_city: Shenzhen
+    to_time: 6:40 PM
+    to_tz: GMT+8
+    duration: 4h 40m
+    terminal: T1
+  - number: CS107
+    airline: CSZ
+    date: Apr 25, 2025
+    from_code: SZX
+    from_city: Shenzhen
+    from_time: 11:55 PM
+    from_tz: GMT+8
+    to_code: HAN
+    to_city: Hanoi
+    to_time: 1:10 AM
+    to_tz: GMT+7
+    duration: 2h 15m
+    terminal: —
+- name: Hanoi → Nagoya
+  icon: 🇯🇵
+  dates: May 17–18, 2025
+  flights:
+  - number: CS108
+    airline: CSZ
+    date: May 18, 2025
+    from_code: HAN
+    from_city: Hanoi
+    from_time: 2:10 AM
+    from_tz: GMT+7
+    to_code: SZX
+    to_city: Shenzhen
+    to_time: 5:00 AM
+    to_tz: GMT+8
+    duration: 1h 50m
+    terminal: T2
+  - number: CS753
+    airline: CSZ
+    date: May 18, 2025
+    from_code: SZX
+    from_city: Shenzhen
+    from_time: 8:55 AM
+    from_tz: GMT+8
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 2:00 PM
+    to_tz: GMT+9
+    duration: 4h 05m
+    terminal: T3
+- name: Nagoya → Tampa
+  icon: 🇺🇸
+  dates: May 24–25, 2025
+  flights:
+  - number: JL200
+    airline: Japan Airlines
+    date: May 25, 2025
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 7:35 AM
+    from_tz: GMT+9
+    to_code: HND
+    to_city: Tokyo
+    to_time: 8:40 AM
+    to_tz: GMT+9
+    duration: 1h 05m
+    terminal: T1
+  - number: JL10
+    airline: Japan Airlines
+    date: May 25, 2025
+    from_code: HND
+    from_city: Tokyo
+    from_time: 11:30 AM
+    from_tz: GMT+9
+    to_code: ORD
+    to_city: Chicago
+    to_time: 9:15 AM
+    to_tz: GMT-5
+    duration: 11h 45m
+    terminal: T3
+  - number: AA1101
+    airline: American Airlines
+    date: May 25, 2025
+    from_code: ORD
+    from_city: Chicago
+    from_time: 1:47 PM
+    from_tz: GMT-5
+    to_code: TPA
+    to_city: Tampa
+    to_time: 5:25 PM
+    to_tz: GMT-4
+    duration: 2h 38m
+    terminal: T3
+- name: Tampa → Nagoya
+  icon: 🇯🇵
+  dates: May 31–Jun 1, 2025
+  flights:
+  - number: JB192
+    airline: JBU
+    date: May 31, 2025
+    from_code: TPA
+    from_city: Tampa
+    from_time: 7:30 AM
+    from_tz: GMT-4
+    to_code: BOS
+    to_city: Boston
+    to_time: 10:35 AM
+    to_tz: GMT-4
+    duration: 3h 05m
+    terminal: —
+  - number: JL7
+    airline: Japan Airlines
+    date: May 31, 2025
+    from_code: BOS
+    from_city: Boston
+    from_time: 1:35 PM
+    from_tz: GMT-4
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 4:10 PM
+    to_tz: GMT+9
+    duration: 13h 35m
+    terminal: E
+  - number: JL3087
+    airline: Japan Airlines
+    date: Jun 1, 2025
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 6:30 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 7:40 PM
+    to_tz: GMT+9
+    duration: 1h 10m
+    terminal: T2
+- name: Nagoya → Taipei
+  icon: 🇹🇼
+  dates: Jun 24, 2025
+  flights:
+  - number: CA151
+    airline: CAL
+    date: Jun 24, 2025
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 9:55 AM
+    from_tz: GMT+9
+    to_code: TPE
+    to_city: Taipei
+    to_time: 11:55 AM
+    to_tz: GMT+8
+    duration: 3h 00m
+    terminal: T1
+- name: Taipei → Ho Chi Minh City
+  icon: 🇻🇳
+  dates: Jul 4–5, 2025
+  flights:
+  - number: TG897
+    airline: TGW
+    date: Jul 5, 2025
+    from_code: TPE
+    from_city: Taipei
+    from_time: 1:05 AM
+    from_tz: GMT+8
+    to_code: SIN
+    to_city: Singapore
+    to_time: 5:25 AM
+    to_tz: GMT+8
+    duration: 4h 20m
+    terminal: T1
+  - number: TG302
+    airline: TGW
+    date: Jul 5, 2025
+    from_code: SIN
+    from_city: Singapore
+    from_time: 4:00 PM
+    from_tz: GMT+8
+    to_code: SGN
+    to_city: Ho Chi Minh City
+    to_time: 5:15 PM
+    to_tz: GMT+7
+    duration: 2h 15m
+    terminal: T1
+- name: Ho Chi Minh City → Taipei
+  icon: 🇹🇼
+  dates: Jul 7, 2025
+  flights:
+  - number: VJ842
+    airline: VietJet Air
+    date: Jul 7, 2025
+    from_code: SGN
+    from_city: Ho Chi Minh City
+    from_time: 1:30 PM
+    from_tz: GMT+7
+    to_code: TPE
+    to_city: Taipei
+    to_time: 6:00 PM
+    to_tz: GMT+8
+    duration: 3h 30m
+    terminal: T2
+- name: Taipei → Nagoya
+  icon: 🇯🇵
+  dates: Jul 17, 2025
+  flights:
+  - number: CA150
+    airline: CAL
+    date: Jul 17, 2025
+    from_code: TPE
+    from_city: Taipei
+    from_time: 5:15 PM
+    from_tz: GMT+8
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 9:05 PM
+    to_tz: GMT+9
+    duration: 2h 50m
+    terminal: T2
+- name: Nagoya → Hanoi
+  icon: 🇻🇳
+  dates: Aug 16, 2025
+  flights:
+  - number: VJ921
+    airline: VietJet Air
+    date: Aug 16, 2025
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 9:25 AM
+    from_tz: GMT+9
+    to_code: HAN
+    to_city: Hanoi
+    to_time: 12:50 PM
+    to_tz: GMT+7
+    duration: 5h 25m
+    terminal: T1
+- name: Hanoi → Nagoya
+  icon: 🇯🇵
+  dates: Sep 14, 2025
+  flights:
+  - number: VJ920
+    airline: VietJet Air
+    date: Sep 15, 2025
+    from_code: HAN
+    from_city: Hanoi
+    from_time: 1:40 AM
+    from_tz: GMT+7
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 8:00 AM
+    to_tz: GMT+9
+    duration: 4h 20m
+    terminal: T2
+- name: Nagoya → Kuala Lumpur
+  icon: ✈
+  dates: Dec 8, 2025
+  flights:
+  - number: HV343
+    airline: HVN
+    date: Dec 8, 2025
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 9:00 AM
+    from_tz: GMT+9
+    to_code: SGN
+    to_city: Ho Chi Minh City
+    to_time: 1:10 PM
+    to_tz: GMT+7
+    duration: 6h 10m
+    terminal: T1
+  - number: HV679
+    airline: HVN
+    date: Dec 8, 2025
+    from_code: SGN
+    from_city: Ho Chi Minh City
+    from_time: 3:50 PM
+    from_tz: GMT+7
+    to_code: KUL
+    to_city: Kuala Lumpur
+    to_time: 6:50 PM
+    to_tz: GMT+8
+    duration: 2h 00m
+    terminal: T2
+- name: Kuala Lumpur → Hanoi
+  icon: 🇻🇳
+  dates: Dec 12, 2025
+  flights:
+  - number: HV680
+    airline: HVN
+    date: Dec 12, 2025
+    from_code: KUL
+    from_city: Kuala Lumpur
+    from_time: 8:10 PM
+    from_tz: GMT+8
+    to_code: HAN
+    to_city: Hanoi
+    to_time: 10:15 PM
+    to_tz: GMT+7
+    duration: 3h 05m
+    terminal: T1
+- name: Hanoi → Nagoya
+  icon: 🇯🇵
+  dates: Dec 31, 2025
+  flights:
+  - number: VJ920
+    airline: VietJet Air
+    date: Jan 1, 2026
+    from_code: HAN
+    from_city: Hanoi
+    from_time: 1:35 AM
+    from_tz: GMT+7
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 8:00 AM
+    to_tz: GMT+9
+    duration: 4h 25m
+    terminal: T2
+- name: Nagoya → Tucson
+  icon: 🇺🇸
+  dates: Mar 5, 2026
+  flights:
+  - number: JL3084
+    airline: Japan Airlines
+    date: Mar 5, 2026
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 2:30 PM
+    from_tz: GMT+9
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 3:50 PM
+    to_tz: GMT+9
+    duration: 1h 20m
+    terminal: T1
+  - number: JL62
+    airline: Japan Airlines
+    date: Mar 5, 2026
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 5:05 PM
+    from_tz: GMT+9
+    to_code: LAX
+    to_city: Los Angeles
+    to_time: 9:45 AM
+    to_tz: GMT-8
+    duration: 9h 40m
+    terminal: T2
+  - number: JL7562
+    airline: Japan Airlines
+    date: Mar 5, 2026
+    from_code: LAX
+    from_city: Los Angeles
+    from_time: 3:04 PM
+    from_tz: GMT-8
+    to_code: TUS
+    to_city: Tucson
+    to_time: 5:36 PM
+    to_tz: GMT-7
+    duration: 1h 32m
+    terminal: T4
+- name: Tucson → Nagoya
+  icon: 🇯🇵
+  dates: Mar 11–12, 2026
+  flights:
+  - number: JL7563
+    airline: Japan Airlines
+    date: Mar 11, 2026
+    from_code: TUS
+    from_city: Tucson
+    from_time: 7:27 AM
+    from_tz: GMT-7
+    to_code: LAX
+    to_city: Los Angeles
+    to_time: 9:25 AM
+    to_tz: GMT-7
+    duration: 1h 58m
+    terminal: Main
+  - number: JL61
+    airline: Japan Airlines
+    date: Mar 11, 2026
+    from_code: LAX
+    from_city: Los Angeles
+    from_time: 12:50 PM
+    from_tz: GMT-7
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 4:40 PM
+    to_tz: GMT+9
+    duration: 11h 50m
+    terminal: B
+  - number: JL3087
+    airline: Japan Airlines
+    date: Mar 12, 2026
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 6:30 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 7:45 PM
+    to_tz: GMT+9
+    duration: 1h 15m
+    terminal: T2
+- name: Nagoya → Frankfurt
+  icon: 🇩🇪
+  dates: Mar 14–15, 2026
+  flights:
+  - number: JL3082
+    airline: Japan Airlines
+    date: Mar 15, 2026
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 8:15 AM
+    from_tz: GMT+9
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 9:25 AM
+    to_tz: GMT+9
+    duration: 1h 10m
+    terminal: T1
+  - number: JL407
+    airline: Japan Airlines
+    date: Mar 15, 2026
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 10:45 AM
+    from_tz: GMT+9
+    to_code: FRA
+    to_city: Frankfurt
+    to_time: 5:00 PM
+    to_tz: GMT+1
+    duration: 14h 15m
+    terminal: T2
+- name: Frankfurt → Nagoya
+  icon: 🇯🇵
+  dates: Mar 21–22, 2026
+  flights:
+  - number: JL408
+    airline: Japan Airlines
+    date: Mar 21, 2026
+    from_code: FRA
+    from_city: Frankfurt
+    from_time: 8:05 PM
+    from_tz: GMT+1
+    to_code: NRT
+    to_city: Tokyo
+    to_time: 5:05 PM
+    to_tz: GMT+9
+    duration: 13h 00m
+    terminal: T2
+  - number: JL3087
+    airline: Japan Airlines
+    date: Mar 22, 2026
+    from_code: NRT
+    from_city: Tokyo
+    from_time: 6:30 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 7:45 PM
+    to_tz: GMT+9
+    duration: 1h 15m
+    terminal: T2
+- name: Nagoya → Tokyo
+  icon: 🇯🇵
+  dates: Apr 18, 2026
+  flights:
+  - number: NH86
+    airline: ANA
+    date: Apr 19, 2026
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 7:20 AM
+    from_tz: GMT+9
+    to_code: HND
+    to_city: Tokyo
+    to_time: 8:25 AM
+    to_tz: GMT+9
+    duration: 1h 05m
+    terminal: T1
+- name: Tokyo → Nagoya
+  icon: 🇯🇵
+  dates: Apr 21, 2026
+  flights:
+  - number: NH85
+    airline: ANA
+    date: Apr 21, 2026
+    from_code: HND
+    from_city: Tokyo
+    from_time: 7:40 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 8:40 PM
+    to_tz: GMT+9
+    duration: 1h 00m
+    terminal: T2
 - name: Nagoya → Frankfurt
   icon: 🇩🇪
   dates: Jun 9, 2026

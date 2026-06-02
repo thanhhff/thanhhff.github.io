@@ -34,7 +34,7 @@ nav_order: 5
       <span id="lv-airline" class="live-airline"></span>
       <span id="lv-num" class="live-num"></span>
     </div>
-    <a id="lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">FlightAware ↗</a>
+    <a id="lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">Google Flights ↗</a>
   </div>
   <div class="live-route">
     <div class="live-stop">
@@ -129,7 +129,7 @@ var liveDep = null, liveArr = null, liveState = null;
   document.getElementById('lv-logo').src    = 'https://www.gstatic.com/flights/airline_logos/70px/' + ac + '.png';
   document.getElementById('lv-airline').textContent = active.airline;
   document.getElementById('lv-num').textContent     = active.number;
-  document.getElementById('lv-link').href           = 'https://www.flightaware.com/live/flight/' + icao + num;
+  document.getElementById('lv-link').href           = 'https://www.google.com/travel/flights?q=' + ac + num;
   document.getElementById('lv-dep-time').textContent = active.fromTime;
   document.getElementById('lv-dep-tz').textContent   = ' ' + active.fromTz;
   document.getElementById('lv-dep-code').textContent = active.fromCode;
@@ -221,8 +221,7 @@ var liveDep = null, liveArr = null, liveState = null;
       <div class="gf-top-right">
         <span class="gf-date">{{ fl.date }}</span>
         <span class="gf-status"></span>
-        {% assign fnum = fl.number | slice: 2, 10 %}{% assign ficao = fd.airline_icao[ac] | default: ac %}
-        <a href="https://www.flightaware.com/live/flight/{{ ficao }}{{ fnum }}" target="_blank" rel="noopener noreferrer" class="gf-btn">FlightAware ↗</a>
+        <a href="https://www.google.com/travel/flights?q={{ fl.number }}" target="_blank" rel="noopener noreferrer" class="gf-btn">Google Flights ↗</a>
       </div>
     </div>
 
