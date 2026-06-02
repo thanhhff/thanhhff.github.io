@@ -11,6 +11,10 @@ nav_order: 3
 <div class="pub-year-block">
   <div class="pub-year">2026</div>
   <div class="pub-entries">
+    <div class="pub-section">Program Committee</div>
+    <ul class="srv-list">
+      <li>International Workshop on Embedded and Mobile Deep Learning <span class="srv-note">ACM MobiSys</span></li>
+    </ul>
     <div class="pub-section">Reviewer</div>
     <ul class="srv-list">
       <li>Neurocomputing <span class="srv-note">Journal, IF: 6.5</span></li>
@@ -20,10 +24,9 @@ nav_order: 3
       <li>IEEE Transactions on Circuits and Systems for Video Technology <span class="srv-note">Journal, IF: 11.1</span></li>
       <li>International Conference on Multimedia Modeling <span class="srv-note">MMM</span></li>
       <li>Conference on Neural Information Processing Systems <span class="srv-note">NeurIPS</span></li>
-      <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition <span class="srv-note">CVPR</span></li>
-      <li>IEEE/CVF CVPR @ CV4Animals: Computer Vision for Animal Behavior Tracking and Modeling</li>
-      <li>IEEE International Conference on Automatic Face and Gesture Recognition <span class="srv-note">FG</span></li>
-      <li>ACM MobiSys @ International Workshop on Embedded and Mobile Deep Learning</li>
+      <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition <span class="srv-note">IEEE/CVF CVPR</span></li>
+      <li>CV4Animals: Computer Vision for Animal Behavior Tracking and Modeling <span class="srv-note">IEEE/CVF CVPR</span></li> 
+      <li>IEEE International Conference on Automatic Face and Gesture Recognition <span class="srv-note">IEEE FG</span></li>
     </ul>
   </div>
 </div>
@@ -35,6 +38,10 @@ nav_order: 3
     <ul class="srv-list">
       <li>ACM Multimedia Asia 2025 <span class="srv-note">Poster Session Chair @ ACM MMAsia</span></li>
       <li>IntentVC Challenge: Intention-Oriented Controllable Video Captioning <span class="srv-note">Grand Challenge @ ACM MM</span></li>
+    </ul>
+    <div class="pub-section">Program Committee</div>
+    <ul class="srv-list">
+      <li>International Workshop on Intelligent Cross-Data Analysis and Retrieval <span class="srv-note">ACM ICMR</span> <a href="https://dl.acm.org/doi/proceedings/10.1145/3733566" target="_blank" rel="noopener" class="srv-cert"><i class="ai ai-doi"></i> DOI</a></li>
     </ul>
     <div class="pub-section">Reviewer</div>
     <ul class="srv-list">
@@ -54,8 +61,8 @@ nav_order: 3
     <ul class="srv-list">
       <li>ACM International Conference on Multimedia <span class="srv-note">ACM MM</span></li>
       <li>Medical Image Computing and Computer Assisted Intervention <span class="srv-note">MICCAI</span></li>
-      <li>ACM ICMR @ International Workshop on Intelligent Cross-Data Analysis and Retrieval</li>
-      <li>Meeting on Image Recognition and Understanding <span class="srv-note">MIRU, Japanese Domestic</span></li>
+      <li>International Workshop on Intelligent Cross-Data Analysis and Retrieval <span class="srv-note">ACM ICMR</span></li>
+      <li>Meeting on Image Recognition and Understanding <span class="srv-note">MIRU (Japanese Domestic)</span></li>
     </ul>
   </div>
 </div>
