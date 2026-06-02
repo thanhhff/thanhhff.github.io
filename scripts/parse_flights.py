@@ -60,22 +60,38 @@ COUNTRY_FLAGS = {
 }
 
 
-def cest_active(dt: datetime) -> bool:
-    """True if Central European Summer Time (UTC+2) is active on dt."""
-    year = dt.year
-    def last_sunday(y, m):
-        days_in = {1:31,2:28,3:31,4:30,5:31,6:30,7:31,8:31,9:30,10:31,11:30,12:31}
-        days_in[2] = 29 if y % 4 == 0 and (y % 100 != 0 or y % 400 == 0) else 28
-        d = datetime(y, m, days_in[m])
-        return d - timedelta(days=(d.weekday() + 1) % 7)
-    return last_sunday(year, 3).replace(hour=1) <= dt < last_sunday(year, 10).replace(hour=1)
+def nth_weekday(year, month, weekday, n):
+    """Return the nth occurrence (1-based) of `weekday` (0=Mon…6=Sun) in year/month."""
+    d = datetime(year, month, 1)
+    first = (weekday - d.weekday()) % 7
+    return d + timedelta(days=first + (n - 1) * 7)
+
+def dst_active(dt: datetime, ap: dict) -> bool:
+    """True if summer/DST offset should be used for airport ap at datetime dt."""
+    if "tz_summer" not in ap or "tz_winter" not in ap:
+        return False
+    y = dt.year
+    # EU: last Sunday March 01:00 UTC → last Sunday October 01:00 UTC
+    # US: 2nd Sunday March 02:00 local → 1st Sunday November 02:00 local
+    # Detect by longitude: rough heuristic (EU: lng 0–40, US: lng < -20)
+    lng = ap.get("lng", 0)
+    if lng < -20:  # Americas
+        start = nth_weekday(y, 3, 6, 2)   # 2nd Sunday March
+        end   = nth_weekday(y, 11, 6, 1)  # 1st Sunday November
+    else:  # Europe / other
+        def last_sunday(m):
+            d = datetime(y, m, 28)
+            return d + timedelta(days=(6 - d.weekday()) % 7)
+        start = last_sunday(3)
+        end   = last_sunday(10)
+    return start <= dt < end
 
 
 def get_tz_offset(code: str, dt: datetime, airports: dict) -> int:
     """Return UTC offset in hours for airport `code` at datetime `dt`."""
     ap = airports.get(code, {})
     if "tz_summer" in ap and "tz_winter" in ap:
-        return ap["tz_summer"] if cest_active(dt) else ap["tz_winter"]
+        return ap["tz_summer"] if dst_active(dt, ap) else ap["tz_winter"]
     return ap.get("tz", 0)
 
 
@@ -165,21 +181,19 @@ def main():
                 "_date":     dep_dt.date(),
             })
 
-    # ── Filter to today onwards and sort ─────────────────────────────────
-    today    = datetime.utcnow().date()
-    upcoming = sorted([f for f in flights if f["_date"] >= today],
-                      key=lambda f: f["_dep_utc"])
+    # ── Sort all flights by departure ─────────────────────────────────────
+    all_flights = sorted(flights, key=lambda f: f["_dep_utc"])
 
-    if not upcoming:
-        print("  ℹ  No upcoming flights found in CSV.")
+    if not all_flights:
+        print("  ℹ  No flights found in CSV.")
         config["trips"] = []
     else:
         # ── Group into trips ──────────────────────────────────────────────
         # A trip continues as long as consecutive flights connect (same airport)
         # within 36 hours of the previous arrival.
         groups = []
-        current = [upcoming[0]]
-        for fl in upcoming[1:]:
+        current = [all_flights[0]]
+        for fl in all_flights[1:]:
             prev = current[-1]
             gap_h = (fl["_dep_utc"] - prev["_arr_utc"]).total_seconds() / 3600
             if prev["to_code"] == fl["from_code"] and gap_h <= 36:
@@ -214,7 +228,7 @@ def main():
                               "flights": clean})
 
         config["trips"] = yml_trips
-        print(f"  ✔ {len(upcoming)} upcoming flight(s) → {len(yml_trips)} trip(s)")
+        print(f"  ✔ {len(all_flights)} flight(s) → {len(yml_trips)} trip(s)")
 
     # ── Write back: preserve config, replace trips section ───────────────
     # We re-serialise only the `trips` block to avoid reformatting the
