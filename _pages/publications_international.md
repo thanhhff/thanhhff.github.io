@@ -5,11 +5,11 @@ permalink: /publications-international/
 nav: false
 ---
 
-{% capture intl_j %}{% bibliography_count --query @*[note=International-Journal] %}{% endcapture %}
-{% capture intl_c %}{% bibliography_count --query @*[note=International-Conference] %}{% endcapture %}
+{% capture intl_j %}{% bibliography_count --file journals.bib --query @*[pub_group^=ij] %}{% endcapture %}
+{% capture intl_c %}{% bibliography_count --file conferences.bib --query @*[pub_group^=ic] %}{% endcapture %}
 {% assign intl_total = intl_j | plus: intl_c %}
-{% capture dom_j %}{% bibliography_count --query @*[note=Domestic-Journal] %}{% endcapture %}
-{% capture dom_c %}{% bibliography_count --query @*[note=Domestic-Conference] %}{% endcapture %}
+{% capture dom_j %}{% bibliography_count --file journals.bib --query @*[pub_group^=dj] %}{% endcapture %}
+{% capture dom_c %}{% bibliography_count --file domestic.bib --query @*[pub_group^=dc] %}{% endcapture %}
 {% assign dom_total = dom_j | plus: dom_c %}
 
 <div class="pub-tabs">
