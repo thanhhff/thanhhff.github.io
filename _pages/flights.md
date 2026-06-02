@@ -1,0 +1,748 @@
+---
+layout: page
+title: flights
+permalink: /flights/
+nav: false
+_styles: ".post-title, .post-description { display: none; }"
+---
+
+<!-- Preconnect to speed up tile loading once map is requested -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin>
+
+{% assign fd = site.data.flights %}
+<!-- ── Hero ── -->
+<div class="fl-hero">
+  <div>
+    <div class="fl-hero-title">✈ Upcoming Flights</div>
+    <div class="fl-hero-sub">Loading…</div>
+  </div>
+  <div class="fl-hero-stats">
+    <div class="fl-hstat"><div class="fl-hstat-v" id="hs-airtime">—</div><div class="fl-hstat-l">In the air</div></div>
+    <div class="fl-hstat"><div class="fl-hstat-v" id="hs-countries">—</div><div class="fl-hstat-l">Countries</div></div>
+    <div class="fl-hstat"><div class="fl-hstat-v" id="hs-airlines">—</div><div class="fl-hstat-l">Airlines</div></div>
+  </div>
+</div>
+
+<!-- ── Live flight card (populated automatically by JS) ── -->
+<div id="live-card" class="live-card" style="display:none">
+  <div class="live-header">
+    <div id="lv-badge" class="live-badge"><span class="live-dot"></span> In the Air</div>
+    <div class="live-meta">
+      <img id="lv-logo" src="" alt="" class="live-logo" onerror="this.style.display='none'"/>
+      <span id="lv-airline" class="live-airline"></span>
+      <span id="lv-num" class="live-num"></span>
+    </div>
+    <a id="lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">FlightAware ↗</a>
+  </div>
+  <div class="live-route">
+    <div class="live-stop">
+      <div class="live-time"><span id="lv-dep-time"></span><span id="lv-dep-tz" class="live-tz"></span></div>
+      <div id="lv-dep-code" class="live-code"></div>
+    </div>
+    <div class="live-track">
+      <div id="lv-dur" class="live-dur"></div>
+      <div class="live-bar">
+        <div class="live-bar-done" id="live-progress"></div>
+        <div class="live-plane" id="live-plane">✈</div>
+      </div>
+      <div id="lv-terminal" class="live-terminal"></div>
+    </div>
+    <div class="live-stop live-stop--right">
+      <div class="live-time"><span id="lv-arr-time"></span><span id="lv-arr-tz" class="live-tz"></span></div>
+      <div id="lv-arr-code" class="live-code"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── All trips data for auto-detection ── */
+var FLIGHTS = [
+  {% for trip in fd.trips %}{% for fl in trip.flights %}{
+    number:"{{ fl.number }}",airline:"{{ fl.airline }}",
+    date:"{{ fl.date }}",
+    fromTime:"{{ fl.from_time }}",fromTz:"{{ fl.from_tz }}",fromCode:"{{ fl.from_code }}",
+    toTime:"{{ fl.to_time }}",toTz:"{{ fl.to_tz }}",toCode:"{{ fl.to_code }}",
+    duration:"{{ fl.duration }}",terminal:"{{ fl.terminal }}"
+  },{% endfor %}{% endfor %}
+];
+var ICAO = { {% for k in fd.airline_icao %}"{{ k[0] }}":"{{ k[1] }}",{% endfor %} };
+
+/* Exposed globally so buildMap() can draw the live route */
+var liveDep = null, liveArr = null, liveState = null;
+
+(function () {
+  /* Convert "Jun 9, 2026", "5:00 PM", "GMT+9" → UTC Date */
+  function toUTC(dateStr, timeStr, tzStr) {
+    var tm = timeStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
+    if (!tm) return null;
+    var h = parseInt(tm[1]), m = parseInt(tm[2]), ap = tm[3].toUpperCase();
+    if (ap === 'AM' && h === 12) h = 0;
+    if (ap === 'PM' && h !== 12) h += 12;
+    var pad = function(n){ return n < 10 ? '0'+n : n; };
+    var tz = tzStr.match(/GMT([+-])(\d+)/);
+    var off = tz ? parseInt(tz[1]+'1') * parseInt(tz[2]) : 0;
+    var d = new Date(dateStr + ' ' + pad(h) + ':' + pad(m) + ':00 UTC');
+    return new Date(d.getTime() - off * 3600000);
+  }
+  function parseDurMs(dur) {
+    var m = dur.match(/(\d+)h\s*(?:(\d+)m)?/);
+    return m ? (parseInt(m[1])*60 + parseInt(m[2]||0)) * 60000 : 0;
+  }
+  function fmt(ms) {
+    var h = Math.floor(ms/3600000), m = Math.floor((ms%3600000)/60000);
+    return h + 'h ' + (m<10?'0':'') + m + 'm';
+  }
+
+  var now = new Date(), active = null, dep, arr, showUntil, flightState;
+  for (var i = 0; i < FLIGHTS.length; i++) {
+    var fl = FLIGHTS[i];
+    var d = toUTC(fl.date, fl.fromTime, fl.fromTz);
+    var a = new Date(d.getTime() + parseDurMs(fl.duration));
+    /* show_from = midnight UTC of departure date */
+    var showFrom = new Date(fl.date + ' 00:00:00 UTC');
+    /* show_until = midnight UTC of day after arrival */
+    var su = new Date(a); su.setUTCHours(0,0,0,0); su.setUTCDate(su.getUTCDate()+1);
+    if (now < showFrom || now > su) continue;
+    active = fl; dep = d; arr = a; showUntil = su;
+    flightState = now < d ? 'scheduled' : now <= a ? 'flying' : 'arrived';
+    break;
+  }
+  if (!active) return;
+  liveDep = dep; liveArr = arr; liveState = flightState;
+
+  /* Flip card plane icon for westward flights */
+  var br = (function() {
+    var R = Math.PI/180;
+    var f = FLIGHTS[i]; /* active flight */
+    /* We need airport coordinates — use a simple lon comparison */
+    var fromTz = parseInt((f.fromTz.match(/GMT([+-]\d+)/)||['','0'])[1]);
+    var toTz   = parseInt((f.toTz.match(/GMT([+-]\d+)/)||['','0'])[1]);
+    return toTz < fromTz; /* true = going west */
+  })();
+  if (br) document.getElementById('live-plane').style.transform = 'translateY(-60%) scaleX(-1)';
+
+  /* Populate card */
+  var ac = active.number.slice(0,2), num = active.number.slice(2);
+  var icao = ICAO[ac] || ac;
+  document.getElementById('lv-logo').src    = 'https://www.gstatic.com/flights/airline_logos/70px/' + ac + '.png';
+  document.getElementById('lv-airline').textContent = active.airline;
+  document.getElementById('lv-num').textContent     = active.number;
+  document.getElementById('lv-link').href           = 'https://www.flightaware.com/live/flight/' + icao + num;
+  document.getElementById('lv-dep-time').textContent = active.fromTime;
+  document.getElementById('lv-dep-tz').textContent   = ' ' + active.fromTz;
+  document.getElementById('lv-dep-code').textContent = active.fromCode;
+  document.getElementById('lv-arr-time').textContent = active.toTime;
+  document.getElementById('lv-arr-tz').textContent   = ' ' + active.toTz;
+  document.getElementById('lv-arr-code').textContent = active.toCode;
+  document.getElementById('lv-dur').textContent      = active.duration;
+  document.getElementById('lv-terminal').textContent = 'Terminal ' + active.terminal;
+
+  var card = document.getElementById('live-card');
+  card.style.display = '';
+  var badge = document.getElementById('lv-badge');
+
+  function setBadge(state) {
+    if (state === 'flying') {
+      badge.className = 'live-badge';
+      badge.innerHTML = '<span class="live-dot"></span> In the Air';
+    } else if (state === 'scheduled') {
+      badge.className = 'live-badge live-badge--scheduled';
+      badge.textContent = 'Scheduled';
+    } else {
+      badge.className = 'live-badge live-badge--arrived';
+      badge.textContent = '✓ Arrived';
+    }
+  }
+  setBadge(flightState);
+
+  /* Animate progress */
+  var bar = document.getElementById('live-progress');
+  var plane = document.getElementById('live-plane');
+  var total = arr - dep;
+
+  function tick() {
+    var now = new Date();
+    if (now > showUntil) { card.style.display = 'none'; clearInterval(timer); return; }
+    var state = now < dep ? 'scheduled' : now <= arr ? 'flying' : 'arrived';
+    setBadge(state);
+    if (state === 'scheduled') {
+      bar.style.width = '0%'; plane.style.display = 'none';
+    } else if (state === 'flying') {
+      plane.style.display = '';
+      var pct = Math.min(100, Math.max(0, (now-dep)/total*100));
+      bar.style.width = pct + '%';
+      plane.style.left = 'calc('+pct+'% - 10px)';
+    } else {
+      plane.style.display = 'none'; bar.style.width = '100%';
+    }
+  }
+  tick();
+  var timer = setInterval(tick, 10000);
+})();
+</script>
+
+<!-- ── Map ── -->
+<div id="fl-map" style="width:100%;height:400px;border-radius:14px;overflow:hidden;border:1px solid #ddd;background:#f0f2f5;margin-bottom:.7rem;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:.85rem;letter-spacing:.05em;">Loading map…</div>
+<div class="fl-legend">
+  {% for leg in fd.legend %}
+  <span class="fl-leg" style="--c:{{ leg.color }}">● {{ leg.label }}</span>
+  {% endfor %}
+</div>
+
+<!-- ── Trip cards ── -->
+{% assign trips = fd.trips %}
+<div class="fl-trips">
+{% for trip in trips %}
+<div class="fl-trip">
+  <div class="fl-trip-header">
+    <span class="fl-trip-icon">{{ trip.icon }}</span>
+    <div class="fl-trip-info">
+      <div class="fl-trip-name">{{ trip.name }}</div>
+      <div class="fl-trip-dates">{{ trip.dates }}</div>
+    </div>
+    <span class="fl-trip-count">{{ trip.flights.size }} flight{% if trip.flights.size > 1 %}s{% endif %}</span>
+  </div>
+
+  <div class="fl-flights">
+  {% for fl in trip.flights %}
+  {% assign ac = fl.number | slice: 0, 2 %}
+  <div class="gf-card" data-date="{{ fl.date }}">
+
+    <!-- Row 1: airline + date + actions -->
+    <div class="gf-top">
+      <div class="gf-airline-row">
+        <img src="https://www.gstatic.com/flights/airline_logos/70px/{{ ac }}.png"
+             alt="{{ fl.airline }}" class="gf-logo" onerror="this.style.display='none'"/>
+        <span class="gf-airline-name">{{ fl.airline }}</span>
+        <span class="gf-flight-num">{{ fl.number }}</span>
+      </div>
+      <div class="gf-top-right">
+        <span class="gf-date">{{ fl.date }}</span>
+        <span class="gf-status"></span>
+        {% assign fnum = fl.number | slice: 2, 10 %}{% assign ficao = fd.airline_icao[ac] | default: ac %}
+        <a href="https://www.flightaware.com/live/flight/{{ ficao }}{{ fnum }}" target="_blank" rel="noopener noreferrer" class="gf-btn">FlightAware ↗</a>
+      </div>
+    </div>
+
+    <!-- Row 2: route -->
+    <div class="gf-route">
+      <div class="gf-stop">
+        <div class="gf-time">{{ fl.from_time }}<span class="gf-tz"> {{ fl.from_tz }}</span></div>
+        <div class="gf-code">{{ fl.from_code }}</div>
+        <div class="gf-city">{{ fl.from_city }}</div>
+      </div>
+
+      <div class="gf-connector">
+        <div class="gf-nonstop">{{ fl.duration }}</div>
+        <div class="gf-line">
+          <div class="gf-dot"></div>
+          <div class="gf-bar"></div>
+          <span class="gf-plane">✈</span>
+          <div class="gf-bar"></div>
+          <div class="gf-dot"></div>
+        </div>
+        <div class="gf-terminal">Terminal {{ fl.terminal }}</div>
+      </div>
+
+      <div class="gf-stop gf-stop--right">
+        <div class="gf-time">{{ fl.to_time }}<span class="gf-tz"> {{ fl.to_tz }}</span></div>
+        <div class="gf-code">{{ fl.to_code }}</div>
+        <div class="gf-city">{{ fl.to_city }}</div>
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+  </div>
+</div>
+{% endfor %}
+</div>
+
+<script>
+/* ── Auto-hide past flights & update hero stats ── */
+var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}',{% endfor %} };
+(function () {
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+  /* Hide past cards; set status badge on visible ones */
+  document.querySelectorAll('.gf-card').forEach(function (card) {
+    var d = new Date(card.getAttribute('data-date'));
+    d.setHours(0, 0, 0, 0);
+    if (d < today) {
+      card.style.display = 'none';
+    } else {
+      var badge = card.querySelector('.gf-status');
+      if (badge) {
+        var isToday = d.getTime() === today.getTime();
+        badge.textContent = isToday ? 'On Time' : 'Scheduled';
+        badge.className = 'gf-status ' + (isToday ? 'gf-status--ontime' : 'gf-status--scheduled');
+      }
+    }
+  });
+
+  /* Hide trip groups where all flights are past */
+  document.querySelectorAll('.fl-trip').forEach(function (trip) {
+    if (!trip.querySelector('.gf-card:not([style*="display: none"])'))
+      trip.style.display = 'none';
+  });
+
+  /* Collect stats from remaining visible cards */
+  var visible = Array.from(document.querySelectorAll('.gf-card:not([style*="display: none"])'));
+  var airports = new Set();
+  var airlines = new Set();
+  var countries = new Set();
+  var dates = [];
+  var totalMins = 0;
+
+  visible.forEach(function (card) {
+    dates.push(new Date(card.getAttribute('data-date')));
+    card.querySelectorAll('.gf-code').forEach(function (c) {
+      var code = c.textContent.trim();
+      airports.add(code);
+      if (AP_COUNTRY[code]) countries.add(AP_COUNTRY[code]);
+    });
+    var an = card.querySelector('.gf-airline-name');
+    if (an) airlines.add(an.textContent.trim());
+    /* parse duration "Xh Ym" or "Xh" or "Ym" */
+    var dur = card.querySelector('.gf-nonstop');
+    if (dur) {
+      var hm = dur.textContent.match(/(\d+)h\s*(?:(\d+)m)?/);
+      if (hm) totalMins += parseInt(hm[1] || 0) * 60 + parseInt(hm[2] || 0);
+    }
+  });
+
+  /* Format total air time */
+  var airH = Math.floor(totalMins / 60), airM = totalMins % 60;
+  var airTime = airH + 'h' + (airM ? ' ' + airM + 'm' : '');
+  var elAirtime = document.getElementById('hs-airtime');
+  if (elAirtime) elAirtime.textContent = totalMins ? airTime : '—';
+  var elCountries = document.getElementById('hs-countries');
+  if (elCountries) elCountries.textContent = countries.size || '—';
+  var elAirlines = document.getElementById('hs-airlines');
+  if (elAirlines) elAirlines.textContent = airlines.size || '—';
+
+  /* Build date range string e.g. "Jun – Oct 2026" or "Jun 2026 – Jan 2027" */
+  var dateRange = '';
+  if (dates.length) {
+    dates.sort(function (a, b) { return a - b; });
+    var first = dates[0], last = dates[dates.length - 1];
+    if (first.getFullYear() === last.getFullYear()) {
+      dateRange = MONTHS[first.getMonth()] + ' – ' + MONTHS[last.getMonth()] + ' ' + first.getFullYear();
+    } else {
+      dateRange = MONTHS[first.getMonth()] + ' ' + first.getFullYear() + ' – ' + MONTHS[last.getMonth()] + ' ' + last.getFullYear();
+    }
+  }
+
+  /* Update hero subtitle */
+  var sub = document.querySelector('.fl-hero-sub');
+  if (sub && visible.length > 0) {
+    sub.textContent = visible.length + ' flight' + (visible.length > 1 ? 's' : '') +
+                      ' · ' + airports.size + ' airports' +
+                      (dateRange ? ' · ' + dateRange : '');
+  } else if (sub) {
+    sub.textContent = 'No upcoming flights';
+  }
+})();
+</script>
+
+<script>
+(function () {
+  var mapEl = document.getElementById('fl-map');
+  var loaded = false;
+
+  function initMap() {
+    if (loaded) return;
+    loaded = true;
+
+    /* Load Leaflet CSS */
+    var css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css';
+    document.head.appendChild(css);
+
+    /* Load Leaflet JS, then init */
+    var js = document.createElement('script');
+    js.src = 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js';
+    js.onload = function () { buildMap(); };
+    document.head.appendChild(js);
+  }
+
+  /* Trigger when map div enters viewport */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(entries, obs) {
+      if (entries[0].isIntersecting) { obs.disconnect(); initMap(); }
+    }, { rootMargin: '200px' }).observe(mapEl);
+  } else {
+    initMap(); /* fallback for old browsers */
+  }
+
+  function buildMap() {
+  var map = L.map('fl-map', {
+    center: [38, 80], zoom: 2,
+    zoomControl: true, scrollWheelZoom: false, attributionControl: false
+  });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    subdomains: 'abcd', maxZoom: 18
+  }).addTo(map);
+
+  var AP = {
+    {% for ap in fd.airports %}{{ ap[0] }}: { ll: [{{ ap[1].lat }}, {{ ap[1].lng }}], label: '{{ ap[0] }} · {{ ap[1].city }}' },
+    {% endfor %}
+  };
+
+  /* Bearing (degrees) from point a to point b */
+  function bearing(a, b) {
+    var R = Math.PI / 180;
+    var la = a[0]*R, lo1 = a[1]*R, lb = b[0]*R, lo2 = b[1]*R;
+    var dLon = lo2 - lo1;
+    var y = Math.sin(dLon) * Math.cos(lb);
+    var x = Math.cos(la)*Math.sin(lb) - Math.sin(la)*Math.cos(lb)*Math.cos(dLon);
+    return (Math.atan2(y, x) / R + 360) % 360;
+  }
+
+  /* Fix paths that cross the antimeridian (180°) so Leaflet draws east, not west */
+  function fixAntimeridian(pts) {
+    var out = [[pts[0][0], pts[0][1]]];
+    for (var i = 1; i < pts.length; i++) {
+      var dlng = pts[i][1] - out[i-1][1];
+      var lng  = pts[i][1];
+      if (dlng >  180) lng -= 360;
+      if (dlng < -180) lng += 360;
+      out.push([pts[i][0], lng]);
+    }
+    return out;
+  }
+
+  function gc(a, b) {
+    var n = 80, D = Math.PI / 180;
+    var f1=a[0]*D, l1=a[1]*D, f2=b[0]*D, l2=b[1]*D;
+    var d = 2*Math.asin(Math.sqrt(Math.pow(Math.sin((f2-f1)/2),2)+Math.cos(f1)*Math.cos(f2)*Math.pow(Math.sin((l2-l1)/2),2)));
+    if (!d) return [a,b];
+    var pts = [];
+    for (var i=0; i<=n; i++) {
+      var t=i/n, A=Math.sin((1-t)*d)/Math.sin(d), B=Math.sin(t*d)/Math.sin(d);
+      var x=A*Math.cos(f1)*Math.cos(l1)+B*Math.cos(f2)*Math.cos(l2);
+      var y=A*Math.cos(f1)*Math.sin(l1)+B*Math.cos(f2)*Math.sin(l2);
+      var z=A*Math.sin(f1)+B*Math.sin(f2);
+      pts.push([Math.atan2(z,Math.sqrt(x*x+y*y))/D, Math.atan2(y,x)/D]);
+    }
+    return pts;
+  }
+
+  var allPts = [];
+  var hasLive = document.getElementById('live-card').style.display !== 'none';
+  var liveFrom = hasLive ? document.getElementById('lv-dep-code').textContent.trim() : null;
+  var liveTo   = hasLive ? document.getElementById('lv-arr-code').textContent.trim() : null;
+
+  if (!hasLive) {
+    /* No active flight today — show all upcoming routes */
+    [
+      {% for r in fd.map_routes %}{ from:'{{ r.from }}', to:'{{ r.to }}', color:'{{ r.color }}' },
+      {% endfor %}
+    ].forEach(function(r) {
+      var pts = fixAntimeridian(gc(AP[r.from].ll, AP[r.to].ll));
+      allPts = allPts.concat(pts);
+      L.polyline(pts, { color: r.color, weight: 5, opacity: 0.9 }).addTo(map);
+    });
+  }
+
+  Object.keys(AP).forEach(function(k) {
+    var a = AP[k];
+    var isLiveAP = k === liveFrom || k === liveTo;
+    /* When live flight active: only show departure & arrival dots */
+    if (hasLive && !isLiveAP) return;
+    L.circleMarker(a.ll, {
+      radius: 7, fillColor: '#1a73e8', color: '#fff', weight: 2, fillOpacity: 1
+    }).addTo(map).bindTooltip(a.label, { className:'fl-tip', direction:'top', offset:[0,-10] });
+  });
+
+  /* ── Live flight route ── */
+  var liveCard = document.getElementById('live-card');
+  var lAP = null, lPts = null, fromCode = null, toCode = null;
+  if (liveCard && liveCard.style.display !== 'none') {
+    var ldep = liveDep; var larr = liveArr;
+    var lnow = new Date();
+    var lpct = Math.min(1, Math.max(0, (lnow - ldep) / (larr - ldep)));
+
+    lAP = {
+      {% for ap in fd.airports %}
+      {{ ap[0] }}: [{{ ap[1].lat }}, {{ ap[1].lng }}],
+      {% endfor %}
+    };
+    fromCode = document.getElementById('lv-dep-code').textContent.trim();
+    toCode   = document.getElementById('lv-arr-code').textContent.trim();
+
+    if (lAP[fromCode] && lAP[toCode]) {
+      lPts = fixAntimeridian(gc(lAP[fromCode], lAP[toCode]));
+
+      /* Dashed gray background */
+      L.polyline(lPts, { color: '#aaa', weight: 2, opacity: 0.5, dashArray: '5 5' }).addTo(map);
+      /* Completed (blue) portion — only when flying or arrived */
+      if (liveState !== 'scheduled') {
+        var donePts = lPts.slice(0, Math.floor(lpct * lPts.length) + 1);
+        if (donePts.length > 1) L.polyline(donePts, { color: '#1a73e8', weight: 3, opacity: 1 }).addTo(map);
+      }
+
+      /* Plane marker — at departure when scheduled, current pos when flying, hidden when arrived */
+      if (liveState !== 'arrived') {
+        var planeIdx = liveState === 'scheduled' ? 0 : Math.min(Math.floor(lpct * lPts.length), lPts.length - 1);
+        var planePos = lPts[planeIdx];
+        var br = bearing(lAP[fromCode], lAP[toCode]);
+        var rot = Math.round(br - 90);
+        var flightNum = document.getElementById('lv-num').textContent.trim();
+        var planeIcon = L.divIcon({
+          className: '',
+          html: '<div style="transform:rotate('+rot+'deg);width:28px;height:28px;display:flex;align-items:center;justify-content:center"><div class="map-plane">✈</div></div>',
+          iconSize: [28, 28],
+          iconAnchor: [14, 14]
+        });
+        L.marker(planePos, { icon: planeIcon }).addTo(map)
+          .bindTooltip(flightNum + ' · ' + fromCode + ' → ' + toCode, {
+            permanent: false, className: 'fl-tip', direction: 'top', offset: [0, -14]
+          });
+      }
+    }
+  }
+
+  /* fitBounds: live flight route when active, all airports otherwise */
+  var boundsPts;
+  if (hasLive && lAP && lPts && lAP[fromCode] && lAP[toCode]) {
+    boundsPts = [lAP[fromCode], lAP[toCode], lPts[Math.floor(lPts.length / 2)]];
+  } else {
+    boundsPts = Object.keys(AP).map(function(k){ return AP[k].ll; });
+    [
+      [AP.NGO.ll, AP.PVG.ll],
+      [AP.PVG.ll, AP.FRA.ll],
+      [AP.NGO.ll, AP.HAN.ll],
+      [AP.NGO.ll, AP.NGS.ll]
+    ].forEach(function(pair) {
+      var mid = fixAntimeridian(gc(pair[0], pair[1]));
+      boundsPts.push(mid[Math.floor(mid.length / 2)]);
+    });
+  }
+
+  map.fitBounds(boundsPts, { padding: [40, 40] });
+  } /* end buildMap */
+})();
+</script>
+
+<style>
+  /* ── Live flight card ── */
+  .live-card {
+    border: 1.5px solid color-mix(in srgb,#1a73e8 40%,transparent);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    background: linear-gradient(135deg, #e8f0fe 0%, #fff 60%);
+    margin-bottom: 1.2rem;
+    box-shadow: 0 2px 12px rgba(26,115,232,.1);
+  }
+  .live-header {
+    display: flex; align-items: center; gap: .6rem;
+    margin-bottom: .9rem; flex-wrap: wrap;
+  }
+  .live-badge {
+    display: inline-flex; align-items: center; gap: .35rem;
+    font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+    color: #c0392b; background: rgba(192,57,43,.08);
+    border: 1px solid rgba(192,57,43,.25);
+    border-radius: 20px; padding: .18rem .6rem;
+  }
+  .live-badge--scheduled { color:#1a73e8; background:rgba(26,115,232,.08); border-color:rgba(26,115,232,.25); }
+  .live-badge--arrived   { color:#1e8e3e; background:rgba(30,142,62,.08);  border-color:rgba(30,142,62,.25); }
+  .live-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #c0392b;
+    animation: live-pulse 1.3s ease-in-out infinite;
+  }
+  @keyframes live-pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50%      { opacity:.35; transform:scale(.8); }
+  }
+  .live-logo { height: 20px; width: auto; object-fit: contain; margin-left: auto; }
+  .live-airline { font-size: .85rem; font-weight: 500; color: #3c4043; }
+  .live-num { font-size: .75rem; color: #5f6368; }
+  .live-btn {
+    margin-left: auto; font-size: .72rem; font-weight: 600;
+    color: #1a73e8; border: 1px solid rgba(26,115,232,.35);
+    border-radius: 4px; padding: .1rem .45rem;
+    text-decoration: none; transition: background .15s;
+  }
+  .live-btn:hover { background: rgba(26,115,232,.08); text-decoration: none; }
+
+  .live-route { display: flex; align-items: center; gap: .6rem; }
+  .live-stop { flex: 0 0 120px; white-space: nowrap; }
+  .live-stop--right { text-align: right; }
+  .live-time { font-size: 1.45rem; font-weight: 400; color: #202124; line-height: 1; letter-spacing: -.01em; white-space: nowrap; }
+  .live-tz   { font-size: .65rem; color: #70757a; }
+  .live-code { font-size: 1rem; font-weight: 700; color: #3c4043; margin-top: .22rem; }
+  .live-city { display: none; }
+
+  .live-track { flex: 1; text-align: center; min-width: 0; }
+  .live-dur   { font-size: .88rem; font-weight: 500; color: #70757a; margin-bottom: .4rem; }
+  .live-bar {
+    position: relative; height: 4px;
+    background: #dadce0; border-radius: 4px;
+    margin-bottom: .3rem;
+  }
+  .live-bar-done {
+    position: absolute; left: 0; top: 0; height: 100%;
+    background: #1a73e8; border-radius: 4px;
+    transition: width .5s ease;
+  }
+  .live-plane {
+    position: absolute; top: 50%;
+    transform: translateY(-60%);
+    font-size: 1.3rem; line-height: 1;
+    animation: fly-bob .9s ease-in-out infinite alternate;
+    filter: drop-shadow(0 1px 3px rgba(26,115,232,.4));
+  }
+  @keyframes fly-bob {
+    from { transform: translateY(-80%); }
+    to   { transform: translateY(-40%); }
+  }
+  /* Map plane marker */
+  .map-plane {
+    font-size: 1.3rem; line-height: 1;
+    filter: drop-shadow(0 1px 4px rgba(26,115,232,.6));
+    animation: fly-bob .9s ease-in-out infinite alternate;
+  }
+
+  .live-terminal  { font-size:.73rem; color:#9aa0a6; margin-top:.3rem; }
+
+  /* Hero */
+  .fl-hero {
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem;
+  }
+  .fl-hero-title { font-size: 1.5rem; font-weight: 800; color: var(--global-text-color,#111); }
+  .fl-hero-sub   { font-size: 0.9rem; color: var(--global-text-color-light,#888); margin-top:.2rem; }
+  .fl-hero-stats { display:flex; gap:1.8rem; }
+  .fl-hstat { text-align:center; }
+  .fl-hstat-v { font-size:1.5rem; font-weight:800; color:var(--global-theme-color,#b509ac); line-height:1; }
+  .fl-hstat-l { font-size:0.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--global-text-color-light,#aaa); margin-top:.15rem; }
+
+  /* Map */
+  #fl-map {
+    width:100%; height:340px;
+    border-radius:14px; overflow:hidden;
+    border:1px solid #2a2a3a; background:#1a1a2e;
+    margin-bottom:.7rem;
+  }
+
+  /* Legend */
+  .fl-legend { display:flex; gap:1.2rem; flex-wrap:wrap; margin-bottom:1.8rem; }
+  .fl-leg { font-size:0.84rem; font-weight:600; color:var(--c); }
+
+  /* Tooltip */
+  .fl-tip {
+    background:#111!important; color:#fff!important;
+    border:none!important; border-radius:7px!important;
+    font-size:0.8rem!important; padding:.3rem .6rem!important;
+    box-shadow:0 2px 10px rgba(0,0,0,.5)!important;
+  }
+  .fl-tip::before { display:none!important; }
+
+  /* Trips */
+  .fl-trips { display:flex; flex-direction:column; gap:2.2rem; }
+  .fl-trip-header {
+    display:flex; align-items:center; gap:.7rem;
+    margin-bottom:.85rem; padding-bottom:.65rem;
+    border-bottom:1px solid var(--global-divider-color,#eee);
+  }
+  .fl-trip-icon { font-size:1.5rem; line-height:1; }
+  .fl-trip-info  { flex:1; }
+  .fl-trip-name  { font-size:1rem; font-weight:700; color:var(--global-text-color,#111); }
+  .fl-trip-dates { font-size:.82rem; color:var(--global-text-color-light,#999); margin-top:.05rem; }
+  .fl-trip-count {
+    font-size:.73rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em;
+    color:var(--global-theme-color,#b509ac);
+    background:color-mix(in srgb,var(--global-theme-color,#b509ac) 10%,transparent);
+    border-radius:20px; padding:.2rem .65rem; white-space:nowrap;
+  }
+
+  /* ── Google Flights-style cards ── */
+  .fl-flights { display:flex; flex-direction:column; gap:.6rem; }
+
+  .gf-card {
+    border:1px solid #e0e0e0;
+    border-radius:12px;
+    padding:1rem 1.2rem .9rem;
+    background:#fff;
+    box-shadow:0 1px 3px rgba(0,0,0,.06);
+    transition:box-shadow .2s, border-color .2s;
+  }
+  .gf-card:hover {
+    box-shadow:0 3px 14px rgba(0,0,0,.1);
+    border-color:#c0c0c0;
+  }
+
+  /* top row */
+  .gf-top {
+    display:flex; align-items:center; justify-content:space-between;
+    margin-bottom:.85rem; gap:.5rem; flex-wrap:wrap;
+  }
+  .gf-airline-row { display:flex; align-items:center; gap:.5rem; }
+  .gf-logo { height:20px; width:auto; object-fit:contain; }
+  .gf-airline-name { font-size:.85rem; font-weight:500; color:#3c4043; }
+  .gf-flight-num {
+    font-size:.78rem; font-weight:500;
+    color:#5f6368;
+  }
+  .gf-top-right { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+  .gf-date { font-size:.78rem; color:#70757a; }
+  .gf-status { font-size:.72rem; font-weight:600; border-radius:4px; padding:.1rem .45rem; white-space:nowrap; }
+  .gf-status--scheduled { color:#1e8e3e; background:#e6f4ea; }
+  .gf-status--ontime    { color:#1e8e3e; background:#e6f4ea; }
+  .gf-btn {
+    font-size:.72rem; font-weight:600;
+    color:var(--global-theme-color,#1a73e8);
+    background:transparent;
+    border:1px solid color-mix(in srgb,var(--global-theme-color,#1a73e8) 35%,transparent);
+    border-radius:4px; padding:.1rem .45rem;
+    text-decoration:none; white-space:nowrap; transition:background .15s;
+  }
+  .gf-btn:hover {
+    background:color-mix(in srgb,var(--global-theme-color,#1a73e8) 8%,transparent);
+    text-decoration:none;
+  }
+
+  /* route row */
+  .gf-route {
+    display:flex; align-items:center; gap:.6rem;
+  }
+  .gf-stop { flex:0 0 120px; width:120px; }
+  .gf-stop--right { text-align:right; }
+  .gf-time {
+    font-size:1.45rem; font-weight:400;
+    color:#202124; line-height:1; letter-spacing:-.01em;
+    white-space: nowrap;
+  }
+  .gf-tz { font-size:.65rem; color:#70757a; font-weight:400; }
+  .gf-code {
+    font-size:1rem; font-weight:700; color:#3c4043; margin-top:.25rem;
+  }
+  .gf-city { display:none; }
+
+  /* connector */
+  .gf-connector { flex:1; text-align:center; min-width:0; padding:0 .4rem; }
+  .gf-nonstop { font-size:.88rem; font-weight:500; color:#70757a; margin-bottom:.3rem; }
+  .gf-line { display:flex; align-items:center; margin-bottom:.25rem; }
+  .gf-dot {
+    width:8px; height:8px; border-radius:50%; flex-shrink:0;
+    border:2px solid #dadce0; background:#fff;
+  }
+  .gf-bar { flex:1; height:1.5px; background:#dadce0; }
+  .gf-plane { font-size:.95rem; color:#70757a; padding:0 .2rem; }
+  .gf-terminal { font-size:.73rem; color:#9aa0a6; }
+
+  @media (max-width:480px) {
+    #fl-map { height:210px; }
+    .fl-hero { flex-direction:column; align-items:flex-start; }
+    .gf-time { font-size:1.15rem; }
+    .gf-stop { min-width:60px; }
+  }
+</style>

@@ -40,6 +40,221 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    <!-- Live flight (auto-shown by JS when currently in the air) -->
+    {% assign fd = site.data.flights %}
+    <div id="ab-live-wrap" style="display:none; margin-bottom:1.5rem;">
+      <h2><a id="ab-live-title" href="{{ '/flights/' | relative_url }}" style="color:inherit">in the air ✈</a></h2>
+
+      <!-- Same card design as flights page -->
+      <div id="ab-live-card" class="live-card">
+        <div class="live-header">
+          <div id="ab-badge" class="live-badge"><span class="live-dot"></span> In the Air</div>
+          <div class="live-meta">
+            <img id="ab-lv-logo" src="" alt="" class="live-logo" onerror="this.style.display='none'"/>
+            <span id="ab-lv-airline" class="live-airline"></span>
+            <span id="ab-lv-num" class="live-num"></span>
+          </div>
+          <a id="ab-lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">FlightAware ↗</a>
+        </div>
+        <div class="live-route">
+          <div class="live-stop">
+            <div class="live-time"><span id="ab-dep-time"></span><span id="ab-dep-tz" class="live-tz"></span></div>
+            <div id="ab-dep-code" class="live-code"></div>
+          </div>
+          <div class="live-track">
+            <div id="ab-dur" class="live-dur"></div>
+            <div class="live-bar">
+              <div class="live-bar-done" id="ab-progress"></div>
+              <div class="live-plane" id="ab-plane">✈</div>
+            </div>
+            <div id="ab-terminal" class="live-terminal"></div>
+          </div>
+          <div class="live-stop live-stop--right">
+            <div class="live-time"><span id="ab-arr-time"></span><span id="ab-arr-tz" class="live-tz"></span></div>
+            <div id="ab-arr-code" class="live-code"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Small map -->
+      <div id="ab-map" style="width:100%;height:250px;border-radius:14px;overflow:hidden;border:1px solid #ddd;background:#f0f2f5;margin-top:.8rem;"></div>
+    </div>
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin>
+
+    <script>
+    var AB_FLIGHTS = [
+      {% for trip in fd.trips %}{% for fl in trip.flights %}{
+        number:"{{ fl.number }}",airline:"{{ fl.airline }}",
+        date:"{{ fl.date }}",
+        fromTime:"{{ fl.from_time }}",fromTz:"{{ fl.from_tz }}",fromCode:"{{ fl.from_code }}",
+        toTime:"{{ fl.to_time }}",toTz:"{{ fl.to_tz }}",toCode:"{{ fl.to_code }}",
+        duration:"{{ fl.duration }}",terminal:"{{ fl.terminal }}"
+      },{% endfor %}{% endfor %}
+    ];
+    var AB_ICAO = { {% for k in fd.airline_icao %}"{{ k[0] }}":"{{ k[1] }}",{% endfor %} };
+    var AB_AP   = { {% for ap in fd.airports %}"{{ ap[0] }}":[{{ ap[1].lat }},{{ ap[1].lng }}],{% endfor %} };
+
+    (function(){
+      function toUTC(dateStr,timeStr,tzStr){
+        var tm=timeStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
+        if(!tm)return null;
+        var h=parseInt(tm[1]),m=parseInt(tm[2]),ap=tm[3].toUpperCase();
+        if(ap==='AM'&&h===12)h=0; if(ap==='PM'&&h!==12)h+=12;
+        var pad=function(n){return n<10?'0'+n:n;};
+        var tz=tzStr.match(/GMT([+-])(\d+)/);
+        var off=tz?parseInt(tz[1]+'1')*parseInt(tz[2]):0;
+        var d=new Date(dateStr+' '+pad(h)+':'+pad(m)+':00 UTC');
+        return new Date(d.getTime()-off*3600000);
+      }
+      function parseDurMs(dur){
+        var m=dur.match(/(\d+)h\s*(?:(\d+)m)?/);
+        return m?(parseInt(m[1])*60+parseInt(m[2]||0))*60000:0;
+      }
+
+      var now=new Date(),active=null,dep,arr,showUntil,flightState;
+      for(var i=0;i<AB_FLIGHTS.length;i++){
+        var fl=AB_FLIGHTS[i];
+        var d=toUTC(fl.date,fl.fromTime,fl.fromTz);
+        var a=new Date(d.getTime()+parseDurMs(fl.duration));
+        var showFrom=new Date(fl.date+' 00:00:00 UTC');
+        var su=new Date(a);su.setUTCHours(0,0,0,0);su.setUTCDate(su.getUTCDate()+1);
+        if(now<showFrom||now>su)continue;
+        active=fl;dep=d;arr=a;showUntil=su;
+        flightState=now<d?'scheduled':now<=a?'flying':'arrived';
+        break;
+      }
+      if(!active)return;
+
+      document.getElementById('ab-live-wrap').style.display='';
+      var abBadge=document.getElementById('ab-badge');
+      var abTitle=document.getElementById('ab-live-title');
+      var TITLES={flying:'in the air ✈',scheduled:'departing today ✈',arrived:'landed ✈'};
+      function setBadge(state){
+        if(state==='flying'){abBadge.className='live-badge';abBadge.innerHTML='<span class="live-dot"></span> In the Air';}
+        else if(state==='scheduled'){abBadge.className='live-badge live-badge--scheduled';abBadge.textContent='Scheduled';}
+        else{abBadge.className='live-badge live-badge--arrived';abBadge.textContent='✓ Arrived';}
+        if(abTitle)abTitle.textContent=TITLES[state]||'in the air ✈';
+      }
+      setBadge(flightState);
+
+      var ac=active.number.slice(0,2),num=active.number.slice(2);
+      var icao=AB_ICAO[ac]||ac;
+      document.getElementById('ab-lv-logo').src='https://www.gstatic.com/flights/airline_logos/70px/'+ac+'.png';
+      document.getElementById('ab-lv-airline').textContent=active.airline;
+      document.getElementById('ab-lv-num').textContent=active.number;
+      document.getElementById('ab-lv-link').href='https://www.flightaware.com/live/flight/'+icao+num;
+      document.getElementById('ab-dep-time').textContent=active.fromTime;
+      document.getElementById('ab-dep-tz').textContent=' '+active.fromTz;
+      document.getElementById('ab-dep-code').textContent=active.fromCode;
+      document.getElementById('ab-arr-time').textContent=active.toTime;
+      document.getElementById('ab-arr-tz').textContent=' '+active.toTz;
+      document.getElementById('ab-arr-code').textContent=active.toCode;
+      document.getElementById('ab-dur').textContent=active.duration;
+      document.getElementById('ab-terminal').textContent='Terminal '+active.terminal;
+
+      var bar=document.getElementById('ab-progress');
+      var plane=document.getElementById('ab-plane');
+      var total=arr-dep;
+      function tick(){
+        var now=new Date();
+        if(now>showUntil){document.getElementById('ab-live-wrap').style.display='none';clearInterval(timer);return;}
+        var state=now<dep?'scheduled':now<=arr?'flying':'arrived';
+        setBadge(state);
+        if(state==='scheduled'){bar.style.width='0%';plane.style.display='none';}
+        else if(state==='flying'){plane.style.display='';var pct=Math.min(100,Math.max(0,(now-dep)/total*100));bar.style.width=pct+'%';plane.style.left='calc('+pct+'% - 10px)';}
+        else{plane.style.display='none';bar.style.width='100%';}
+      }
+      tick(); var timer=setInterval(tick,10000);
+
+      /* Load Leaflet & draw map */
+      var css=document.createElement('link');
+      css.rel='stylesheet';css.href='https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.css';
+      document.head.appendChild(css);
+      var js=document.createElement('script');
+      js.src='https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.min.js';
+      js.onload=function(){
+        var from=AB_AP[active.fromCode],to=AB_AP[active.toCode];
+        if(!from||!to)return;
+        var map=L.map('ab-map',{zoomControl:false,scrollWheelZoom:false,attributionControl:false,dragging:false});
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{subdomains:'abcd'}).addTo(map);
+        function gc(a,b){
+          var n=60,D=Math.PI/180,f1=a[0]*D,l1=a[1]*D,f2=b[0]*D,l2=b[1]*D;
+          var d=2*Math.asin(Math.sqrt(Math.pow(Math.sin((f2-f1)/2),2)+Math.cos(f1)*Math.cos(f2)*Math.pow(Math.sin((l2-l1)/2),2)));
+          if(!d)return[a,b];
+          var pts=[];
+          for(var i=0;i<=n;i++){var t=i/n,A=Math.sin((1-t)*d)/Math.sin(d),B=Math.sin(t*d)/Math.sin(d);
+            var x=A*Math.cos(f1)*Math.cos(l1)+B*Math.cos(f2)*Math.cos(l2);
+            var y=A*Math.cos(f1)*Math.sin(l1)+B*Math.cos(f2)*Math.sin(l2);
+            var z=A*Math.sin(f1)+B*Math.sin(f2);
+            pts.push([Math.atan2(z,Math.sqrt(x*x+y*y))/D,Math.atan2(y,x)/D]);}
+          return pts;
+        }
+        function fix(pts){var out=[[pts[0][0],pts[0][1]]];for(var i=1;i<pts.length;i++){var dlng=pts[i][1]-out[i-1][1],lng=pts[i][1];if(dlng>180)lng-=360;if(dlng<-180)lng+=360;out.push([pts[i][0],lng]);}return out;}
+        var pts=fix(gc(from,to));
+        var pct=Math.min(1,Math.max(0,(new Date()-dep)/total));
+        var idx=Math.min(Math.floor(pct*pts.length),pts.length-1);
+        var pos=pts[idx];
+        /* Full gray dashed route */
+        L.polyline(pts,{color:'#dadce0',weight:2,dashArray:'5 4'}).addTo(map);
+        /* Blue completed portion — only when flying or arrived */
+        if(flightState!=='scheduled'&&idx>0){
+          L.polyline(pts.slice(0,idx+1),{color:'#1a73e8',weight:3}).addTo(map);
+        }
+        L.circleMarker(from,{radius:6,fillColor:'#1a73e8',color:'#fff',weight:2,fillOpacity:1}).addTo(map);
+        L.circleMarker(to,{radius:6,fillColor:'#1a73e8',color:'#fff',weight:2,fillOpacity:1}).addTo(map);
+        if(flightState!=='arrived'){
+          function bearing(a,b){var R=Math.PI/180,la=a[0]*R,lo1=a[1]*R,lb=b[0]*R,lo2=b[1]*R,dL=lo2-lo1,y=Math.sin(dL)*Math.cos(lb),x=Math.cos(la)*Math.sin(lb)-Math.sin(la)*Math.cos(lb)*Math.cos(dL);return(Math.atan2(y,x)/R+360)%360;}
+          var br=bearing(from,to), rot=Math.round(br-90);
+          var markerPos=flightState==='scheduled'?from:pos;
+          var planeIcon=L.divIcon({className:'',html:'<div style="transform:rotate('+rot+'deg);width:24px;height:24px;display:flex;align-items:center;justify-content:center"><div class="map-plane">✈</div></div>',iconSize:[24,24],iconAnchor:[12,12]});
+          L.marker(markerPos,{icon:planeIcon}).addTo(map);
+        }
+
+        /* Adjust map height by duration: >5h = long-haul = 400px */
+        var durMs=parseDurMs(active.duration);
+        var mapEl=document.getElementById('ab-map');
+        if(durMs>5*3600000) mapEl.style.height='400px';
+
+        /* Include arc midpoint so long routes (e.g. PVG→FRA) don't get clipped */
+        var mid=pts[Math.floor(pts.length/2)];
+        map.fitBounds([from,to,mid],{padding:[30,30]});
+      };
+      document.head.appendChild(js);
+    })();
+    </script>
+
+    <style>
+      /* live-* classes are shared with flights page */
+      .live-card { border:1.5px solid color-mix(in srgb,#1a73e8 40%,transparent); border-radius:14px; padding:1rem 1.2rem; background:linear-gradient(135deg,#e8f0fe 0%,#fff 60%); margin-bottom:0; box-shadow:0 2px 12px rgba(26,115,232,.1); }
+      .live-header { display:flex; align-items:center; gap:.6rem; margin-bottom:.9rem; flex-wrap:wrap; }
+      .live-badge { display:inline-flex; align-items:center; gap:.35rem; font-size:.7rem; font-weight:700; letter-spacing:.08em; color:#c0392b; background:rgba(192,57,43,.08); border:1px solid rgba(192,57,43,.25); border-radius:20px; padding:.18rem .6rem; }
+      .live-badge--scheduled { color:#1a73e8; background:rgba(26,115,232,.08); border-color:rgba(26,115,232,.25); }
+      .live-badge--arrived   { color:#1e8e3e; background:rgba(30,142,62,.08);  border-color:rgba(30,142,62,.25); }
+      .live-dot { width:7px; height:7px; border-radius:50%; background:#c0392b; animation:live-pulse 1.3s ease-in-out infinite; }
+      @keyframes live-pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.35;transform:scale(.8);} }
+      .live-logo { height:20px; width:auto; object-fit:contain; margin-left:auto; }
+      .live-airline { font-size:.85rem; font-weight:500; color:#3c4043; }
+      .live-num { font-size:.75rem; color:#5f6368; }
+      .live-btn { margin-left:auto; font-size:.72rem; font-weight:600; color:#1a73e8; border:1px solid rgba(26,115,232,.35); border-radius:4px; padding:.1rem .45rem; text-decoration:none; transition:background .15s; }
+      .live-btn:hover { background:rgba(26,115,232,.08); text-decoration:none; }
+      .live-route { display:flex; align-items:center; gap:.6rem; }
+      .live-stop { flex:0 0 120px; white-space:nowrap; }
+      .live-stop--right { text-align:right; }
+      .live-time { font-size:1.45rem; font-weight:400; color:#202124; line-height:1; letter-spacing:-.01em; white-space:nowrap; }
+      .live-tz { font-size:.65rem; color:#70757a; }
+      .live-code { font-size:1rem; font-weight:700; color:#3c4043; margin-top:.22rem; }
+      .live-track { flex:1; text-align:center; min-width:0; }
+      .live-dur { font-size:.88rem; font-weight:500; color:#70757a; margin-bottom:.4rem; }
+      .live-bar { position:relative; height:4px; background:#dadce0; border-radius:4px; margin-bottom:.3rem; }
+      .live-bar-done { position:absolute; left:0; top:0; height:100%; background:#1a73e8; border-radius:4px; transition:width .5s ease; }
+      .live-plane { position:absolute; top:50%; font-size:1.3rem; line-height:1; animation:fly-bob .9s ease-in-out infinite alternate; filter:drop-shadow(0 1px 3px rgba(26,115,232,.4)); }
+      @keyframes fly-bob { from{transform:translateY(-80%);} to{transform:translateY(-40%);} }
+      .map-plane { font-size:1.3rem; line-height:1; filter:drop-shadow(0 1px 4px rgba(26,115,232,.6)); animation:fly-bob .9s ease-in-out infinite alternate; }
+      .live-terminal { font-size:.73rem; color:#9aa0a6; margin-top:.3rem; }
+    </style>
+
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
