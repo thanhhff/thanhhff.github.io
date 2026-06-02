@@ -1,6 +1,7 @@
 ---
 layout: page
-title: blog
+title: Blog
+nav_title: blog
 permalink: /blog/
 nav: true
 nav_order: 2

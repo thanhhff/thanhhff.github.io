@@ -21,7 +21,7 @@ announcements:
 latest_posts:
   enabled: true
   scrollable: false
-  limit: 10
+  limit: 5
 ---
 
 I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specializing in the Department of Intelligent Systems. My research focuses on vision-language models, multimodal recognition, and video captioning, with applications in solving real-world problems.

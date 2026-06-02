@@ -1,9 +1,10 @@
 ---
 layout: page
-title: flights
+title: ✈
 permalink: /flights/
-nav: false
+nav: true
 _styles: ".post-title, .post-description { display: none; }"
+nav_order: 5
 ---
 
 <!-- Preconnect to speed up tile loading once map is requested -->
@@ -183,7 +184,7 @@ var liveDep = null, liveArr = null, liveState = null;
 </script>
 
 <!-- ── Map ── -->
-<div id="fl-map" style="width:100%;height:400px;border-radius:14px;overflow:hidden;border:1px solid #ddd;background:#f0f2f5;margin-bottom:.7rem;display:flex;align-items:center;justify-content:center;color:#aaa;font-size:.85rem;letter-spacing:.05em;">Loading map…</div>
+<div id="fl-map" style="width:100%;height:400px;border-radius:14px;overflow:hidden;border:1px solid var(--global-divider-color);background:var(--global-card-bg-color);margin-bottom:.7rem;display:flex;align-items:center;justify-content:center;color:var(--global-text-color-light);font-size:.85rem;letter-spacing:.05em;">Loading map…</div>
 <div class="fl-legend">
   {% for leg in fd.legend %}
   <span class="fl-leg" style="--c:{{ leg.color }}">● {{ leg.label }}</span>
@@ -381,8 +382,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
 
   function buildMap() {
   var map = L.map('fl-map', {
-    center: [38, 80], zoom: 2,
-    zoomControl: true, scrollWheelZoom: false, attributionControl: false
+    zoomControl: false, scrollWheelZoom: false, attributionControl: false, dragging: false
   });
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
@@ -438,6 +438,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   var liveFrom = hasLive ? document.getElementById('lv-dep-code').textContent.trim() : null;
   var liveTo   = hasLive ? document.getElementById('lv-arr-code').textContent.trim() : null;
 
+  var animLines = [];
   if (!hasLive) {
     /* No active flight today — show all upcoming routes */
     [
@@ -446,7 +447,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
     ].forEach(function(r) {
       var pts = fixAntimeridian(gc(AP[r.from].ll, AP[r.to].ll));
       allPts = allPts.concat(pts);
-      L.polyline(pts, { color: r.color, weight: 5, opacity: 0.9 }).addTo(map);
+      animLines.push(L.polyline(pts, { color: r.color, weight: 5, opacity: 0.9 }).addTo(map));
     });
   }
 
@@ -484,7 +485,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
       /* Completed (blue) portion — only when flying or arrived */
       if (liveState !== 'scheduled') {
         var donePts = lPts.slice(0, Math.floor(lpct * lPts.length) + 1);
-        if (donePts.length > 1) L.polyline(donePts, { color: '#1a73e8', weight: 3, opacity: 1 }).addTo(map);
+        if (donePts.length > 1) animLines.push(L.polyline(donePts, { color: '#1a73e8', weight: 3, opacity: 1 }).addTo(map));
       }
 
       /* Plane marker — at departure when scheduled, current pos when flying, hidden when arrived */
@@ -526,6 +527,19 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   }
 
   map.fitBounds(boundsPts, { padding: [40, 40] });
+
+  /* Animate route lines drawing after map settles */
+  setTimeout(function() {
+    animLines.forEach(function(line, i) {
+      var el = line.getElement();
+      if (!el) return;
+      var len = el.getTotalLength ? el.getTotalLength() : 2000;
+      el.style.strokeDasharray = len;
+      el.style.strokeDashoffset = len;
+      el.style.transition = 'stroke-dashoffset 1.2s ease-in-out ' + (i * 0.2) + 's';
+      requestAnimationFrame(function() { el.style.strokeDashoffset = 0; });
+    });
+  }, 100);
   } /* end buildMap */
 })();
 </script>
@@ -536,7 +550,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
     border: 1.5px solid color-mix(in srgb,#1a73e8 40%,transparent);
     border-radius: 14px;
     padding: 1rem 1.2rem;
-    background: linear-gradient(135deg, #e8f0fe 0%, #fff 60%);
+    background: color-mix(in srgb, #1a73e8 6%, var(--global-bg-color, #fff));
     margin-bottom: 1.2rem;
     box-shadow: 0 2px 12px rgba(26,115,232,.1);
   }
@@ -563,8 +577,8 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
     50%      { opacity:.35; transform:scale(.8); }
   }
   .live-logo { height: 20px; width: auto; object-fit: contain; margin-left: auto; }
-  .live-airline { font-size: .85rem; font-weight: 500; color: #3c4043; }
-  .live-num { font-size: .75rem; color: #5f6368; }
+  .live-airline { font-size: .85rem; font-weight: 500; color: var(--global-text-color); }
+  .live-num { font-size: .75rem; color: var(--global-text-color-light); }
   .live-btn {
     margin-left: auto; font-size: .72rem; font-weight: 600;
     color: #1a73e8; border: 1px solid rgba(26,115,232,.35);
@@ -576,16 +590,16 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   .live-route { display: flex; align-items: center; gap: .6rem; }
   .live-stop { flex: 0 0 120px; white-space: nowrap; }
   .live-stop--right { text-align: right; }
-  .live-time { font-size: 1.45rem; font-weight: 400; color: #202124; line-height: 1; letter-spacing: -.01em; white-space: nowrap; }
-  .live-tz   { font-size: .65rem; color: #70757a; }
-  .live-code { font-size: 1rem; font-weight: 700; color: #3c4043; margin-top: .22rem; }
+  .live-time { font-size: 1.45rem; font-weight: 400; color: var(--global-text-color); line-height: 1; letter-spacing: -.01em; white-space: nowrap; }
+  .live-tz   { font-size: .65rem; color: var(--global-text-color-light); }
+  .live-code { font-size: 1rem; font-weight: 700; color: var(--global-text-color); margin-top: .22rem; }
   .live-city { display: none; }
 
   .live-track { flex: 1; text-align: center; min-width: 0; }
-  .live-dur   { font-size: .88rem; font-weight: 500; color: #70757a; margin-bottom: .4rem; }
+  .live-dur   { font-size: .88rem; font-weight: 500; color: var(--global-text-color-light); margin-bottom: .4rem; }
   .live-bar {
     position: relative; height: 4px;
-    background: #dadce0; border-radius: 4px;
+    background: var(--global-divider-color); border-radius: 4px;
     margin-bottom: .3rem;
   }
   .live-bar-done {
@@ -606,12 +620,13 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   }
   /* Map plane marker */
   .map-plane {
-    font-size: 1.3rem; line-height: 1;
+    font-size: 1.3rem; line-height: 1; color: #000;
     filter: drop-shadow(0 1px 4px rgba(26,115,232,.6));
     animation: fly-bob .9s ease-in-out infinite alternate;
   }
+  html[data-theme=dark] .map-plane { color: #1a73e8; }
 
-  .live-terminal  { font-size:.73rem; color:#9aa0a6; margin-top:.3rem; }
+  .live-terminal  { font-size:.73rem; color: var(--global-text-color-light); margin-top:.3rem; }
 
   /* Hero */
   .fl-hero {
@@ -668,16 +683,16 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   .fl-flights { display:flex; flex-direction:column; gap:.6rem; }
 
   .gf-card {
-    border:1px solid #e0e0e0;
+    border:1px solid var(--global-divider-color);
     border-radius:12px;
     padding:1rem 1.2rem .9rem;
-    background:#fff;
+    background:var(--global-bg-color);
     box-shadow:0 1px 3px rgba(0,0,0,.06);
     transition:box-shadow .2s, border-color .2s;
   }
   .gf-card:hover {
     box-shadow:0 3px 14px rgba(0,0,0,.1);
-    border-color:#c0c0c0;
+    border-color:var(--global-text-color-light);
   }
 
   /* top row */
@@ -687,16 +702,16 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   }
   .gf-airline-row { display:flex; align-items:center; gap:.5rem; }
   .gf-logo { height:20px; width:auto; object-fit:contain; }
-  .gf-airline-name { font-size:.85rem; font-weight:500; color:#3c4043; }
+  .gf-airline-name { font-size:.85rem; font-weight:500; color:var(--global-text-color); }
   .gf-flight-num {
     font-size:.78rem; font-weight:500;
-    color:#5f6368;
+    color:var(--global-text-color-light);
   }
   .gf-top-right { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
-  .gf-date { font-size:.78rem; color:#70757a; }
+  .gf-date { font-size:.78rem; color:var(--global-text-color-light); }
   .gf-status { font-size:.72rem; font-weight:600; border-radius:4px; padding:.1rem .45rem; white-space:nowrap; }
-  .gf-status--scheduled { color:#1e8e3e; background:#e6f4ea; }
-  .gf-status--ontime    { color:#1e8e3e; background:#e6f4ea; }
+  .gf-status--scheduled { color:#1e8e3e; background:rgba(30,142,62,.1); }
+  .gf-status--ontime    { color:#1e8e3e; background:rgba(30,142,62,.1); }
   .gf-btn {
     font-size:.72rem; font-weight:600;
     color:var(--global-theme-color,#1a73e8);
@@ -718,26 +733,26 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   .gf-stop--right { text-align:right; }
   .gf-time {
     font-size:1.45rem; font-weight:400;
-    color:#202124; line-height:1; letter-spacing:-.01em;
+    color:var(--global-text-color); line-height:1; letter-spacing:-.01em;
     white-space: nowrap;
   }
-  .gf-tz { font-size:.65rem; color:#70757a; font-weight:400; }
+  .gf-tz { font-size:.65rem; color:var(--global-text-color-light); font-weight:400; }
   .gf-code {
-    font-size:1rem; font-weight:700; color:#3c4043; margin-top:.25rem;
+    font-size:1rem; font-weight:700; color:var(--global-text-color); margin-top:.25rem;
   }
   .gf-city { display:none; }
 
   /* connector */
   .gf-connector { flex:1; text-align:center; min-width:0; padding:0 .4rem; }
-  .gf-nonstop { font-size:.88rem; font-weight:500; color:#70757a; margin-bottom:.3rem; }
+  .gf-nonstop { font-size:.88rem; font-weight:500; color:var(--global-text-color-light); margin-bottom:.3rem; }
   .gf-line { display:flex; align-items:center; margin-bottom:.25rem; }
   .gf-dot {
     width:8px; height:8px; border-radius:50%; flex-shrink:0;
-    border:2px solid #dadce0; background:#fff;
+    border:2px solid var(--global-divider-color); background:var(--global-bg-color);
   }
-  .gf-bar { flex:1; height:1.5px; background:#dadce0; }
-  .gf-plane { font-size:.95rem; color:#70757a; padding:0 .2rem; }
-  .gf-terminal { font-size:.73rem; color:#9aa0a6; }
+  .gf-bar { flex:1; height:1.5px; background:var(--global-divider-color); }
+  .gf-plane { font-size:.95rem; color:var(--global-text-color-light); padding:0 .2rem; }
+  .gf-terminal { font-size:.73rem; color:var(--global-text-color-light); }
 
   @media (max-width:480px) {
     #fl-map { height:210px; }
