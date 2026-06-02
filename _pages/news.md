@@ -63,7 +63,7 @@ nav_order: 1
   content: '';
   flex: 1;
   height: 1.5px;
-  background: color-mix(in srgb, var(--global-theme-color) 22%, transparent);
+  background: var(--global-divider-color);
 }
 
 /* ── Month separator with dot ── */
@@ -87,7 +87,16 @@ nav_order: 1
   border-radius: 50%;
   flex-shrink: 0;
   background: var(--global-theme-color);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--global-theme-color) 18%, transparent);
+  position: relative;
+}
+.nt-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--global-theme-color);
+  opacity: 0.2;
+  z-index: -1;
 }
 
 /* ── Year group — continuous spine line ── */
