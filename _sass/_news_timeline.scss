@@ -32,10 +32,8 @@
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--global-text-color-light);
-  padding: .5rem 0 .3rem 1.2rem;
+  padding: .5rem 0 .3rem;
   margin-bottom: .2rem;
-  position: relative;
-  z-index: 1;
 }
 
 .nt-new-badge {
@@ -72,27 +70,18 @@
   }
 }
 
-// Spine: ::before absolutely positioned so its center aligns with the dot center
-// dot left-edge = 1.2rem (padding-left of month-sep)
-// dot center    = 1.2rem + 5px  →  spine left = 1.2rem + 4px (spine is 2px wide)
 .nt-items {
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    left: calc(1.2rem + 4px);
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--global-divider-color);
-    z-index: 0;
-  }
+  border-left: 2px solid var(--global-divider-color);
+  padding-left: 1.2rem;
+  margin-left: .4rem;
 }
 
 .nt-item {
-  padding-left: calc(1.2rem + 10px + .6rem);
-  margin-bottom: .65rem;
-  position: relative;
+  margin-bottom: .5rem;
+}
+
+.nt-item + .nt-month-sep {
+  margin-top: .15rem;
 }
 
 .nt-body {

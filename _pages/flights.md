@@ -18,7 +18,7 @@ nav_order: 5
     <div class="fl-hero-title">✈ Upcoming Flights</div>
     <div class="fl-hero-sub">Loading…</div>
   </div>
-  <div class="fl-hero-stats">
+  <div class="fl-hero-stats" style="opacity:0;transition:opacity .15s ease">
     <div class="fl-hstat"><div class="fl-hstat-v" id="hs-airtime">—</div><div class="fl-hstat-l">In the air</div></div>
     <div class="fl-hstat"><div class="fl-hstat-v" id="hs-countries">—</div><div class="fl-hstat-l">Countries</div></div>
     <div class="fl-hstat"><div class="fl-hstat-v" id="hs-airlines">—</div><div class="fl-hstat-l">Airlines</div></div>
@@ -36,7 +36,7 @@ nav_order: 5
 
 <!-- ── Trip cards ── -->
 {% assign trips = fd.trips %}
-<div class="fl-trips">
+<div class="fl-trips" style="opacity:0;transition:opacity .15s ease">
 {% for trip in trips %}
 <div class="fl-trip">
   <div class="fl-trip-header">
@@ -188,6 +188,12 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   } else if (sub) {
     sub.textContent = 'No upcoming flights';
   }
+
+  /* Reveal everything now that past flights are hidden and values are set */
+  var tripsEl = document.querySelector('.fl-trips');
+  if (tripsEl) tripsEl.style.opacity = '1';
+  var statsEl = document.querySelector('.fl-hero-stats');
+  if (statsEl) statsEl.style.opacity = '1';
 })();
 </script>
 
