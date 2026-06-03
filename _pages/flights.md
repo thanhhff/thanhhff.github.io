@@ -1,6 +1,7 @@
 ---
 layout: page
 title: ✈
+nav_title: "✈&#xFE0E;"
 permalink: /flights/
 nav: true
 _styles: ".post-title, .post-description { display: none; }"
