@@ -65,7 +65,7 @@ nav_order: 5
       <div class="gf-top-right">
         <span class="gf-date">{{ fl.date }}</span>
         <span class="gf-status"></span>
-        <a href="https://www.google.com/search?q={{ fl.number | url_encode }}+flight+status+{{ fl.date | url_encode }}" target="_blank" rel="noopener noreferrer" class="gf-btn">Google Flights ↗&#xFE0E;</a>
+        <a href="https://www.google.com/search?q={{ fl.number | url_encode }}+flight+status+{{ fl.date | url_encode }}" target="_blank" rel="noopener noreferrer" class="gf-btn">Google ↗&#xFE0E;</a>
       </div>
     </div>
 
@@ -466,7 +466,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
   }
   .gf-bar { flex:1; height:1.5px; background:var(--global-divider-color); }
   .gf-plane { font-size:.95rem; color:var(--global-text-color-light); padding:0 .2rem; }
-  .gf-terminal { font-size:.80rem; color:var(--global-text-color-light); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .gf-terminal { font-size:.80rem; color:var(--global-text-color-light); white-space:nowrap; text-align:center; display:block; width:100%; margin-top:.2rem; }
 
   @media (max-width:480px) {
     #fl-map { height:210px; }

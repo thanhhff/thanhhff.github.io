@@ -54,7 +54,7 @@ layout: default
             <span id="ab-lv-airline" class="live-airline"></span>
             <span id="ab-lv-num" class="live-num"></span>
           </div>
-          <a id="ab-lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">Google Flights ↗&#xFE0E;</a>
+          <a id="ab-lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">Google ↗&#xFE0E;</a>
         </div>
         <div class="live-route">
           <div class="live-stop">
@@ -158,7 +158,6 @@ layout: default
       var active=chosen.fl,dep=chosen.d,arr=chosen.a,
           showUntil=chosen.su,flightState=chosen.state;
 
-      document.getElementById('ab-live-wrap').style.display='';
       var abBadge=document.getElementById('ab-badge');
       var abTitle=document.getElementById('ab-live-title');
       var TRIP=active.tripFrom+' ✈ '+active.tripTo;
@@ -198,6 +197,7 @@ layout: default
         else{plane.style.display='none';bar.style.width='100%';}
       }
       tick(); var timer=setInterval(tick,10000);
+      document.getElementById('ab-live-wrap').style.display='';
 
       /* Load Leaflet & draw map */
       var css=document.createElement('link');
@@ -208,7 +208,7 @@ layout: default
       js.onload=function(){
         var from=AB_AP[active.fromCode],to=AB_AP[active.toCode];
         if(!from||!to)return;
-        var map=L.map('ab-map',{zoomControl:false,scrollWheelZoom:false,attributionControl:false,dragging:false});
+        var map=L.map('ab-map',{zoomControl:true,scrollWheelZoom:false,attributionControl:false,dragging:true});
         L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{subdomains:'abcd'}).addTo(map);
         function gc(a,b){
           var n=60,D=Math.PI/180,f1=a[0]*D,l1=a[1]*D,f2=b[0]*D,l2=b[1]*D;
@@ -268,7 +268,8 @@ layout: default
             L.marker(schedFrom,{icon:planeIcon2}).addTo(map);
           }
         }
-        map.fitBounds(boundPts,{padding:[30,30]});
+        var pad=window.innerWidth<600?[30,30]:[45,45];
+        map.fitBounds(boundPts,{padding:pad});
       };
       document.head.appendChild(js);
     })();
@@ -307,7 +308,8 @@ layout: default
       @keyframes fly-bob { from{transform:translateY(-80%);} to{transform:translateY(-40%);} }
       .map-plane { font-size:1.3rem; line-height:1; color:#000; filter:drop-shadow(0 1px 4px rgba(26,115,232,.6)); animation:fly-bob .9s ease-in-out infinite alternate; }
       html[data-theme=dark] .map-plane { color:#1a73e8; }
-      .live-terminal { font-size:.80rem; color:var(--global-text-color-light); margin-top:.3rem; }
+      .live-terminal { font-size:.80rem; color:var(--global-text-color-light); margin-top:.25rem; white-space:nowrap; text-align:center; display:block; }
+      @media (max-width:399px) { .live-btn { display:none; } }
     </style>
 
     <style>
