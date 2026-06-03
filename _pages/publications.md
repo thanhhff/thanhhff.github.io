@@ -13,115 +13,82 @@ nav_order: 2
 {% capture dom_j %}{% bibliography_count --file journals.bib --query @*[pub_group^=dj] %}{% endcapture %}
 {% capture dom_c %}{% bibliography_count --file domestic.bib --query @*[pub_group^=dc] %}{% endcapture %}
 {% assign dom_total = dom_j | plus: dom_c %}
+{% capture pre_c %}{% bibliography_count --file others.bib --query @*[pub_group^=pc] %}{% endcapture %}
+{% capture pre_j %}{% bibliography_count --file others.bib --query @*[pub_group^=pj] %}{% endcapture %}
+{% assign pre_total = pre_c | plus: pre_j %}
 
 <div class="pub-tabs">
   <a href="#international" class="pub-tab" data-tab="international">International <span class="pub-tab-count">{{ intl_total }} papers</span></a>
   <a href="#domestic" class="pub-tab" data-tab="domestic">Domestic <span class="pub-tab-count">{{ dom_total }} papers</span></a>
+  <a href="#preprint" class="pub-tab" data-tab="preprint">Preprint <span class="pub-tab-count">{{ pre_total }} papers</span></a>
 </div>
 
 <!-- International Panel -->
 <div id="tab-international" class="pub-panel pub-page">
 
+{% assign years = "2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020" | split: "," %}
+{% for year in years %}
+  {% capture ij_cnt %}{% bibliography_count --file journals.bib --query @*[pub_group=ij{{ year }}] %}{% endcapture %}
+  {% capture ic_cnt %}{% bibliography_count --file conferences.bib --query @*[pub_group=ic{{ year }}] %}{% endcapture %}
+  {% assign year_total = ij_cnt | plus: ic_cnt %}
+  {% if year_total > 0 %}
 <div class="pub-year-block">
-  <div class="pub-year">2026</div>
+  <div class="pub-year">{{ year }}</div>
   <div class="pub-entries">
-    <div class="pub-section">Journal</div>
-    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=ij2026] %}
-    <div class="pub-section">Conference</div>
-    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2026] %}
+    {% if ij_cnt != "0" %}<div class="pub-section">Journal</div>
+    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=ij{{ year }}] %}{% endif %}
+    {% if ic_cnt != "0" %}<div class="pub-section">Conference</div>
+    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic{{ year }}] %}{% endif %}
   </div>
 </div>
-
-<div class="pub-year-block">
-  <div class="pub-year">2025</div>
-  <div class="pub-entries">
-    <div class="pub-section">Conference</div>
-    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2025] %}
-  </div>
-</div>
-
-<div class="pub-year-block">
-  <div class="pub-year">2024</div>
-  <div class="pub-entries">
-    <div class="pub-section">Journal</div>
-    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=ij2024] %}
-    <div class="pub-section">Conference</div>
-    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2024] %}
-  </div>
-</div>
-
-<div class="pub-year-block">
-  <div class="pub-year">2022</div>
-  <div class="pub-entries">
-    <div class="pub-section">Journal</div>
-    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=ij2022] %}
-    <div class="pub-section">Conference</div>
-    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2022] %}
-  </div>
-</div>
-
-<div class="pub-year-block">
-  <div class="pub-year">2021</div>
-  <div class="pub-entries">
-    <div class="pub-section">Conference</div>
-    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic2021] %}
-  </div>
-</div>
+  {% endif %}
+{% endfor %}
 
 </div>
 
 <!-- Domestic Panel -->
 <div id="tab-domestic" class="pub-panel pub-page" style="display:none">
 
+{% assign years = "2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020" | split: "," %}
+{% for year in years %}
+  {% capture dj_cnt %}{% bibliography_count --file journals.bib --query @*[pub_group=dj{{ year }}] %}{% endcapture %}
+  {% capture dc_cnt %}{% bibliography_count --file domestic.bib --query @*[pub_group=dc{{ year }}] %}{% endcapture %}
+  {% assign year_total = dj_cnt | plus: dc_cnt %}
+  {% if year_total > 0 %}
 <div class="pub-year-block">
-  <div class="pub-year">2026</div>
+  <div class="pub-year">{{ year }}</div>
   <div class="pub-entries">
-    <div class="pub-section">Conference</div>
-    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2026] %}
+    {% if dj_cnt != "0" %}<div class="pub-section">Journal</div>
+    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=dj{{ year }}] %}{% endif %}
+    {% if dc_cnt != "0" %}<div class="pub-section">Conference</div>
+    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc{{ year }}] %}{% endif %}
   </div>
+</div>
+  {% endif %}
+{% endfor %}
+
 </div>
 
-<div class="pub-year-block">
-  <div class="pub-year">2025</div>
-  <div class="pub-entries">
-    <div class="pub-section">Conference</div>
-    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2025] %}
-  </div>
-</div>
+<!-- Preprint Panel -->
+<div id="tab-preprint" class="pub-panel pub-page" style="display:none">
 
+{% assign pre_years = "2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020" | split: "," %}
+{% for year in pre_years %}
+  {% capture pj_cnt %}{% bibliography_count --file others.bib --query @*[pub_group=pj{{ year }}] %}{% endcapture %}
+  {% capture pc_cnt %}{% bibliography_count --file others.bib --query @*[pub_group=pc{{ year }}] %}{% endcapture %}
+  {% assign year_total = pj_cnt | plus: pc_cnt %}
+  {% if year_total > 0 %}
 <div class="pub-year-block">
-  <div class="pub-year">2024</div>
+  <div class="pub-year">{{ year }}</div>
   <div class="pub-entries">
-    <div class="pub-section">Conference</div>
-    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2024] %}
+    {% if pj_cnt != "0" %}<div class="pub-section">Journal</div>
+    {% bibliography --file others.bib --template bib_international --query @*[pub_group=pj{{ year }}] %}{% endif %}
+    {% if pc_cnt != "0" %}<div class="pub-section">Conference</div>
+    {% bibliography --file others.bib --template bib_international --query @*[pub_group=pc{{ year }}] %}{% endif %}
   </div>
 </div>
-
-<div class="pub-year-block">
-  <div class="pub-year">2023</div>
-  <div class="pub-entries">
-    <div class="pub-section">Conference</div>
-    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2023] %}
-  </div>
-</div>
-
-<div class="pub-year-block">
-  <div class="pub-year">2022</div>
-  <div class="pub-entries">
-    <div class="pub-section">Conference</div>
-    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2022] %}
-  </div>
-</div>
-
-<div class="pub-year-block">
-  <div class="pub-year">2021</div>
-  <div class="pub-entries">
-    <div class="pub-section">Journal</div>
-    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=dj2021] %}
-    <div class="pub-section">Conference</div>
-    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc2021] %}
-  </div>
-</div>
+  {% endif %}
+{% endfor %}
 
 </div>
 
@@ -149,7 +116,9 @@ nav_order: 2
     });
 
     var hash = location.hash.replace('#', '');
-    activate(hash === 'domestic' ? 'domestic' : 'international');
+    if (hash === 'domestic') activate('domestic');
+    else if (hash === 'preprint') activate('preprint');
+    else activate('international');
   })();
 </script>
 
@@ -332,21 +301,6 @@ nav_order: 2
     vertical-align: 1px;
   }
 
-  @media (max-width: 600px) {
-    .pub-year-block {
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-    .pub-year {
-      flex-basis: auto;
-      text-align: left;
-      position: static;
-    }
-    ol.bibliography li {
-      text-align: left;
-    }
-  }
-
   .pub-tabs {
     display: flex;
     gap: 0;
@@ -381,5 +335,26 @@ nav_order: 2
     padding: 0.05rem 0.45rem;
     margin-left: 0.25rem;
     vertical-align: middle;
+  }
+
+  @media (max-width: 600px) {
+    .pub-year-block {
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+    .pub-year {
+      flex-basis: auto;
+      text-align: left;
+      position: static;
+    }
+    ol.bibliography li {
+      text-align: left;
+    }
+    .pub-tab-count {
+      margin-left: 0;
+    }
+    .pub-tab {
+      text-align: left;
+    }
   }
 </style>

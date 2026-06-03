@@ -1,7 +1,7 @@
 ---
 layout: page
 title: publications
-permalink: /publications-international/
+permalink: /publications-preprint/
 nav: false
 ---
 
@@ -16,26 +16,26 @@ nav: false
 {% assign pre_total = pre_c | plus: pre_j %}
 
 <div class="pub-tabs">
-  <a href="{{ '/publications-international/' | relative_url }}" class="pub-tab active">International <span class="pub-tab-count">{{ intl_total }} papers</span></a>
+  <a href="{{ '/publications-international/' | relative_url }}" class="pub-tab">International <span class="pub-tab-count">{{ intl_total }} papers</span></a>
   <a href="{{ '/publications-domestic/' | relative_url }}" class="pub-tab">Domestic <span class="pub-tab-count">{{ dom_total }} papers</span></a>
-  <a href="{{ '/publications-preprint/' | relative_url }}" class="pub-tab">Preprint <span class="pub-tab-count">{{ pre_total }} papers</span></a>
+  <a href="{{ '/publications-preprint/' | relative_url }}" class="pub-tab active">Preprint <span class="pub-tab-count">{{ pre_total }} papers</span></a>
 </div>
 
 <div class="pub-page">
 
-{% assign years = "2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020" | split: "," %}
-{% for year in years %}
-  {% capture ij_cnt %}{% bibliography_count --file journals.bib --query @*[pub_group=ij{{ year }}] %}{% endcapture %}
-  {% capture ic_cnt %}{% bibliography_count --file conferences.bib --query @*[pub_group=ic{{ year }}] %}{% endcapture %}
-  {% assign year_total = ij_cnt | plus: ic_cnt %}
+{% assign pre_years = "2030,2029,2028,2027,2026,2025,2024,2023,2022,2021,2020" | split: "," %}
+{% for year in pre_years %}
+  {% capture pj_cnt %}{% bibliography_count --file others.bib --query @*[pub_group=pj{{ year }}] %}{% endcapture %}
+  {% capture pc_cnt %}{% bibliography_count --file others.bib --query @*[pub_group=pc{{ year }}] %}{% endcapture %}
+  {% assign year_total = pj_cnt | plus: pc_cnt %}
   {% if year_total > 0 %}
 <div class="pub-year-block">
   <div class="pub-year">{{ year }}</div>
   <div class="pub-entries">
-    {% if ij_cnt != "0" %}<div class="pub-section">Journal</div>
-    {% bibliography --file journals.bib --template bib_international --query @*[pub_group=ij{{ year }}] %}{% endif %}
-    {% if ic_cnt != "0" %}<div class="pub-section">Conference</div>
-    {% bibliography --file conferences.bib --template bib_international --query @*[pub_group=ic{{ year }}] %}{% endif %}
+    {% if pj_cnt != "0" %}<div class="pub-section">Journal</div>
+    {% bibliography --file others.bib --template bib_international --query @*[pub_group=pj{{ year }}] %}{% endif %}
+    {% if pc_cnt != "0" %}<div class="pub-section">Conference</div>
+    {% bibliography --file others.bib --template bib_international --query @*[pub_group=pc{{ year }}] %}{% endif %}
   </div>
 </div>
   {% endif %}
