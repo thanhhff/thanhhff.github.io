@@ -1,6 +1,6 @@
 // News & Blog timeline
-// - border-left on .nt-items for spine (no absolute positioning)
-// - column-gap instead of gap (Safari 12+ flex compatibility)
+// - ::before spine aligned to dot center (left: 1.2rem + half-dot)
+// - column-gap instead of gap (Safari 12+ flexbox compatibility)
 // - explicit top/right/bottom/left instead of inset (Safari 14.0 compat)
 
 .nt-feed { margin-top: 1.5rem; }
@@ -32,8 +32,10 @@
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--global-text-color-light);
-  padding: .5rem 0 .3rem;
+  padding: .5rem 0 .3rem 1.2rem;
   margin-bottom: .2rem;
+  position: relative;
+  z-index: 1;
 }
 
 .nt-new-badge {
@@ -70,14 +72,27 @@
   }
 }
 
+// Spine: ::before absolutely positioned so its center aligns with the dot center
+// dot left-edge = 1.2rem (padding-left of month-sep)
+// dot center    = 1.2rem + 5px  →  spine left = 1.2rem + 4px (spine is 2px wide)
 .nt-items {
-  padding-left: 1.2rem;
-  border-left: 2px solid var(--global-divider-color);
-  margin-left: .4rem;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(1.2rem + 4px);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--global-divider-color);
+    z-index: 0;
+  }
 }
 
 .nt-item {
+  padding-left: calc(1.2rem + 10px + .6rem);
   margin-bottom: .65rem;
+  position: relative;
 }
 
 .nt-body {
