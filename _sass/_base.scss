@@ -1136,9 +1136,11 @@ nav[data-toggle="toc"] {
   display: none !important;
 }
 
-.medium-zoom-overlay,
+.medium-zoom-overlay {
+  z-index: 1040;
+}
 .medium-zoom-image--opened {
-  z-index: 999;
+  z-index: 1041;
 }
 
 #toc-sidebar {

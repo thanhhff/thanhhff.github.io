@@ -43,7 +43,7 @@ layout: default
     <!-- Live flight (auto-shown by JS on the flight day) -->
     {% assign fd = site.data.flights %}
     <div id="ab-live-wrap" style="display:none; margin-bottom:1.5rem;">
-      <h2><a id="ab-live-title" href="{{ '/flights/' | relative_url }}" style="color:inherit">in the air ✈</a><a href="{{ '/flights/' | relative_url }}" class="ab-see-more">↗</a></h2>
+      <h2><a id="ab-live-title" href="{{ '/flights/' | relative_url }}" style="color:inherit">in the air ✈&#xFE0E;</a><a href="{{ '/flights/' | relative_url }}" class="ab-see-more">↗&#xFE0E;</a></h2>
 
       <!-- Same card design as flights page -->
       <div id="ab-live-card" class="live-card">
@@ -54,7 +54,7 @@ layout: default
             <span id="ab-lv-airline" class="live-airline"></span>
             <span id="ab-lv-num" class="live-num"></span>
           </div>
-          <a id="ab-lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">Google Flights ↗</a>
+          <a id="ab-lv-link" href="#" target="_blank" rel="noopener noreferrer" class="live-btn">Google Flights ↗&#xFE0E;</a>
         </div>
         <div class="live-route">
           <div class="live-stop">
@@ -311,6 +311,7 @@ layout: default
     </style>
 
     <style>
+      .post-title { font-size: 2.3rem !important; }
       /* ── Section headings on the about page ── */
       .post article h2 {
         font-size: 1.5rem !important;
@@ -354,7 +355,7 @@ layout: default
     {% if page.announcements and page.announcements.enabled %}
       <h2>
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
-        <a href="{{ '/news/' | relative_url }}" class="ab-see-more">↗</a>
+        <a href="{{ '/news/' | relative_url }}" class="ab-see-more">↗&#xFE0E;</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -363,7 +364,7 @@ layout: default
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
         <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Posts</a>
-        <a href="{{ '/blog/' | relative_url }}" class="ab-see-more">↗</a>
+        <a href="{{ '/blog/' | relative_url }}" class="ab-see-more">↗&#xFE0E;</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
@@ -372,7 +373,7 @@ layout: default
     {% if page.selected_papers %}
       <h2>
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
-        <a href="{{ '/publications/' | relative_url }}" class="ab-see-more">↗</a>
+        <a href="{{ '/publications/' | relative_url }}" class="ab-see-more">↗&#xFE0E;</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}

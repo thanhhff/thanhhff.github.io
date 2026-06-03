@@ -15,7 +15,7 @@ nav_order: 5
 <!-- ── Hero ── -->
 <div class="fl-hero">
   <div>
-    <div class="fl-hero-title">✈ Upcoming Flights</div>
+    <div class="fl-hero-title">✈&#xFE0E; Upcoming Flights</div>
     <div class="fl-hero-sub">Loading…</div>
   </div>
   <div class="fl-hero-stats" style="opacity:0;transition:opacity .15s ease">
@@ -64,7 +64,7 @@ nav_order: 5
       <div class="gf-top-right">
         <span class="gf-date">{{ fl.date }}</span>
         <span class="gf-status"></span>
-        <a href="https://www.google.com/search?q={{ fl.number | url_encode }}+flight+status+{{ fl.date | url_encode }}" target="_blank" rel="noopener noreferrer" class="gf-btn">Google Flights ↗</a>
+        <a href="https://www.google.com/search?q={{ fl.number | url_encode }}+flight+status+{{ fl.date | url_encode }}" target="_blank" rel="noopener noreferrer" class="gf-btn">Google Flights ↗&#xFE0E;</a>
       </div>
     </div>
 
@@ -81,7 +81,7 @@ nav_order: 5
         <div class="gf-line">
           <div class="gf-dot"></div>
           <div class="gf-bar"></div>
-          <span class="gf-plane">✈</span>
+          <span class="gf-plane">✈&#xFE0E;</span>
           <div class="gf-bar"></div>
           <div class="gf-dot"></div>
         </div>
