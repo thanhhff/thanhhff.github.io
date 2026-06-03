@@ -247,7 +247,7 @@ ul.task-list input[type="checkbox"] {
   box-shadow: none;
   border-bottom: 1px solid var(--global-divider-color);
   background-color: var(--global-bg-color);
-  opacity: 0.95;
+  opacity: 1.0;
 }
 
 .navbar .dropdown-menu {
@@ -1347,3 +1347,5 @@ ninja-keys::part(ninja-input-wrapper) {
   background-color: var(--global-theme-color);
   color: var(--global-text-color);
 }
+
+div.container.mt-5[role="main"] { margin-top: 2.5rem !important; }
