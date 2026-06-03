@@ -1,4 +1,7 @@
-// News & Blog timeline layout
+// News & Blog timeline
+// - border-left on .nt-items for spine (no absolute positioning)
+// - column-gap instead of gap (Safari 12+ flex compatibility)
+// - explicit top/right/bottom/left instead of inset (Safari 14.0 compat)
 
 .nt-feed { margin-top: 1.5rem; }
 
@@ -9,30 +12,28 @@
   color: var(--global-theme-color);
   display: flex;
   align-items: center;
-  gap: .75rem;
   margin: 2rem 0 1.1rem;
   &::after {
     content: '';
     flex: 1;
     height: 2px;
     background: var(--global-theme-color);
-    opacity: 0.3;
+    opacity: .3;
+    margin-left: .5rem;
   }
 }
 
 .nt-month-sep {
   display: flex;
   align-items: center;
-  gap: .6rem;
-  font-size: .80rem;
+  column-gap: .5rem;
+  font-size: .78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .1em;
   color: var(--global-text-color-light);
-  padding: .6rem 0 .4rem 1.2rem;
-  margin-bottom: .1rem;
-  position: relative;
-  z-index: 1;
+  padding: .5rem 0 .3rem;
+  margin-bottom: .2rem;
 }
 
 .nt-new-badge {
@@ -44,7 +45,7 @@
   background: #e53935;
   border-radius: 20px;
   padding: .15rem .55rem;
-  margin-left: .25rem;
+  margin-left: .15rem;
   vertical-align: middle;
 }
 
@@ -58,32 +59,25 @@
   &::after {
     content: '';
     position: absolute;
-    inset: -3px;
+    top: -3px;
+    right: -3px;
+    bottom: -3px;
+    left: -3px;
     border-radius: 50%;
     background: var(--global-theme-color);
-    opacity: 0.2;
+    opacity: .2;
     z-index: -1;
   }
 }
 
 .nt-items {
-  position: relative;
-  &::before {
-    content: '';
-    position: absolute;
-    left: calc(1.2rem + 4px);
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--global-divider-color);
-    z-index: 0;
-  }
+  padding-left: 1.2rem;
+  border-left: 2px solid var(--global-divider-color);
+  margin-left: .4rem;
 }
 
 .nt-item {
-  padding-left: calc(1.2rem + 10px + .6rem);
   margin-bottom: .65rem;
-  position: relative;
 }
 
 .nt-body {
@@ -104,10 +98,9 @@
   &:hover { text-decoration: underline; }
 }
 
-// Blog-specific card
 .bl-card {
   display: flex;
-  gap: .75rem;
+  column-gap: .75rem;
   align-items: center;
 }
 .bl-thumb {
@@ -133,7 +126,7 @@
 .bl-meta {
   display: flex;
   align-items: center;
-  gap: .5rem;
+  column-gap: .5rem;
   margin-top: .15rem;
 }
 .bl-date {
