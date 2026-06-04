@@ -35,7 +35,7 @@ nav: false
     {% if dj_cnt != "0" %}<div class="pub-section">Journal</div>
     {% bibliography --file journals.bib --template bib_international --query @*[pub_group=dj{{ year }}] %}{% endif %}
     {% if dc_cnt != "0" %}<div class="pub-section">Conference</div>
-    {% bibliography --file domestic.bib --template bib_international --query @*[pub_group=dc{{ year }}] %}{% endif %}
+    {% bibliography --file domestic.bib --template bib_domestic --query @*[pub_group=dc{{ year }}] %}{% endif %}
   </div>
 </div>
   {% endif %}
