@@ -317,6 +317,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-prims-physics-guided-representation-for-fluid-identification-in-multimodal-sensing-has-been-accepted-to-ecml-pkdd-2026-naples",
           title: 'Our paper, “PRIMS: Physics-guided Representation for Fluid Identification in Multimodal Sensing,” has been...',
           description: "",
+          section: "News",},{id: "news-our-paper-trara-trajectory-level-recognition-aggregation-for-video-text-spotting-in-urban-surveillance-has-been-accepted-to-ieee-avss-2026-lecce",
+          title: 'Our paper, “TraRA: Trajectory-level Recognition Aggregation for Video Text Spotting in Urban Surveillance,”...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
