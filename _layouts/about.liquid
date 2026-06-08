@@ -121,16 +121,24 @@ layout: default
       }
 
       var now=new Date();
+      var AB_TRIP_WINDOWS=[];
+      for(var ti=0;ti<AB_TRIPS.length;ti++){
+        var legs=AB_TRIPS[ti];
+        if(!legs||!legs.length){AB_TRIP_WINDOWS.push(null);continue;}
+        var firstDep=toUTC(legs[0].date,legs[0].dep,legs[0].depTz);
+        var lastLeg=legs[legs.length-1];
+        var lastArr=new Date(toUTC(lastLeg.date,lastLeg.dep,lastLeg.depTz).getTime()+parseDurMs(lastLeg.dur));
+        AB_TRIP_WINDOWS.push({from:new Date(firstDep.getTime()-24*3600000),until:new Date(lastArr.getTime()+24*3600000)});
+      }
       var cFlying=null,cScheduled=null,cArrived=null;
       for(var i=0;i<AB_FLIGHTS.length;i++){
         var fl=AB_FLIGHTS[i];
+        var win=AB_TRIP_WINDOWS[fl.tripIdx];
+        if(!win||now<win.from||now>win.until)continue;
         var d=toUTC(fl.date,fl.fromTime,fl.fromTz);
         var a=new Date(d.getTime()+parseDurMs(fl.duration));
-        var showFrom=new Date(d.getTime()-6*3600000);
-        var su=new Date(a);su.setUTCHours(0,0,0,0);su.setUTCDate(su.getUTCDate()+1);
-        if(now<showFrom||now>su)continue;
         var state=now<d?'scheduled':now<=a?'flying':'arrived';
-        var c={fl:fl,d:d,a:a,su:su,state:state};
+        var c={fl:fl,d:d,a:a,su:win.until,state:state};
         if(state==='flying'    &&!cFlying)                        cFlying=c;
         if(state==='scheduled' &&!cScheduled)                     cScheduled=c;
         if(state==='arrived'   &&(!cArrived||a>cArrived.a))       cArrived=c;
@@ -148,7 +156,7 @@ layout: default
           if(d2<=connArr||d2-now>24*3600000)continue;
           if(!cNext||d2<toUTC(cNext.fl.date,cNext.fl.fromTime,cNext.fl.fromTz)){
             var a2=new Date(d2.getTime()+parseDurMs(fl2.duration));
-            var su2=new Date(a2);su2.setUTCHours(0,0,0,0);su2.setUTCDate(su2.getUTCDate()+1);
+            var su2=AB_TRIP_WINDOWS[connTripIdx]?AB_TRIP_WINDOWS[connTripIdx].until:new Date(a2.getTime()+24*3600000);
             cNext={fl:fl2,d:d2,a:a2,su:su2,state:now<d2?'scheduled':now<=a2?'flying':'arrived'};
           }
         }
