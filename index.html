@@ -627,13 +627,61 @@
         tripFrom:"Nagasaki",tripTo:"Nagoya",
         tripIdx:45
       },{
+        number:"JL202",airline:"Japan Airlines",
+        date:"Aug 30, 2026",
+        fromTime:"7:35 AM",fromTz:"GMT+9",fromCode:"NGO",fromCity:"Nagoya",
+        toTime:"8:40 AM",toTz:"GMT+9",toCode:"HND",toCity:"Tokyo",
+        duration:"1h 05m",aircraft:"Boeing 737-800",
+        tripFrom:"Nagoya",tripTo:"Brindisi",
+        tripIdx:46
+      },{
+        number:"AZ793",airline:"ITY",
+        date:"Aug 30, 2026",
+        fromTime:"12:40 PM",fromTz:"GMT+9",fromCode:"HND",fromCity:"Tokyo",
+        toTime:"8:25 PM",toTz:"GMT+2",toCode:"FCO",toCity:"Rome",
+        duration:"14h 45m",aircraft:"Airbus A350-900",
+        tripFrom:"Nagoya",tripTo:"Brindisi",
+        tripIdx:46
+      },{
+        number:"AZ1625",airline:"ITY",
+        date:"Aug 30, 2026",
+        fromTime:"9:45 PM",fromTz:"GMT+2",fromCode:"FCO",fromCity:"Rome",
+        toTime:"11:00 PM",toTz:"GMT+2",toCode:"BDS",toCity:"Brindisi",
+        duration:"1h 15m",aircraft:"Airbus A320neo",
+        tripFrom:"Nagoya",tripTo:"Brindisi",
+        tripIdx:46
+      },{
+        number:"AZ1624",airline:"ITY",
+        date:"Sep 4, 2026",
+        fromTime:"11:15 AM",fromTz:"GMT+2",fromCode:"BDS",fromCity:"Brindisi",
+        toTime:"12:25 PM",toTz:"GMT+2",toCode:"FCO",toCity:"Rome",
+        duration:"1h 10m",aircraft:"Airbus A320neo",
+        tripFrom:"Brindisi",tripTo:"Nagoya",
+        tripIdx:47
+      },{
+        number:"AZ792",airline:"ITY",
+        date:"Sep 4, 2026",
+        fromTime:"2:55 PM",fromTz:"GMT+2",fromCode:"FCO",fromCity:"Rome",
+        toTime:"10:25 AM",toTz:"GMT+9",toCode:"HND",toCity:"Tokyo",
+        duration:"12h 30m",aircraft:"Airbus A350-900",
+        tripFrom:"Brindisi",tripTo:"Nagoya",
+        tripIdx:47
+      },{
+        number:"JL209",airline:"Japan Airlines",
+        date:"Sep 5, 2026",
+        fromTime:"7:55 PM",fromTz:"GMT+9",fromCode:"HND",fromCity:"Tokyo",
+        toTime:"8:55 PM",toTz:"GMT+9",toCode:"NGO",toCity:"Nagoya",
+        duration:"1h 00m",aircraft:"Boeing 737-800",
+        tripFrom:"Brindisi",tripTo:"Nagoya",
+        tripIdx:47
+      },{
         number:"MU720",airline:"China Eastern",
         date:"Sep 7, 2026",
         fromTime:"5:00 PM",fromTz:"GMT+9",fromCode:"NGO",fromCity:"Nagoya",
         toTime:"6:35 PM",toTz:"GMT+8",toCode:"PVG",toCity:"Shanghai",
         duration:"2h 35m",aircraft:"Airbus A321",
         tripFrom:"Nagoya",tripTo:"Frankfurt",
-        tripIdx:46
+        tripIdx:48
       },{
         number:"MU219",airline:"China Eastern",
         date:"Sep 8, 2026",
@@ -641,7 +689,7 @@
         toTime:"6:05 AM",toTz:"GMT+2",toCode:"FRA",toCity:"Frankfurt",
         duration:"11h 50m",aircraft:"Boeing 777-300 ER",
         tripFrom:"Nagoya",tripTo:"Frankfurt",
-        tripIdx:46
+        tripIdx:48
       },{
         number:"MU220",airline:"China Eastern",
         date:"Oct 2, 2026",
@@ -649,7 +697,7 @@
         toTime:"7:15 AM",toTz:"GMT+8",toCode:"PVG",toCity:"Shanghai",
         duration:"10h 45m",aircraft:"Boeing 777-300 ER",
         tripFrom:"Frankfurt",tripTo:"Nagoya",
-        tripIdx:47
+        tripIdx:49
       },{
         number:"MU529",airline:"China Eastern",
         date:"Oct 3, 2026",
@@ -657,7 +705,7 @@
         toTime:"12:35 PM",toTz:"GMT+9",toCode:"NGO",toCity:"Nagoya",
         duration:"2h 25m",aircraft:"Airbus A321",
         tripFrom:"Frankfurt",tripTo:"Nagoya",
-        tripIdx:47
+        tripIdx:49
       },
     ];
     var AB_TRIPS = [
@@ -754,13 +802,17 @@
       ],[
         {from:"NGS",to:"NGO",date:"Aug 6, 2026",dep:"8:05 PM",depTz:"GMT+9",dur:"1h 20m"},
       ],[
+        {from:"NGO",to:"HND",date:"Aug 30, 2026",dep:"7:35 AM",depTz:"GMT+9",dur:"1h 05m"},{from:"HND",to:"FCO",date:"Aug 30, 2026",dep:"12:40 PM",depTz:"GMT+9",dur:"14h 45m"},{from:"FCO",to:"BDS",date:"Aug 30, 2026",dep:"9:45 PM",depTz:"GMT+2",dur:"1h 15m"},
+      ],[
+        {from:"BDS",to:"FCO",date:"Sep 4, 2026",dep:"11:15 AM",depTz:"GMT+2",dur:"1h 10m"},{from:"FCO",to:"HND",date:"Sep 4, 2026",dep:"2:55 PM",depTz:"GMT+2",dur:"12h 30m"},{from:"HND",to:"NGO",date:"Sep 5, 2026",dep:"7:55 PM",depTz:"GMT+9",dur:"1h 00m"},
+      ],[
         {from:"NGO",to:"PVG",date:"Sep 7, 2026",dep:"5:00 PM",depTz:"GMT+9",dur:"2h 35m"},{from:"PVG",to:"FRA",date:"Sep 8, 2026",dep:"12:15 AM",depTz:"GMT+8",dur:"11h 50m"},
       ],[
         {from:"FRA",to:"PVG",date:"Oct 2, 2026",dep:"2:30 PM",depTz:"GMT+2",dur:"10h 45m"},{from:"PVG",to:"NGO",date:"Oct 3, 2026",dep:"9:10 AM",depTz:"GMT+8",dur:"2h 25m"},
       ],
     ];
-    var AB_ICAO = { "MU":"CES","VJ":"VJC","NH":"ANA","JL":"JAL", };
-    var AB_AP   = { "NGO":[34.86,136.81],"NGS":[32.92,129.91],"NRT":[35.76,140.39],"HND":[35.55,139.78],"KIX":[34.43,135.24],"CTS":[42.77,141.69],"OKA":[26.2,127.65],"UKB":[34.63,135.22],"PVG":[31.14,121.81],"CAN":[23.39,113.3],"SZX":[22.64,113.81],"HAN":[21.22,105.81],"SGN":[10.82,106.65],"FRA":[50.04,8.56],"IST":[41.27,28.74],"KUL":[2.74,101.71],"SIN":[1.36,103.99],"TPE":[25.08,121.23],"AKL":[-37.01,174.79],"RDU":[35.88,-78.79],"BOS":[42.37,-71.0],"IAD":[38.94,-77.46],"ORD":[41.98,-87.91],"LAX":[33.94,-118.41],"DEN":[39.86,-104.67],"TPA":[27.98,-82.54],"TUS":[32.12,-110.94], };
+    var AB_ICAO = { "MU":"CES","VJ":"VJC","NH":"ANA","JL":"JAL","AZ":"ITY", };
+    var AB_AP   = { "NGO":[34.86,136.81],"NGS":[32.92,129.91],"NRT":[35.76,140.39],"HND":[35.55,139.78],"KIX":[34.43,135.24],"CTS":[42.77,141.69],"OKA":[26.2,127.65],"UKB":[34.63,135.22],"PVG":[31.14,121.81],"CAN":[23.39,113.3],"SZX":[22.64,113.81],"HAN":[21.22,105.81],"SGN":[10.82,106.65],"FRA":[50.04,8.56],"FCO":[41.8,12.24],"BDS":[40.66,17.95],"IST":[41.27,28.74],"KUL":[2.74,101.71],"SIN":[1.36,103.99],"TPE":[25.08,121.23],"AKL":[-37.01,174.79],"RDU":[35.88,-78.79],"BOS":[42.37,-71.0],"IAD":[38.94,-77.46],"ORD":[41.98,-87.91],"LAX":[33.94,-118.41],"DEN":[39.86,-104.67],"TPA":[27.98,-82.54],"TUS":[32.12,-110.94], };
 
     (function(){
       function toUTC(dateStr,timeStr,tzStr){
