@@ -465,7 +465,7 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
     border:2px solid var(--global-divider-color); background:var(--global-bg-color);
   }
   .gf-bar { flex:1; height:1.5px; background:var(--global-divider-color); }
-  .gf-plane { font-size:.95rem; color:var(--global-text-color-light); padding:0 .2rem; }
+  .gf-plane { font-size:.95rem; color:var(--global-text-color-light); padding:0 .2rem; font-variant-emoji: text; font-family: "Segoe UI Symbol", "Apple Symbols", "Symbol", sans-serif; }
   .gf-terminal { font-size:.80rem; color:var(--global-text-color-light); white-space:nowrap; text-align:center; display:block; width:100%; margin-top:.2rem; }
 
   @media (max-width:480px) {

@@ -3,6 +3,7 @@ airline_icao:
   VJ: "VJC"   # VietJet Air
   NH: "ANA"   # ANA
   JL: "JAL"   # Japan Airlines
+  AZ: "ITY"   # ITA Airways
 
 airports:
   # Japan
@@ -23,6 +24,8 @@ airports:
   SGN: { lat: 10.82,  lng: 106.65,  city: "Ho Chi Minh City", country: "Vietnam",       tz: 7 }
   # Europe
   FRA: { lat: 50.04,  lng: 8.56,    city: "Frankfurt",        country: "Germany",       tz_winter: 1, tz_summer: 2 }
+  FCO: { lat: 41.80,  lng: 12.24,   city: "Rome",             country: "Italy",         tz_winter: 1, tz_summer: 2 }
+  BDS: { lat: 40.66,  lng: 17.95,   city: "Brindisi",         country: "Italy",         tz_winter: 1, tz_summer: 2 }
   IST: { lat: 41.27,  lng: 28.74,   city: "Istanbul",         country: "Turkey",        tz: 3 }
   # Southeast Asia
   KUL: { lat: 2.74,   lng: 101.71,  city: "Kuala Lumpur",     country: "Malaysia",      tz: 8 }
@@ -54,6 +57,15 @@ map_routes:
   - from: NGO
     to: NGS
     color: "#43a047"
+  - from: NGO
+    to: HND
+    color: "#ff6f00"
+  - from: HND
+    to: FCO
+    color: "#ff6f00"
+  - from: FCO
+    to: BDS
+    color: "#ff6f00"
 
 legend:
   - label: "Germany"
@@ -62,6 +74,8 @@ legend:
     color: "#e53935"
   - label: "Nagasaki"
     color: "#43a047"
+  - label: "Italy"
+    color: "#ff6f00"
 
 trips:
 - name: Hanoi → Nagoya
@@ -1261,6 +1275,92 @@ trips:
     to_time: 9:25 PM
     to_tz: GMT+9
     duration: 1h 20m
+    aircraft: Boeing 737-800
+- name: Nagoya → Brindisi
+  icon: 🇮🇹
+  dates: Aug 29–30, 2026
+  flights:
+  - number: JL202
+    airline: Japan Airlines
+    date: Aug 30, 2026
+    from_code: NGO
+    from_city: Nagoya
+    from_time: 7:35 AM
+    from_tz: GMT+9
+    to_code: HND
+    to_city: Tokyo
+    to_time: 8:40 AM
+    to_tz: GMT+9
+    duration: 1h 05m
+    aircraft: Boeing 737-800
+  - number: AZ793
+    airline: ITY
+    date: Aug 30, 2026
+    from_code: HND
+    from_city: Tokyo
+    from_time: 12:40 PM
+    from_tz: GMT+9
+    to_code: FCO
+    to_city: Rome
+    to_time: 8:25 PM
+    to_tz: GMT+2
+    duration: 14h 45m
+    aircraft: Airbus A350-900
+  - number: AZ1625
+    airline: ITY
+    date: Aug 30, 2026
+    from_code: FCO
+    from_city: Rome
+    from_time: 9:45 PM
+    from_tz: GMT+2
+    to_code: BDS
+    to_city: Brindisi
+    to_time: 11:00 PM
+    to_tz: GMT+2
+    duration: 1h 15m
+    aircraft: Airbus A320neo
+- name: Brindisi → Nagoya
+  icon: 🇯🇵
+  dates: Sep 4–5, 2026
+  flights:
+  - number: AZ1624
+    airline: ITY
+    date: Sep 4, 2026
+    from_code: BDS
+    from_city: Brindisi
+    from_time: 11:15 AM
+    from_tz: GMT+2
+    to_code: FCO
+    to_city: Rome
+    to_time: 12:25 PM
+    to_tz: GMT+2
+    duration: 1h 10m
+    aircraft: Airbus A320neo
+  - number: AZ792
+    airline: ITY
+    date: Sep 4, 2026
+    from_code: FCO
+    from_city: Rome
+    from_time: 2:55 PM
+    from_tz: GMT+2
+    to_code: HND
+    to_city: Tokyo
+    to_time: 10:25 AM
+    to_tz: GMT+9
+    duration: 12h 30m
+    aircraft: Airbus A350-900
+  - number: JL209
+    airline: Japan Airlines
+    date: Sep 5, 2026
+    from_code: HND
+    from_city: Tokyo
+    from_time: 7:55 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 8:55 PM
+    to_tz: GMT+9
+    duration: 1h 00m
     aircraft: Boeing 737-800
 - name: Nagoya → Frankfurt
   icon: 🇩🇪
