@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Our paper on the [MultiSensor-Home dataset](https://doi.org/10.1016/j.patcog.2026.113810) was accepted in Pattern Recognition (IF: 7.6).
+Our paper on the [MultiSensor-Home dataset](https://doi.org/10.1016/j.patcog.2026.113810) was accepted in Pattern Recognition (IF: 9.1).
