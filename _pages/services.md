@@ -23,6 +23,7 @@ nav_order: 3
       <li>ACM Computing Surveys <span class="srv-note">Journal, IF: 28.0</span></li>
       <li>IEEE Transactions on Multimedia <span class="srv-note">Journal, IF: 9.7</span></li>
       <li>IEEE Transactions on Circuits and Systems for Video Technology <span class="srv-note">Journal, IF: 11.1</span></li>
+      <li>British Machine Vision Conference <span class="srv-note">BMVC</span></li>
       <li>International Conference on Multimedia Modeling <span class="srv-note">MMM</span></li>
       <li>Conference on Neural Information Processing Systems <span class="srv-note">NeurIPS</span></li>
       <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition <span class="srv-note">IEEE/CVF CVPR</span></li>
