@@ -320,6 +320,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-trara-trajectory-level-recognition-aggregation-for-video-text-spotting-in-urban-surveillance-has-been-accepted-to-ieee-avss-2026-lecce",
           title: 'Our paper, “TraRA: Trajectory-level Recognition Aggregation for Video Text Spotting in Urban Surveillance,”...',
           description: "",
+          section: "News",},{id: "news-the-project-webpage-of-selectanytree-is-now-live",
+          title: 'The project webpage of 🌲 SelectAnyTree is now live.',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
