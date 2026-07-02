@@ -15,6 +15,7 @@ nav_order: 3
     <div class="pub-section">Program Committee</div>
     <ul class="srv-list">
       <li>International Workshop on Embedded and Mobile Deep Learning <span class="srv-note">ACM MobiSys</span></li>
+      <li>International Conference on Computational Science and Network Intelligence <span class="srv-note">CSoNet</span></li>
     </ul>
     <div class="pub-section">Reviewer</div>
     <ul class="srv-list">
