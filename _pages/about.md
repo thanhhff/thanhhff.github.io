@@ -47,7 +47,7 @@ I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specia
   <div class="about-position-card">
     <div class="about-position-icon"><i class="fa-solid fa-tree"></i></div>
     <div class="about-position-body">
-      <div class="about-position-title">Visiting Researcher</div>
+      <div class="about-position-title">Rising Star Fellowship</div>
       <div class="about-position-org"><a href="https://uni-freiburg.de/" target="_blank" rel="noopener">University of Freiburg</a> &mdash; Excellence Cluster Future Forests, Germany</div>
     </div>
   </div>
