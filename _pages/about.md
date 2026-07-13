@@ -60,6 +60,14 @@ I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specia
     </div>
   </div>
 
+  <div class="about-position-card about-position-card--incoming">
+    <div class="about-position-icon"><i class="fa-solid fa-flask"></i></div>
+    <div class="about-position-body">
+      <div class="about-position-title">Research Internship <span class="about-position-badge">Incoming</span></div>
+      <div class="about-position-org"><a href="https://www.global.toshiba/ww/top.html" target="_blank" rel="noopener">Toshiba Corporation</a> &mdash; Japan</div>
+    </div>
+  </div>
+
 </div>
 
 <div class="about-contact">
@@ -129,6 +137,35 @@ I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specia
     margin-top: 0.12rem;
     font-style: italic;
     line-height: 1.4;
+  }
+
+  /* ── Incoming position (distinct accent) ── */
+  .about-position-card--incoming {
+    --incoming-color: #0a875a;
+    border-color: color-mix(in srgb, var(--incoming-color) 40%, transparent);
+    background: color-mix(in srgb, var(--incoming-color) 5%, var(--global-card-bg-color, #fff));
+  }
+  .about-position-card--incoming:hover {
+    border-color: color-mix(in srgb, var(--incoming-color) 60%, transparent);
+    box-shadow: 0 2px 12px color-mix(in srgb, var(--incoming-color) 12%, transparent);
+  }
+  .about-position-card--incoming .about-position-icon {
+    background: color-mix(in srgb, var(--incoming-color) 12%, transparent);
+    color: var(--incoming-color);
+  }
+  .about-position-badge {
+    display: inline-block;
+    font-size: 0.66rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--incoming-color, #0a875a);
+    background: color-mix(in srgb, var(--incoming-color, #0a875a) 13%, transparent);
+    border-radius: 999px;
+    padding: 0.1rem 0.5rem;
+    margin-left: 0.35rem;
+    vertical-align: middle;
+    white-space: nowrap;
   }
 
   /* ── Contact row ── */
