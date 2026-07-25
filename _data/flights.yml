@@ -1207,7 +1207,7 @@ trips:
     to_time: 12:35 PM
     to_tz: GMT+9
     duration: 2h 25m
-    aircraft: Airbus A321
+    aircraft: Airbus A321neo
 - name: Nagoya → Hanoi
   icon: 🇻🇳
   dates: Jul 8, 2026
@@ -1224,7 +1224,7 @@ trips:
     to_time: 12:50 PM
     to_tz: GMT+7
     duration: 5h 25m
-    aircraft: Airbus A321
+    aircraft: Airbus A321neo
 - name: Hanoi → Nagoya
   icon: 🇯🇵
   dates: Jul 28, 2026
@@ -1276,13 +1276,30 @@ trips:
     to_tz: GMT+9
     duration: 1h 20m
     aircraft: Boeing 737-800
+- name: Tokyo → Nagoya
+  icon: 🇯🇵
+  dates: Aug 11, 2026
+  flights:
+  - number: JL209
+    airline: Japan Airlines
+    date: Aug 11, 2026
+    from_code: HND
+    from_city: Tokyo
+    from_time: 7:55 PM
+    from_tz: GMT+9
+    to_code: NGO
+    to_city: Nagoya
+    to_time: 8:55 PM
+    to_tz: GMT+9
+    duration: 1h 00m
+    aircraft: Boeing 737-800
 - name: Nagoya → Brindisi
   icon: 🇮🇹
-  dates: Aug 29–30, 2026
+  dates: Aug 28–30, 2026
   flights:
   - number: JL202
     airline: Japan Airlines
-    date: Aug 30, 2026
+    date: Aug 29, 2026
     from_code: NGO
     from_city: Nagoya
     from_time: 7:35 AM
@@ -1295,7 +1312,7 @@ trips:
     aircraft: Boeing 737-800
   - number: AZ793
     airline: ITY
-    date: Aug 30, 2026
+    date: Aug 29, 2026
     from_code: HND
     from_city: Tokyo
     from_time: 12:40 PM
@@ -1306,22 +1323,22 @@ trips:
     to_tz: GMT+2
     duration: 14h 45m
     aircraft: Airbus A350-900
-  - number: AZ1625
+  - number: AZ1627
     airline: ITY
     date: Aug 30, 2026
     from_code: FCO
     from_city: Rome
-    from_time: 9:45 PM
+    from_time: 3:00 PM
     from_tz: GMT+2
     to_code: BDS
     to_city: Brindisi
-    to_time: 11:00 PM
+    to_time: 4:10 PM
     to_tz: GMT+2
-    duration: 1h 15m
+    duration: 1h 10m
     aircraft: Airbus A320neo
-- name: Brindisi → Nagoya
+- name: Brindisi → Tokyo
   icon: 🇯🇵
-  dates: Sep 4–5, 2026
+  dates: Sep 4, 2026
   flights:
   - number: AZ1624
     airline: ITY
@@ -1349,19 +1366,6 @@ trips:
     to_tz: GMT+9
     duration: 12h 30m
     aircraft: Airbus A350-900
-  - number: JL209
-    airline: Japan Airlines
-    date: Sep 5, 2026
-    from_code: HND
-    from_city: Tokyo
-    from_time: 7:55 PM
-    from_tz: GMT+9
-    to_code: NGO
-    to_city: Nagoya
-    to_time: 8:55 PM
-    to_tz: GMT+9
-    duration: 1h 00m
-    aircraft: Boeing 737-800
 - name: Nagoya → Frankfurt
   icon: 🇩🇪
   dates: Sep 7, 2026
@@ -1384,13 +1388,13 @@ trips:
     date: Sep 8, 2026
     from_code: PVG
     from_city: Shanghai
-    from_time: 12:15 AM
+    from_time: 12:25 AM
     from_tz: GMT+8
     to_code: FRA
     to_city: Frankfurt
     to_time: 6:05 AM
     to_tz: GMT+2
-    duration: 11h 50m
+    duration: 11h 40m
     aircraft: Boeing 777-300 ER
 - name: Frankfurt → Nagoya
   icon: 🇯🇵
@@ -1421,4 +1425,4 @@ trips:
     to_time: 12:35 PM
     to_tz: GMT+9
     duration: 2h 25m
-    aircraft: Airbus A321
+    aircraft: Airbus A330-200
