@@ -323,6 +323,9 @@ ninja.data = [{
           section: "News",},{id: "news-the-project-webpage-of-selectanytree-is-now-live",
           title: 'The project webpage of 🌲 SelectAnyTree is now live.',
           description: "",
+          section: "News",},{id: "news-our-paper-context-aware-and-view-consistent-learning-for-multi-view-action-recognition-has-been-accepted-in-acm-tomm-if-5-6",
+          title: 'Our paper, “Context-aware and View-consistent Learning for Multi-view Action Recognition,” has been accepted...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
