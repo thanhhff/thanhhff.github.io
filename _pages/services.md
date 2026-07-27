@@ -12,6 +12,10 @@ nav_order: 3
 <div class="pub-year-block">
   <div class="pub-year">2026</div>
   <div class="pub-entries">
+    <div class="pub-section">Organizing Committee</div>
+    <ul class="srv-list">
+      <li>3rd Workshop on Computer Vision for Developing Countries <span class="srv-note">CV4DC @ ACCV</span> <a href="https://cv4dc.github.io/" target="_blank" rel="noopener" class="srv-cert">Website</a></li>
+    </ul>
     <div class="pub-section">Program Committee</div>
     <ul class="srv-list">
       <li>International Workshop on Embedded and Mobile Deep Learning <span class="srv-note">ACM MobiSys</span></li>
