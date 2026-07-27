@@ -326,6 +326,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-context-aware-and-view-consistent-learning-for-multi-view-action-recognition-has-been-accepted-in-acm-tomm-if-5-6",
           title: 'Our paper, “Context-aware and View-consistent Learning for Multi-view Action Recognition,” has been accepted...',
           description: "",
+          section: "News",},{id: "news-i-will-serve-as-an-organizing-committee-member-of-the-3rd-workshop-on-computer-vision-for-developing-countries-cv4dc-in-conjunction-with-accv-2026-osaka",
+          title: 'I will serve as an Organizing Committee member of the 3rd Workshop on...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
