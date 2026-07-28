@@ -59,7 +59,7 @@ ninja.data = [{
       section: "Posts",
       handler: () => {
         
-          window.location.href = "/blog/2026/3Dtrees/";
+          window.location.href = "/blog/2026/ForestMamba/";
         
       },
     },{id: "post-presenting-at-ieee-fg-2026",
