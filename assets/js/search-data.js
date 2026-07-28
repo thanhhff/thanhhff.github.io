@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/flights/";
           },
-        },{id: "post-presenting-at-ieee-fg-2026",
+        },{id: "post-forestmamba-on-3dtrees-earth-platform",
+      
+        title: "🌲 ForestMamba on 3Dtrees.earth Platform",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/3Dtrees/";
+        
+      },
+    },{id: "post-presenting-at-ieee-fg-2026",
       
         title: "🇯🇵 Presenting at IEEE FG 2026",
       
@@ -328,6 +339,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-i-will-serve-as-an-organizing-committee-member-of-the-3rd-workshop-on-computer-vision-for-developing-countries-cv4dc-in-conjunction-with-accv-2026-osaka",
           title: 'I will serve as an Organizing Committee member of the 3rd Workshop on...',
+          description: "",
+          section: "News",},{id: "news-forestmamba-has-been-integrated-into-the-3dtrees-earth-platform",
+          title: '🌲 ForestMamba has been integrated into the 3Dtrees.earth platform.',
           description: "",
           section: "News",},{
         id: 'social-github',
