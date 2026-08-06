@@ -52,12 +52,6 @@ map_routes:
     to: FRA
     color: "#1a73e8"
   - from: NGO
-    to: HAN
-    color: "#e53935"
-  - from: NGO
-    to: NGS
-    color: "#43a047"
-  - from: NGO
     to: HND
     color: "#ff6f00"
   - from: HND
@@ -70,10 +64,6 @@ map_routes:
 legend:
   - label: "Germany"
     color: "#1a73e8"
-  - label: "Vietnam"
-    color: "#e53935"
-  - label: "Nagasaki"
-    color: "#43a047"
   - label: "Italy"
     color: "#ff6f00"
 
