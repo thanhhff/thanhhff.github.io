@@ -343,6 +343,9 @@ ninja.data = [{
           section: "News",},{id: "news-forestmamba-has-been-integrated-into-the-3dtrees-earth-platform",
           title: '🌲 ForestMamba has been integrated into the 3Dtrees.earth platform.',
           description: "",
+          section: "News",},{id: "news-i-was-awarded-a-research-grant-from-thers-national-university-corporation-japan",
+          title: 'I was awarded a research grant from THERS (National University Corporation), Japan.',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
