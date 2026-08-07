@@ -346,6 +346,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-awarded-a-research-grant-from-thers-national-university-corporation-japan",
           title: 'I was awarded a research grant from THERS (National University Corporation), Japan.',
           description: "",
+          section: "News",},{id: "news-our-paper-forestmamba-sparse-mamba-with-geometry-guided-queries-for-3d-forest-point-cloud-segmentation-has-been-accepted-to-bmvc-2026-lancaster",
+          title: 'Our paper, “🌲 ForestMamba: Sparse Mamba with Geometry-guided Queries for 3D Forest Point...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
