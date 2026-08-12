@@ -349,6 +349,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-forestmamba-sparse-mamba-with-geometry-guided-queries-for-3d-forest-point-cloud-segmentation-has-been-accepted-to-bmvc-2026-lancaster",
           title: 'Our paper, “🌲 ForestMamba: Sparse Mamba with Geometry-guided Queries for 3D Forest Point...',
           description: "",
+          section: "News",},{id: "news-our-paper-diffcas-inference-time-ct-free-diffusion-model-for-physics-aware-multi-slice-attenuation-correction-in-cardiac-spect-has-been-accepted-in-artificial-intelligence-in-medicine-if-7-8",
+          title: 'Our paper, “DiffCAS: Inference-time CT-free Diffusion Model for Physics-aware Multi-slice Attenuation Correction in...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
