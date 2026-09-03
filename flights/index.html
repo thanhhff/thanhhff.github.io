@@ -129,7 +129,9 @@ var AP_COUNTRY = { 'NGO':'Japan','NGS':'Japan','NRT':'Japan','HND':'Japan','KIX'
     zoomControl: true, scrollWheelZoom: false, attributionControl: false, dragging: true
   });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  /* CARTO watermarks unauthenticated tiles, so the basemap key is required.
+     It is domain-scoped and public by design, like any basemap key. */
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2vci_1_3d45a4d1a13900cab830da2f', {
     subdomains: 'abcd', maxZoom: 18
   }).addTo(map);
 
