@@ -234,7 +234,9 @@ var AP_COUNTRY = { {% for ap in fd.airports %}'{{ ap[0] }}':'{{ ap[1].country }}
     zoomControl: true, scrollWheelZoom: false, attributionControl: false, dragging: true
   });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+  /* CARTO watermarks unauthenticated tiles, so the basemap key is required.
+     It is domain-scoped and public by design, like any basemap key. */
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png?key=cb1_2vci_1_3d45a4d1a13900cab830da2f', {
     subdomains: 'abcd', maxZoom: 18
   }).addTo(map);
 
