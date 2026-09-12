@@ -51,9 +51,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/flights/";
           },
-        },{id: "post-attending-ieee-avss-2026-in-lecce",
+        },{id: "post-attending-ieee-avss-2026",
       
-        title: "🇮🇹 Attending IEEE AVSS 2026 in Lecce",
+        title: "🇮🇹 Attending IEEE AVSS 2026",
       
       description: "",
       section: "Posts",
