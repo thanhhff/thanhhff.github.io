@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/flights/";
           },
-        },{id: "post-forestmamba-on-3dtrees-earth-platform",
+        },{id: "post-attending-ieee-avss-2026-in-lecce",
+      
+        title: "🇮🇹 Attending IEEE AVSS 2026 in Lecce",
+      
+      description: "",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2026/AVSS/";
+        
+      },
+    },{id: "post-forestmamba-on-3dtrees-earth-platform",
       
         title: "🌲 ForestMamba on 3Dtrees.earth Platform",
       
