@@ -360,6 +360,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-diffcas-inference-time-ct-free-diffusion-model-for-physics-aware-multi-slice-attenuation-correction-in-cardiac-spect-has-been-accepted-in-artificial-intelligence-in-medicine-if-7-8",
           title: 'Our paper, “DiffCAS: Inference-time CT-free Diffusion Model for Physics-aware Multi-slice Attenuation Correction in...',
           description: "",
+          section: "News",},{id: "news-i-gave-a-talk-at-the-chair-of-sensor-based-geoinformatics-university-of-freiburg-slides",
+          title: 'I gave a talk at the Chair of Sensor-based Geoinformatics, University of Freiburg...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
