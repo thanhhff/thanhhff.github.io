@@ -1355,3 +1355,51 @@ ninja-keys::part(ninja-input-wrapper) {
 }
 
 div.container.mt-5[role="main"] { margin-top: 2.5rem !important; }
+
+// news attachment links (slides, poster, video, ...)
+// used on both the home-page news table and the /news/ timeline
+a.news-link,
+table.table a.news-link {
+  --news-link-color: var(--global-theme-color);
+  --news-link-bg-color: var(--global-chip-bg-color);
+  --news-link-hover-bg-color: var(--global-chip-hover-bg-color);
+  --news-link-icon-color: inherit;
+  --news-link-icon-opacity: 0.85;
+
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.45em;
+  padding: 0.1em 0.5em;
+  border-radius: 6px;
+  background-color: var(--news-link-bg-color);
+  font-size: 0.78em;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--news-link-color);
+  text-decoration: none;
+  vertical-align: baseline;
+  transition: background-color 0.2s ease-in-out;
+
+  i {
+    margin-right: 0.4em;
+    font-size: 0.95em;
+    color: var(--news-link-icon-color);
+    opacity: var(--news-link-icon-opacity);
+  }
+
+  &:hover {
+    color: var(--news-link-color);
+    text-decoration: none;
+    background-color: var(--news-link-hover-bg-color);
+
+    i {
+      opacity: 1;
+    }
+  }
+
+  // slide decks keep the PowerPoint orange on the file icon
+  &.slides {
+    --news-link-icon-color: var(--global-slides-color);
+    --news-link-icon-opacity: 1;
+  }
+}
