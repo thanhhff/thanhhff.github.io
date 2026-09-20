@@ -40,6 +40,7 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
+    {% if site.flights_enabled %}
     <!-- Live flight (auto-shown by JS on the flight day) -->
     {% assign fd = site.data.flights %}
     <div id="ab-live-wrap" style="display:none; margin-bottom:1.5rem;">
@@ -319,6 +320,7 @@ layout: default
       .live-terminal { font-size:.80rem; color:var(--global-text-color-light); margin-top:.25rem; white-space:nowrap; text-align:center; display:block; }
       @media (max-width:399px) { .live-btn { display:none; } }
     </style>
+    {% endif %}
 
     <style>
       /* ── Section headings on the about page ── */

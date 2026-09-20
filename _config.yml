@@ -46,6 +46,9 @@ rss_icon: true
 navbar_fixed: true
 footer_fixed: true
 search_enabled: false
+# Temporarily hidden: set to true to bring back the ✈ flights page
+# (also flip `published` to true in _pages/flights.md)
+flights_enabled: false
 socials_in_search: true
 bib_search: true
 

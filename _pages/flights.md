@@ -3,7 +3,10 @@ layout: page
 title: ✈
 nav_title: "✈&#xFE0E;"
 permalink: /flights/
-nav: true
+# Temporarily hidden — set `published: true` and `nav: true` to restore
+# (also set `flights_enabled: true` in _config.yml for the about-page card)
+published: false
+nav: false
 _styles: ".post-title, .post-description { display: none; }"
 nav_order: 5
 ---
