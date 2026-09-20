@@ -44,13 +44,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "nav-",
-          title: "✈",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/flights/";
-          },
         },{id: "post-attending-ieee-avss-2026",
       
         title: "🇮🇹 Attending IEEE AVSS 2026",
