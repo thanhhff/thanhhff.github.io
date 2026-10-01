@@ -356,6 +356,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-gave-a-talk-at-the-chair-of-sensor-based-geoinformatics-university-of-freiburg-slides",
           title: 'I gave a talk at the Chair of Sensor-based Geoinformatics, University of Freiburg...',
           description: "",
+          section: "News",},{id: "news-i-started-an-ai-research-internship-at-toshiba-corporation",
+          title: 'I started an AI research internship at Toshiba Corporation 🇯🇵.',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
