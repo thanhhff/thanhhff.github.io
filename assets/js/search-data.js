@@ -359,6 +359,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-started-an-ai-research-internship-at-toshiba-corporation",
           title: 'I started an AI research internship at Toshiba Corporation 🇯🇵.',
           description: "",
+          section: "News",},{id: "news-i-was-recognized-as-a-top-reviewer-at-neurips-2026-certificate",
+          title: 'I was recognized as a Top Reviewer at NeurIPS 2026. Certificate',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
