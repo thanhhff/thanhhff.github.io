@@ -1402,4 +1402,10 @@ table.table a.news-link {
     --news-link-icon-color: var(--global-slides-color);
     --news-link-icon-opacity: 1;
   }
+
+  // PDF documents share the slides icon color
+  &.pdf {
+    --news-link-icon-color: var(--global-slides-color);
+    --news-link-icon-opacity: 1;
+  }
 }
