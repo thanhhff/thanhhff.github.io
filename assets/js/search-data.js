@@ -362,6 +362,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-recognized-as-a-top-reviewer-at-neurips-2026-and-received-a-complimentary-conference-registration-certificate",
           title: 'I was recognized as a Top Reviewer at NeurIPS 2026 and received a...',
           description: "",
+          section: "News",},{id: "news-our-paper-cross4d-jepa-dense-cross-modal-correspondence-distillation-for-4d-point-cloud-representation-learning-has-been-accepted-to-ieee-cvf-wacv-2027-florida",
+          title: 'Our paper, “Cross4D-JEPA: Dense Cross-modal Correspondence Distillation for 4D Point Cloud Representation Learning,”...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
