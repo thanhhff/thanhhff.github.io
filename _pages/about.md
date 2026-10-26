@@ -60,6 +60,7 @@ I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specia
     </div>
   </div>
 
+  {% comment %}
   <div class="about-position-card about-position-card--incoming">
     <div class="about-position-icon"><i class="fa-solid fa-flask"></i></div>
     <div class="about-position-body">
@@ -67,6 +68,7 @@ I am a PhD Candidate at [Nagoya University](https://www.nagoya-u.ac.jp/), specia
       <div class="about-position-org"><a href="https://www.global.toshiba/ww/top.html" target="_blank" rel="noopener">Toshiba Corporation</a> &mdash; Japan</div>
     </div>
   </div>
+  {% endcomment %}
 
 </div>
 
