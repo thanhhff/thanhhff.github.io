@@ -365,6 +365,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-cross4d-jepa-dense-cross-modal-correspondence-distillation-for-4d-point-cloud-representation-learning-has-been-accepted-to-ieee-cvf-wacv-2027-florida",
           title: 'Our paper, “Cross4D-JEPA: Dense Cross-modal Correspondence Distillation for 4D Point Cloud Representation Learning,”...',
           description: "",
+          section: "News",},{id: "news-i-was-awarded-a-research-grant-from-the-telecommunications-advancement-foundation-est-1984-japan",
+          title: 'I was awarded a research grant from The Telecommunications Advancement Foundation (est. 1984),...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
