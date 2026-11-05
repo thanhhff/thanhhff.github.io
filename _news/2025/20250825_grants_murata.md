@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I was awarded a research grant from Murata Foundation (est. 1970), Japan.
+I was awarded a grant from Murata Foundation (est. 1970), Japan.
