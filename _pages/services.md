@@ -31,7 +31,7 @@ nav_order: 3
       <li>ACM Transactions on Multimedia Computing, Communications, and Applications <span class="srv-note">Journal, IF: 5.6</span></li>
       <li>British Machine Vision Conference <span class="srv-note">BMVC</span></li>
       <li>International Conference on Multimedia Modeling <span class="srv-note">MMM</span></li>
-      <li>Conference on Neural Information Processing Systems <span class="srv-note">NeurIPS, Top Reviewer</span> <a href="{{ site.baseurl }}/assets/pdf/reviewer/2026-NeurIPS.pdf" target="_blank" rel="noopener" class="srv-cert">Certificate</a></li>
+      <li>Conference on Neural Information Processing Systems <span class="srv-note">NeurIPS</span> <span class="award-badge">Top Reviewer</span> <a href="{{ site.baseurl }}/assets/pdf/reviewer/2026-NeurIPS.pdf" target="_blank" rel="noopener" class="srv-cert">Certificate</a></li>
       <li>IEEE/CVF Conference on Computer Vision and Pattern Recognition <span class="srv-note">IEEE/CVF CVPR</span> <a href="{{ site.baseurl }}/assets/pdf/reviewer/2026-CVPR.pdf" target="_blank" rel="noopener" class="srv-cert">Certificate</a></li>
       <li>CV4Animals: Computer Vision for Animal Behavior Tracking and Modeling <span class="srv-note">IEEE/CVF CVPR</span></li> 
       <li>IEEE International Conference on Automatic Face and Gesture Recognition <span class="srv-note">IEEE FG</span></li>
@@ -145,6 +145,18 @@ nav_order: 3
     font-size: 0.78rem;
     color: var(--global-text-color-light, #828282);
     font-style: italic;
+  }
+
+  .award-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #b26a00;
+    background: rgba(255, 193, 7, 0.15);
+    border-radius: 6px;
+    padding: 0.05rem 0.45rem;
+    white-space: nowrap;
+    vertical-align: 1px;
   }
 
   .srv-cert {
