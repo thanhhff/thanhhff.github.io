@@ -28,6 +28,7 @@ nav_order: 3
       <li>ACM Computing Surveys <span class="srv-note">Journal, IF: 28.0</span></li>
       <li>IEEE Transactions on Multimedia <span class="srv-note">Journal, IF: 9.7</span></li>
       <li>IEEE Transactions on Circuits and Systems for Video Technology <span class="srv-note">Journal, IF: 11.1</span></li>
+      <li>ACM Transactions on Multimedia Computing, Communications, and Applications <span class="srv-note">Journal, IF: 5.6</span></li>
       <li>British Machine Vision Conference <span class="srv-note">BMVC</span></li>
       <li>International Conference on Multimedia Modeling <span class="srv-note">MMM</span></li>
       <li>Conference on Neural Information Processing Systems <span class="srv-note">NeurIPS, Top Reviewer</span> <a href="{{ site.baseurl }}/assets/pdf/reviewer/2026-NeurIPS.pdf" target="_blank" rel="noopener" class="srv-cert">Certificate</a></li>
