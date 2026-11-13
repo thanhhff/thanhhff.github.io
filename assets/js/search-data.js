@@ -368,6 +368,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-was-awarded-a-grant-from-the-telecommunications-advancement-foundation-est-1984-japan",
           title: 'I was awarded a grant from The Telecommunications Advancement Foundation (est. 1984), Japan....',
           description: "",
+          section: "News",},{id: "news-our-paper-closed-form-fisher-guided-compression-rate-allocation-for-large-language-models-has-been-accepted-to-findings-of-eacl-2027-athens",
+          title: 'Our paper, “Closed-Form Fisher-Guided Compression-Rate Allocation for Large Language Models,” has been accepted...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
