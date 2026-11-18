@@ -371,6 +371,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-closed-form-fisher-guided-compression-rate-allocation-for-large-language-models-has-been-accepted-to-findings-of-eacl-2027-athens",
           title: 'Our paper, “Closed-Form Fisher-Guided Compression-Rate Allocation for Large Language Models,” has been accepted...',
           description: "",
+          section: "News",},{id: "news-our-paper-grouped-causal-query-adapter-for-parameter-efficient-feature-extraction-in-video-captioning-has-been-accepted-in-acm-tomm-if-5-6",
+          title: 'Our paper, “Grouped Causal Query Adapter for Parameter-Efficient Feature Extraction in Video Captioning,”...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
