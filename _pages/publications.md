@@ -250,6 +250,26 @@ nav_order: 2
     text-decoration: none;
   }
 
+  .poster-badge {
+    display: inline-block;
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #0f766e;
+    background: rgba(15, 118, 110, 0.08);
+    border: 1px solid rgba(15, 118, 110, 0.25);
+    border-radius: 6px;
+    padding: 0.05rem 0.4rem;
+    white-space: nowrap;
+    vertical-align: 1px;
+    text-decoration: none;
+  }
+  .poster-badge:hover {
+    background: rgba(15, 118, 110, 0.18);
+    text-decoration: none;
+  }
+
   .arxiv-badge {
     display: inline-block;
     font-style: normal;
