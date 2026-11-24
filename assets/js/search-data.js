@@ -374,6 +374,9 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-grouped-causal-query-adapter-for-parameter-efficient-feature-extraction-in-video-captioning-has-been-accepted-in-acm-tomm-if-5-6",
           title: 'Our paper, “Grouped Causal Query Adapter for Parameter-Efficient Feature Extraction in Video Captioning,”...',
           description: "",
+          section: "News",},{id: "news-our-paper-forestmamba-won-the-sustainability-research-award-from-lloyds-banking-group-at-bmvc-2026-lancaster",
+          title: 'Our paper “🌲 ForestMamba” won the Sustainability Research Award from Lloyds Banking Group...',
+          description: "",
           section: "News",},{
         id: 'social-github',
         title: 'GitHub',
